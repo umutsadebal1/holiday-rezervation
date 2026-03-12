@@ -1,4 +1,3 @@
-// ===== THEME TOGGLE =====
 const themeToggle = document.getElementById('themeToggle');
 const savedTheme = localStorage.getItem('theme') || 'light';
 
@@ -15,8 +14,6 @@ if (themeToggle) {
         themeToggle.textContent = isDarkMode ? '☀️' : '🌙';
     });
 }
-
-// ===== HERO SLIDER =====
 let currentSlide = 0;
 const heroSlider = document.getElementById('heroSlider');
 
@@ -27,11 +24,8 @@ const slideHero = (direction) => {
     currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
     heroSlider.style.transform = `translateX(-${currentSlide * 100}%)`;
 };
-
-// Auto slide
 setInterval(() => slideHero(1), 5000);
 
-// ===== TESTIMONIALS SLIDER =====
 let currentTestimonial = 0;
 const testimonialsTrack = document.getElementById('testimonialsTrack');
 
@@ -68,8 +62,6 @@ const slideTestimonial = (direction) => {
     currentTestimonial = (currentTestimonial + direction + items.length) % items.length;
     testimonialsTrack.style.transform = `translateX(-${currentTestimonial * 100}%)`;
 };
-
-// ===== REGIONS =====
 const regions = [
     { name: 'Antalya', hotels: 172, image: 'img/1.jpg', link: 'antalya.html', class: 'large-left' },
     { name: 'Mardin', hotels: 106, image: 'img/11.jpg', link: 'mardin.html', class: 'top-right' },
@@ -97,8 +89,6 @@ const loadRegions = () => {
         </div>
     `).join('');
 };
-
-// ===== SEARCH =====
 const searchResorts = () => {
     const destination = document.getElementById('destination')?.value || '';
     const checkIn = document.getElementById('checkIn')?.value || '';
@@ -133,8 +123,6 @@ const searchResorts = () => {
         alert(`"${destination}" için sayfa bulunamadı.`);
     }
 };
-
-// ===== MODAL =====
 let selectedHotel = null;
 let selectedPrice = 0;
 
@@ -150,7 +138,6 @@ const closeModal = () => {
     document.getElementById('bookingModal').style.display = 'none';
 };
 
-// Close modal on outside click
 window.onclick = (e) => {
     const modal = document.getElementById('bookingModal');
     if (e.target === modal) {
@@ -158,7 +145,6 @@ window.onclick = (e) => {
     }
 };
 
-// ===== RESERVATION SUBMIT =====
 const submitReservation = (event) => {
     event.preventDefault();
     
@@ -185,8 +171,6 @@ const submitReservation = (event) => {
     alert('Rezervasyonunuz başarıyla alındı! Rezervasyonlarım sayfasından takip edebilirsiniz.');
     document.getElementById('bookingForm').reset();
 };
-
-// ===== INIT =====
 document.addEventListener('DOMContentLoaded', () => {
     loadTestimonials();
     loadRegions();
