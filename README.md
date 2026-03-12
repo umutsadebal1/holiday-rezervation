@@ -41,7 +41,7 @@ holidayrez
 ## 🚀 Kurulum
 
 Projeyi bilgisayarına klonla:
-git clone https://github.com/umutsadebal1/holidayrez42.git
+git clone https://github.com/umutsadebal1/holiday-rezervation.git
 
 Sonra `index.html` dosyasını açarak projeyi çalıştırabilirsin.
 
