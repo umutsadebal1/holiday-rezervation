@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Başlık ve Navigasyon -->
     <header class="header">
         <div class="navbar">
             <div class="logo">
@@ -26,7 +25,6 @@
             </div>
         </div>
 
-        <!-- Hero Slider -->
         <section class="hero" id="home">
             <div class="hero-slider-container">
                 <div class="hero-slider" id="heroSlider">
@@ -64,8 +62,6 @@
                 <button class="slider-nav slider-prev" onclick="slideHero(-1)">❮</button>
                 <button class="slider-nav slider-next" onclick="slideHero(1)">❯</button>
             </div>
-
-            <!-- Arama Çubuğu -->
             <div class="search-container">
                 <div class="search-box">
                     <div class="search-field">
@@ -106,8 +102,6 @@
             </div>
         </section>
     </header>
-
-    <!-- Popüler Bölgeler Bölümü -->
     <section class="popular-regions" id="specials">
         <h2>Popüler Bölgeler</h2>
         <div class="regions-filter">
@@ -118,23 +112,17 @@
             <button class="filter-tag" onclick="window.location.href='mugla.html'">Muğla</button>
         </div>
         <div class="regions-cascade-grid" id="regionsCascade">
-            <!-- Bölgeler dinamik olarak yüklenecektir -->
         </div>
     </section>
-
-    <!-- Müşteri Yorumları Carousel -->
     <section class="testimonials" id="testimonials">
         <h2>Konuk Yorumları</h2>
         <div class="testimonials-carousel">
             <div class="testimonials-track" id="testimonialsTrack">
-                <!-- Yorumlar dinamik olarak yüklenecektir -->
             </div>
             <button class="carousel-nav carousel-prev" onclick="slideTestimonial(-1)">❮</button>
             <button class="carousel-nav carousel-next" onclick="slideTestimonial(1)">❯</button>
         </div>
     </section>
-
-    <!-- İletişim Bölümü -->
     <section class="contact" id="contact">
         <h2>Bize Ulaşın</h2>
         <div class="contact-content">
@@ -160,17 +148,12 @@
             </form>
         </div>
     </section>
-
-    <!-- Altbilgi -->
           <footer class="site-footer">
             <div class="footer-content">
                 <span class="texts4">© 2026 TatilRez. Tüm hakları saklıdır.</span>
                 <a href="aboutme.html" class="my-name">Umut Sadebal</a>
             </div>
         </footer>
-
-
-    <!-- Rezervasyon Modalı -->
     <div id="bookingModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
