@@ -1,0 +1,99 @@
+
+================================================================================
+                    TATİLREZ - RESİM KULLANIM REHBERİ
+================================================================================
+
+================================================================================
+                         1. ŞEHİR SAYFALARI (Hero Resimleri)
+================================================================================
+
+ANTALYA:      img/1.jpg     → antalya.html
+BODRUM:       img/95.jpg    → bodrum.html
+MARDİN:       img/11.jpg    → mardin.html
+BURSA:        img/99.jpg    → bursa.html (background)
+DİYARBAKIR:   img/67.jpg    → diyarbakir.html
+MUĞLA:        img/72.jpg    → mugla.html
+VAN:          img/97.jpg    → van.html
+TRABZON:      img/90.jpg    → trabzon.html
+İZMİR:        img/98.jpg    → izmir.html
+
+================================================================================
+                    2. ANA SAYFA SLIDER (index.html)
+================================================================================
+
+img/90.jpg    → Slider 1
+img/91.jpg    → Slider 2 (91.webp alternatifi mevcut)
+img/92.jpg    → Slider 3
+img/93.webp   → Slider 4
+img/94.jpg    → Slider 5
+
+================================================================================
+                 3. POPÜLER BÖLGELER (script.js - loadRegions)
+================================================================================
+
+img/1.jpg     → Antalya (large-left)
+img/11.jpg    → Mardin (top-right)
+img/67.jpg    → Diyarbakır (middle-left)
+img/72.jpg    → Muğla (middle-right)
+img/97.jpg    → Van (middle-left)
+img/90.jpg    → Trabzon (bottom-left)
+img/95.jpg    → Bodrum (bottom-left)
+img/99.jpg    → Bursa (bottom-right)
+img/98.jpg    → İzmir (bottom-right)
+
+================================================================================
+                    4. OTEL KARTLARI (Şehir JS Dosyaları)
+================================================================================
+
+Her şehir sayfasında 8 otel kartı için mevcut resimler kullanılıyor:
+
+Antalya:    1.jpg, 90-96.jpg
+Bodrum:     95-103.jpg
+Mardin:     11.jpg, 90-96.jpg
+Bursa:      99-103.jpg, 92-94.jpg
+Van:        97.jpg, 94-96.jpg, 100-103.jpg
+Trabzon:    90-97.jpg
+İzmir:      98.jpg, 94-97.jpg, 100-102.jpg
+Muğla:      72.jpg, 90-96.jpg
+Diyarbakır: 67.jpg, 90-96.jpg
+
+================================================================================
+                    5. MEVCUT RESİMLER (img/ klasörü)
+================================================================================
+
+ŞEHİR GÖRSELLERİ:
+- 1.jpg (Antalya)
+- 11.jpg (Mardin)
+- 45.jpeg
+- 67.jpg (Diyarbakır)
+- 72.jpg (Muğla)
+
+SLIDER VE KART GÖRSELLERİ:
+- 90.jpg, 90.jpeg, 91.jpg, 91.webp, 92.jpg
+- 93.jpg, 93.webp, 94.jpg
+- 95.jpg, 96.jpg, 97.jpg, 98.jpg, 99.jpg
+- 100.jpg, 101.jpg, 102.jpg, 103.jpg
+
+LOGOLAR VE İKONLAR:
+- logo.png: TatilRez logosu (header)
+- tatilrez.png: Proje görseli (aboutme.html)
+- html.png, css.png, js.png: Teknoloji ikonları
+- icon-design.svg: Tasarım ikonu
+- my-avatar.jpeg: Geliştirici profil fotoğrafı
+
+================================================================================
+                              ÖZET
+================================================================================
+
+TOPLAM KULLANILAN DOSYA SAYISI: 104 resim + 1 logo = 105 dosya
+
+KULLANIM AREALAARI:
+- Şehir Sayfaları: img/1-89 (Her şehrin hero + 8 otel görseli)
+- Ana Sayfa Slider: img/90-94 (5 şehrin hero görselleri)
+- Popüler Bölgeler: img/95-104 (10 şehrin kaskad grid görselleri)
+- Header Logo: img/logo.png (Tüm sayfalarda)
+
+RESPONSIVE DESİGN: Tüm görseller responsive tasarım için optimize edilmelidir
+DARK MODE: Tüm görseller hem light hem dark mode'da kullanılmaktadır
+
+================================================================================

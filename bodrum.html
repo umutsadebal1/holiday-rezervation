@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bodrum Tatili - Otel Rezervasyonları</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-bodrum">
+    <!-- Başlık -->
+    <header class="header">
+        <div class="navbar">
+            <div class="logo">
+                <h1>🏖️ TatilRez</h1>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html#home">Anasayfa</a>
+                <a href="index.html#locations">Bölgeler</a>
+                <a href="index.html#specials">Özel Paketler</a>
+                <a href="index.html#testimonials">Yorumlar</a>
+            </nav>
+            <div class="header-actions">
+                <button id="themeToggle" class="theme-toggle" title="Karanlık modu aç/kapat">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <div class="location-hero">
+        <img src="img/95.jpg" alt="Bodrum" class="hero-image" onerror="this.src='img/95.jpg'">
+        <h1>🏖️ Bodrum Tatili</h1>
+        <p>Akdeniz'in en güzel plajları ve tarihi kalesi</p>
+    </div>
+
+    <!-- Otel Listesi -->
+    <div class="hotels-container">
+        <a href="index.html#locations" class="back-link">← Tüm Bölgelere Dön</a>
+        
+        <h2 style="text-align: center; margin-bottom: 3rem; color: var(--light-text);">Bodrum'da Seçili Oteller</h2>
+        
+        <div class="hotel-list" id="hotelsList">
+            <!-- Oteller dinamik olarak yüklenecektir -->
+        </div>
+    </div>
+
+    <!-- Altbilgi -->
+        <footer class="site-footer">
+            <div class="footer-content">
+                <span class="texts4">© 2026 TatilRez. Tüm hakları saklıdır.</span>
+                <a href="aboutme.html" class="my-name">Umut Sadebal</a>
+            </div>
+        </footer>
+
+
+    <!-- Rezervasyon Modalı -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Rezervasyonunuzu Tamamlayın</h2>
+            <form id="bookingForm" onsubmit="submitReservation(event)">
+                <div class="form-group">
+                    <label>Otel Adı</label>
+                    <input type="text" id="resortName" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Tam Adınız</label>
+                    <input type="text" id="guestName" required>
+                </div>
+                <div class="form-group">
+                    <label>E-posta</label>
+                    <input type="email" id="guestEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Telefon</label>
+                    <input type="tel" id="guestPhone" required>
+                </div>
+                <div class="form-group">
+                    <label>Giriş Tarihi</label>
+                    <input type="date" id="bookingCheckIn" required>
+                </div>
+                <div class="form-group">
+                    <label>Çıkış Tarihi</label>
+                    <input type="date" id="bookingCheckOut" required>
+                </div>
+                <div class="form-group">
+                    <label>Konuk Sayısı</label>
+                    <input type="number" id="bookingGuests" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label>Oda Tipi</label>
+                    <select id="roomType" required>
+                        <option value="">Oda Tipi Seçin</option>
+                        <option value="Standard">Standart Oda</option>
+                        <option value="Deluxe">Deluxe Oda</option>
+                        <option value="Suite">Suite</option>
+                        <option value="Villa">Özel Villa</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Özel İstekler</label>
+                    <textarea id="specialRequests" rows="4" placeholder="Herhangi bir özel istek..."></textarea>
+                </div>
+                <div class="price-summary">
+                    <p>Toplam Fiyat: <strong id="totalPrice">₺0</strong></p>
+                </div>
+                <button type="submit" class="btn-book">Rezervasyonu Onayla</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="bodrum.js"></script>
+</body>
+</html>

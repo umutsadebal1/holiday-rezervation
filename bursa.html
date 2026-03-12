@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bursa Otelleri</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-bursa">
+    <header class="header">
+        <div class="navbar">
+            <div class="logo">
+                <h1>🏖️ TatilRez</h1>
+            </div>
+            <nav>
+                <a href="index.html">Anasayfa</a>
+            </nav>
+            <div class="header-actions">
+                <button id="themeToggle" class="theme-toggle">🌙</button>
+                <a href="reservations.html">Rezervasyonlarım</a>
+            </div>
+        </div>
+
+        <section class="location-hero" style="background: linear-gradient(135deg, rgba(34, 139, 34, 0.9), rgba(85, 107, 47, 0.9)), url('img/99.jpg'); background-size: cover;">
+            <div class="hero-content">
+                <h1>Bursa</h1>
+                <p>Dağlar ve Kış Sporları - Uludağ Yakını</p>
+            </div>
+        </section>
+    </header>
+
+    <main class="location-main">
+        <section class="hotels-section">
+            <h2>Bursa Otelleri</h2>
+            <div class="hotels-grid" id="hotelsGrid"></div>
+        </section>
+    </main>
+        <footer class="site-footer">
+            <div class="footer-content">
+                <span class="texts4">© 2026 TatilRez. Tüm hakları saklıdır.</span>
+                <a href="aboutme.html" class="my-name">Umut Sadebal</a>
+            </div>
+        </footer>
+
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Rezervasyon</h2>
+            <form id="bookingForm" onsubmit="submitReservation(event)">
+                <div class="form-group">
+                    <label>Otel</label>
+                    <input type="text" id="resortName" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Ad</label>
+                    <input type="text" id="guestName" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="guestEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Telefon</label>
+                    <input type="tel" id="guestPhone" required>
+                </div>
+                <div class="form-group">
+                    <label>Giriş</label>
+                    <input type="date" id="bookingCheckIn" required>
+                </div>
+                <div class="form-group">
+                    <label>Çıkış</label>
+                    <input type="date" id="bookingCheckOut" required>
+                </div>
+                <div class="form-group">
+                    <label>Konuk</label>
+                    <input type="number" id="bookingGuests" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label>Oda</label>
+                    <select id="roomType" required>
+                        <option>Standart</option>
+                        <option value="Deluxe">Deluxe</option>
+                        <option value="Suite">Suite</option>
+                        <option value="Villa">Villa</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>İstek</label>
+                    <textarea id="specialRequests" rows="3"></textarea>
+                </div>
+                <div class="price-summary">
+                    <p>Toplam: <strong id="totalPrice">₺0</strong></p>
+                </div>
+                <button type="submit" class="btn-book">Onayla</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="bursa.js"></script>
+</body>
+</html>

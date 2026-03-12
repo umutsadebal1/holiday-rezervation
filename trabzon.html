@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabzon Otelleri - TatilRez</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-trabzon">
+    <header class="header">
+        <div class="navbar">
+            <div class="logo"><h1>🏖️ TatilRez</h1></div>
+            <nav class="nav-links">
+                <a href="index.html">Anasayfa</a>
+                <a href="index.html#locations">Bölgeler</a>
+                <a href="index.html#specials">Tatilim</a>
+                <a href="index.html#contact">İletişim</a>
+            </nav>
+            <div class="header-actions">
+                <button id="themeToggle" class="theme-toggle" title="Karanlık modu aç/kapat">🌙</button>
+                <a href="reservations.html" class="btn-reservations">Rezervasyonlarım</a>
+            </div>
+        </div>
+        <section class="location-hero" style="background: linear-gradient(135deg, rgba(46, 125, 50, 0.9), rgba(27, 94, 32, 0.9));">
+            <img src="img/90.jpg" alt="Trabzon" class="hero-image">
+            <div class="hero-content">
+                <h1>Trabzon</h1>
+                <p>Karadeniz'in İncisi - Doğa, Kültür ve Yayla Güzelliği</p>
+            </div>
+        </section>
+    </header>
+
+    <main class="location-main">
+        <section class="hotels-section">
+            <h2>Trabzon'da Popüler Oteller</h2>
+            <div class="hotels-grid" id="hotelsGrid"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <span class="texts4">© 2026 TatilRez. Tüm hakları saklıdır.</span>
+            <a href="aboutme.html" class="my-name">Umut Sadebal</a>
+        </div>
+    </footer>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Rezervasyonunuzu Tamamlayın</h2>
+            <form id="bookingForm" onsubmit="submitReservation(event)">
+                <div class="form-group">
+                    <label>Tatil Yeri / Otel Adı</label>
+                    <input type="text" id="resortName" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Tam Adınız</label>
+                    <input type="text" id="guestName" required>
+                </div>
+                <div class="form-group">
+                    <label>E-posta</label>
+                    <input type="email" id="guestEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Telefon</label>
+                    <input type="tel" id="guestPhone" required>
+                </div>
+                <div class="form-group">
+                    <label>Giriş Tarihi</label>
+                    <input type="date" id="bookingCheckIn" required>
+                </div>
+                <div class="form-group">
+                    <label>Çıkış Tarihi</label>
+                    <input type="date" id="bookingCheckOut" required>
+                </div>
+                <div class="form-group">
+                    <label>Konuk Sayısı</label>
+                    <input type="number" id="bookingGuests" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label>Oda Tipi</label>
+                    <select id="roomType" required>
+                        <option value="">Oda Tipi Seçin</option>
+                        <option value="Standard">Standart Oda</option>
+                        <option value="Deluxe">Deluxe Oda</option>
+                        <option value="Suite">Suite</option>
+                        <option value="Villa">Özel Villa</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Özel İstekler</label>
+                    <textarea id="specialRequests" rows="4" placeholder="Herhangi bir özel istek..."></textarea>
+                </div>
+                <div class="price-summary">
+                    <p>Toplam Fiyat: <strong id="totalPrice">₺0</strong></p>
+                </div>
+                <button type="submit" class="btn-book">Rezervasyonu Onayla</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="trabzon.js"></script>
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Umut Sadebal</title>
+    <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="aboutme.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <main>
+
+     <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./img/my-avatar.jpeg" alt="Umut Sadebal" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Umut Sadebal">Umut Sadebal</h1>
+
+          <p class="title">Web Designer</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>İletişim</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:umutsadebal@gmail.com" class="contact-link">umutsadebal@gmail.com</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Telefon</p>
+
+              <a href="tel:+995384674010" class="contact-link">+99 5384674010</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Doğum günü</p>
+
+              <time datetime="1982-06-23">11 Ocak 2005</time>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Konum</p>
+
+              <address>Serik, Antalya, Türkiye</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+          <li class="social-item">
+            <a href="#https://x.com/lidergriffin?s=21" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="#https://www.instagram.com/umut.sadebal?igsh=MWdud3F6aTc3enR2Mw%3D%3D&utm_source=qr" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+     <nav class="navbar">
+  <ul class="navbar-list">
+    <li class="navbar-item">
+      <button class="navbar-link active" data-nav-link="about" onclick="sayfaDegistir('about', this)">Hakkımda</button>
+    </li>
+    <li class="navbar-item">
+      <button class="navbar-link" data-nav-link="resume" onclick="sayfaDegistir('resume', this)">Eğitim ve Yetenek</button>
+    </li>
+    <li class="navbar-item">
+      <button class="navbar-link" data-nav-link="portfolio" onclick="sayfaDegistir('portfolio', this)">Portföyüm</button>
+    </li>
+  </ul>
+</nav>
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">Hakkımda</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+           Ben Umut Sadebal, 
+           Diyarbakır merkezli bir Fullstack yolcusuyum. HTML, CSS ve JavaScript kullanarak modern dünyayı ekranın arkasında tasarlıyorum.
+          </p>
+
+          <p>
+            İşlevsel, kullanıcı odaklı ve görsel olarak çarpıcı dijital ürünler geliştiriyorum. 
+            Amacım, karmaşık fikirleri basit ve etkileyici arayüzlere dönüştürerek markanızın hikayesini en yaratıcı yolla anlatmak.
+            Yavaşça uzmanlaştığım bu yolda markanızı kişisel bir estetik anlayışıyla birleştirip, akılda kalıcı kullanıcı deneyimleri tasarlıyorum
+          </p>
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">Peki ben ne yapıyorum? </h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web tasarımı</h4>
+
+                <p class="service-item-text">
+                    Web tasarımında, kullanıcı deneyimini ön planda tutarak, estetik ve işlevselliği bir araya getiriyorum. 
+                    Modern tasarım trendlerini takip ederek, markanızın dijital varlığını güçlendirecek özgün ve etkileyici web siteleri oluşturuyorum.
+                </p>
+              </div>
+
+            </li>
+          </ul>
+
+        </section>
+        <section class="clients">
+
+          <h3 class="h3 clients-title">Aktif olarak kullanabildiğim diller</h3>
+
+          <ul class="clients-list has-scrollbar">
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./img/html.png" alt="html logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./img/css.png" alt="css logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./img/js.png" alt="js logo">
+              </a>
+            </li>
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume active" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Eğitim ve Yetenek</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Eğitim</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Diyarbakır Yenişehir İlk Öğretim okulu</h4>
+
+              <span>2012-2016</span>
+
+              <p class="timeline-text">
+                Eğitim hayatıma ilk olarak <strong>Yenişehir İlköğretim Okulu</strong>'nda başladım. 
+                Burada aldığım temel eğitim, bugün kurduğum bu düzenin ilk kıvılcımı oldu.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Şehit Namık Tümer Ortaokulu</h4>
+
+              <span>2016-2020</span>
+
+              <p class="timeline-text">
+                Temel eğitimimin ardından ortaöğrenim hayatıma <strong>Şehit Namık Tümer Ortaokulu</strong>'nda devam ettim.
+                Bu dönem, hayata dair bir şeyleri öğrenmeye başladığım, merakımın arttığı ve kendimi keşfetmeye başladığım bir süreçti.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Diyarbakır Özel Final Fen Lisesi</h4>
+
+              <span>2020-2024</span>
+
+              <p class="timeline-text">
+                <strong>Diyarbakır Özel Final Fen Lisesi</strong> bünyesinde aldığım eğitim, mühendislik ve yazılım dünyasına olan ilgimin akademik temellerle birleştiği dönüm noktası oldu.
+                bu süreçte, Tubitak için geliştirdiğim TubiForum projesi ile ikinci aşamaya kadar yükselerek, bu alandaki yeteneklerimi ve tutkumun meyvelerini görme fırsatı buldum.
+              </p>
+
+            </li>
+
+               <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Antalya Belek Üniversitesi</h4>
+
+              <span>2024-2028</span>
+
+              <p class="timeline-text">
+                Şu anda <strong>Antalya Belek Üniversitesi</strong>'nde Yönetim Bilişim Sistemleri bölümünde eğitimime devam ediyorum. 
+                Burada, hem yönetim hem de bilişim alanlarında derinlemesine bilgi edinerek, gelecekteki kariyer hedeflerime sağlam bir temel oluşturmayı amaçlıyorum.
+                Üniversite hayatım boyunca, hem akademik başarılarımı artırmayı hem de sektörel deneyimler kazanarak kendimi geliştirmeyi hedefliyorum.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+        <section class="skill">
+
+          <h3 class="h3 skills-title">Yeteneklerim</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Web design</h5>
+                <data value="75">75%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 75%;"></div>
+              </div>
+
+            </li>
+          </ul>
+
+        </section>
+
+      </article>
+
+      <article class="portfolio" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title">Portföyüm</h2>
+        </header>
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./img/tatilrez.png" alt="Tatil Rezervasyon Otomasyonu" loading="lazy">
+                </figure>
+
+                <h3 class="project-title" href="index.html">Tatil Rezervasyon Otomasyonu</h3>
+
+                <p class="project-category">Web Tasarım</p>
+
+              </a>
+            </li>
+            </ul>
+        </section>
+      </article>
+        </div>
+  </main>
+
+
+  <script src="aboutme.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

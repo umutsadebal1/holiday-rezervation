@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tatil Rehberi - Türkiye'nin En İyi Tatil Yerleri</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Başlık ve Navigasyon -->
+    <header class="header">
+        <div class="navbar">
+            <div class="logo">
+                <img src="img/logo.png" alt="TatilRez" style="height:100px;margin-right:8px;">
+            </div>
+            <nav class="nav-links">
+                <a href="#home">Anasayfa</a>
+                <a href="#locations">Bölgeler</a>
+                <a href="#testimonials">Yorumlar</a>
+                <a href="#contact">İletişim</a>
+            </nav>
+            <div class="header-actions">
+                <button id="themeToggle" class="theme-toggle" title="Karanlık modu aç/kapat">🌙</button>
+                <a href="reservations.html" class="btn-reservations">Rezervasyonlarım</a>
+            </div>
+        </div>
+
+        <!-- Hero Slider -->
+        <section class="hero" id="home">
+            <div class="hero-slider-container">
+                <div class="hero-slider" id="heroSlider">
+                    <div class="slider-item" style="background: rgba(0, 0, 0, 0.6) url('img/90.jpg') center/cover no-repeat;">
+                        <div class="slider-content">
+                            <h2>Bodrum</h2>
+                            <p>Türkiye'nin En Güzel Plaj Noktası</p>
+                        </div>
+                    </div>
+                    <div class="slider-item" style="background: rgba(0, 0, 0, 0.6) url('img/91.jpg') center/cover no-repeat;">
+                        <div class="slider-content">
+                            <h2>Muğla</h2>
+                            <p>Türkiye'nin sevilen tatil bölgelerinden biri</p>
+                        </div>
+                    </div>
+                    <div class="slider-item" style="background: rgba(0, 0, 0, 0.6) url('img/92.jpg') center/cover no-repeat;">
+                        <div class="slider-content">
+                            <h2>Mardin</h2>
+                            <p>Tarihin taşlara yazıldığı şehir</p>
+                        </div>
+                    </div>
+                    <div class="slider-item" style="background: rgba(0, 0, 0, 0.6) url('img/93.webp') center/cover no-repeat;">
+                        <div class="slider-content">
+                            <h2>Diyarbakır</h2>
+                            <p>Tarihin kalesi</p>
+                        </div>
+                    </div>
+                    <div class="slider-item" style="background: rgba(0, 0, 0, 0.6) url('img/94.jpg') center/cover no-repeat;">
+                        <div class="slider-content">
+                            <h2>Antalya</h2>
+                            <p>Akdeniz'in İncisi - Her Şeyin Olduğu Yer</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-nav slider-prev" onclick="slideHero(-1)">❮</button>
+                <button class="slider-nav slider-next" onclick="slideHero(1)">❯</button>
+            </div>
+
+            <!-- Arama Çubuğu -->
+            <div class="search-container">
+                <div class="search-box">
+                    <div class="search-field">
+                        <label>📍 Destinasyon & Otel</label>
+                        <input type="text" id="destination" placeholder="Bodrum, Fethiye, Kappadokya..." list="destinations-list">
+                        <datalist id="destinations-list">
+                            <option value="Antalya">
+                            <option value="Bodrum">
+                            <option value="Mardin">
+                            <option value="Diyarbakır">
+                            <option value="Muğla">
+                            <option value="Van">
+                            <option value="Trabzon">
+                            <option value="Bursa">
+                            <option value="İzmir">
+                        </datalist>
+                    </div>
+                    <div class="search-field">
+                        <label>📅 Giriş Tarihi</label>
+                        <input type="date" id="checkIn">
+                    </div>
+                    <div class="search-field">
+                        <label>📅 Çıkış Tarihi</label>
+                        <input type="date" id="checkOut">
+                    </div>
+                    <div class="search-field">
+                        <label>👥 Konuk Sayısı</label>
+                        <select id="guests">
+                            <option value="1">1 Konuk</option>
+                            <option value="2">2 Konuk</option>
+                            <option value="3">3 Konuk</option>
+                            <option value="4">4 Konuk</option>
+                            <option value="5">5+ Konuk</option>
+                        </select>
+                    </div>
+                    <button class="btn-search" onclick="searchResorts()">Ara</button>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <!-- Popüler Bölgeler Bölümü -->
+    <section class="popular-regions" id="specials">
+        <h2>Popüler Bölgeler</h2>
+        <div class="regions-filter">
+            <button class="filter-tag active" onclick="window.location.href='antalya.html'">Antalya</button>
+            <button class="filter-tag" onclick="window.location.href='mardin.html'">Mardin</button>
+            <button class="filter-tag" onclick="window.location.href='diyarbakir.html'">Diyarbakır</button>
+            <button class="filter-tag" onclick="window.location.href='trabzon.html'">Trabzon</button>
+            <button class="filter-tag" onclick="window.location.href='mugla.html'">Muğla</button>
+        </div>
+        <div class="regions-cascade-grid" id="regionsCascade">
+            <!-- Bölgeler dinamik olarak yüklenecektir -->
+        </div>
+    </section>
+
+    <!-- Müşteri Yorumları Carousel -->
+    <section class="testimonials" id="testimonials">
+        <h2>Konuk Yorumları</h2>
+        <div class="testimonials-carousel">
+            <div class="testimonials-track" id="testimonialsTrack">
+                <!-- Yorumlar dinamik olarak yüklenecektir -->
+            </div>
+            <button class="carousel-nav carousel-prev" onclick="slideTestimonial(-1)">❮</button>
+            <button class="carousel-nav carousel-next" onclick="slideTestimonial(1)">❯</button>
+        </div>
+    </section>
+
+    <!-- İletişim Bölümü -->
+    <section class="contact" id="contact">
+        <h2>Bize Ulaşın</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="info-card">
+                    <h3>📞 Telefon</h3>
+                    <p>+90 (538) 467-4010</p>
+                </div>
+                <div class="info-card">
+                    <h3>✉️ E-posta</h3>
+                    <p>info@dauerhaft14.com</p>
+                </div>
+                <div class="info-card">
+                    <h3>📍 Adres</h3>
+                    <p>Antalya Belek Üniversitesi</p>
+                </div>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <input type="text" placeholder="Adınız" required>
+                <input type="email" placeholder="E-posta Adresiniz" required>
+                <textarea placeholder="Mesajınız" rows="5" required></textarea>
+                <button type="submit" class="btn-submit">Mesaj Gönder</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Altbilgi -->
+          <footer class="site-footer">
+            <div class="footer-content">
+                <span class="texts4">© 2026 TatilRez. Tüm hakları saklıdır.</span>
+                <a href="aboutme.html" class="my-name">Umut Sadebal</a>
+            </div>
+        </footer>
+
+
+    <!-- Rezervasyon Modalı -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Rezervasyonunuzu Tamamlayın</h2>
+            <form id="bookingForm" onsubmit="submitReservation(event)">
+                <div class="form-group">
+                    <label>Tatil Yeri / Otel Adı</label>
+                    <input type="text" id="resortName" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Tam Adınız</label>
+                    <input type="text" id="guestName" required>
+                </div>
+                <div class="form-group">
+                    <label>E-posta</label>
+                    <input type="email" id="guestEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Telefon</label>
+                    <input type="tel" id="guestPhone" required>
+                </div>
+                <div class="form-group">
+                    <label>Giriş Tarihi</label>
+                    <input type="date" id="bookingCheckIn" required>
+                </div>
+                <div class="form-group">
+                    <label>Çıkış Tarihi</label>
+                    <input type="date" id="bookingCheckOut" required>
+                </div>
+                <div class="form-group">
+                    <label>Konuk Sayısı</label>
+                    <input type="number" id="bookingGuests" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label>Oda Tipi</label>
+                    <select id="roomType" required>
+                        <option value="">Oda Tipi Seçin</option>
+                        <option value="Standard">Standart Oda</option>
+                        <option value="Deluxe">Deluxe Oda</option>
+                        <option value="Suite">Suite</option>
+                        <option value="Villa">Özel Villa</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Özel İstekler</label>
+                    <textarea id="specialRequests" rows="4" placeholder="Herhangi bir özel istek veya diyetsel gereksiniminiz..."></textarea>
+                </div>
+                <div class="price-summary">
+                    <p>Toplam Fiyat: <strong id="totalPrice">₺0</strong></p>
+                </div>
+                <button type="submit" class="btn-book">Rezervasyonu Onayla</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
