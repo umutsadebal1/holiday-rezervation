@@ -47,7 +47,6 @@ Sonra `index.html` dosyasını açarak projeyi çalıştırabilirsin.
 
 ## 📷 Proje Görüntüsü
 
-![site görüntüsü](img/tatilrez.png)
 
 ## 👨‍💻 Geliştirici
 
