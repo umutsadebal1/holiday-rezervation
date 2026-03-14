@@ -1700,14 +1700,14 @@ body.dark-mode .btn-details {
 
 /* ===== ANTALYA THEME ===== */
 .page-antalya {
-    --location-primary: #FF9800;
-    --location-secondary: #FF5722;
+    --location-primary: #18784e;
+    --location-secondary: #0c6379;
 }
 
-.page-antalya .hotel-price { color: #FF9800; }
-.page-antalya .hotel-features li:before { color: #FF9800; }
-.page-antalya .btn-book { background: linear-gradient(135deg, #FF9800, #FF5722); }
-.page-antalya .btn-book:hover { box-shadow: 0 8px 20px rgba(255, 152, 0, 0.4); }
+.page-antalya .hotel-price { color: #045222b3; }
+.page-antalya .hotel-features li:before { color: #036d3fd2; }
+.page-antalya .btn-book { background: linear-gradient(135deg, #18784e, #0c6379); }
+.page-antalya .btn-book:hover { box-shadow: 0 8px 20px rgba(11, 67, 106, 0.533); }
 
 /* ===== BODRUM THEME ===== */
 .page-bodrum {
@@ -1717,13 +1717,8 @@ body.dark-mode .btn-details {
 
 .page-bodrum .hotel-price { color: #667eea; }
 .page-bodrum .hotel-features li:before { color: #667eea; }
-.page-bodrum .btn-book,
-.page-bodrum .btn-book-now { background: linear-gradient(135deg, #667eea, #764ba2); }
-.page-bodrum .btn-details { border-color: #667eea; color: #667eea; }
-body.dark-mode .page-bodrum .btn-details { border-color: #764ba2; color: #9bb1ff; }
-.page-bodrum .btn-details:hover { background: #667eea; }
-.page-bodrum .back-link { color: #667eea; }
-.page-bodrum .hotel-image { background: linear-gradient(135deg, #667eea, #764ba2); }
+.page-bodrum .btn-book { background: linear-gradient(135deg, #667eea, #764ba2); }
+.page-bodrum .btn-book:hover { box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4); }
 
 /* ===== MARDIN THEME ===== */
 .page-mardin {

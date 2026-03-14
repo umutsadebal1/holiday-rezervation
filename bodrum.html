@@ -2,49 +2,42 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bodrum Tatili - Otel Rezervasyonları</title>
+    <title>Bodrum Otelleri - TatilRez</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="page-bodrum">
-    <!-- Başlık -->
     <header class="header">
         <div class="navbar">
-            <div class="logo">
-                <h1>🏖️ TatilRez</h1>
-            </div>
+            <div class="logo"><img src="img/logo.png" alt="logo" style="height:100px;margin-right:8px;"></div>
             <nav class="nav-links">
-                <a href="index.html#home">Anasayfa</a>
+                <a href="index.html">Anasayfa</a>
                 <a href="index.html#locations">Bölgeler</a>
-                <a href="index.html#specials">Özel Paketler</a>
-                <a href="index.html#testimonials">Yorumlar</a>
+                <a href="index.html#specials">Tatilim</a>
+                <a href="index.html#contact">İletişim</a>
             </nav>
             <div class="header-actions">
                 <button id="themeToggle" class="theme-toggle" title="Karanlık modu aç/kapat">🌙</button>
+                <a href="reservations.html" class="btn-reservations">Rezervasyonlarım</a>
             </div>
         </div>
+        <section class="location-hero" style="background: linear-gradient(135deg, rgba(0, 188, 212, 0.667), rgba(0, 150, 170, 0.7));">
+            <img src="img/bodhero.jpg" alt="Bodrum" class="hero-image">
+            <div class="hero-content">
+                <h1>Bodrum</h1>
+                <p>Akdeniz'in Mücevheri - Plajlar ve Antik Limanlar</p>
+            </div>
+        </section>
     </header>
 
-    <!-- Hero -->
-    <div class="location-hero">
-        <img src="img/95.jpg" alt="Bodrum" class="hero-image" onerror="this.src='img/95.jpg'">
-        <h1>🏖️ Bodrum Tatili</h1>
-        <p>Akdeniz'in en güzel plajları ve tarihi kalesi</p>
-    </div>
+    <main class="location-main">
+        <section class="hotels-section">
+            <h2>Bodrum'da Popüler Oteller</h2>
+            <div class="hotels-grid" id="hotelsGrid"></div>
+        </section>
+    </main>
 
-    <!-- Otel Listesi -->
-    <div class="hotels-container">
-        <a href="index.html#locations" class="back-link">← Tüm Bölgelere Dön</a>
-        
-        <h2 style="text-align: center; margin-bottom: 3rem; color: var(--light-text);">Bodrum'da Seçili Oteller</h2>
-        
-        <div class="hotel-list" id="hotelsList">
-            <!-- Oteller dinamik olarak yüklenecektir -->
-        </div>
-    </div>
 
-    <!-- Altbilgi -->
         <footer class="site-footer">
             <div class="footer-content">
                 <span class="texts4">© 2026 TatilRez. Tüm hakları saklıdır.</span>
@@ -52,15 +45,13 @@
             </div>
         </footer>
 
-
-    <!-- Rezervasyon Modalı -->
     <div id="bookingModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <h2>Rezervasyonunuzu Tamamlayın</h2>
             <form id="bookingForm" onsubmit="submitReservation(event)">
                 <div class="form-group">
-                    <label>Otel Adı</label>
+                    <label>Tatil Yeri / Otel Adı</label>
                     <input type="text" id="resortName" readonly>
                 </div>
                 <div class="form-group">

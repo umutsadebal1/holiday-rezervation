@@ -18,102 +18,102 @@ const initThemeToggle = () => {
 };
 
 const antalya_hotels = [
-    { name: 'Rixos Downtown Antalya', image: 'img/90.jpg', rating: 4.8, price: 1850, features: ['Sahil Kenarı', '5 Restoran', 'Spa', 'Kapalı Havuz'] },
-    { name: 'Titanic Deluxe Beach', image: 'img/91.jpg', rating: 4.7, price: 1650, features: ['All-Inclusive', 'Animasyon', 'Su Parkı', 'Konsiyerj'] },
-    { name: 'Kémer Luxury Hotels', image: 'img/92.jpg', rating: 4.6, price: 1450, features: ['Dağ Manzarası', 'Private Plaj', 'Yoga', 'Kütüphane'] },
-    { name: 'Side Sun Garden', image: 'img/93.jpg', rating: 4.5, price: 1200, features: ['Antik Şehir Yakın', 'Balık Restoranı', 'Masaj', 'Kino'] },
-    { name: 'Lara Family Resort', image: 'img/94.jpg', rating: 4.4, price: 980, features: ['Ailelere Uygun', 'Çocuk Kulübü', 'Oyun Parkı', 'Beslenme'] },
-    { name: 'Marina Resort Antalya', image: 'img/95.jpg', rating: 4.3, price: 1100, features: ['Modern Mimari', 'Teknoloji', 'Business Merkezi', 'Uydu TV'] },
-    { name: 'Alp Pasa Boutique Hotel', image: 'img/96.jpg', rating: 4.6, price: 750, features: ['Tarih Başıboş', 'Eski Şehir', 'Çay Saati', 'Rehber'] },
-    { name: 'Beachfront Paradise', image: 'img/97.jpg', rating: 4.9, price: 2200, features: ['Kasırgalar Sahili', 'Sunset Bar', 'Gourmet', 'Helikopter'] }
+    { name: 'Rixos Downtown Antalya', image: 'img/antot1.jpg', rating: 4.8, price: 1850, features: ['Sahil Kenarı', '5 Restoran', 'Spa', 'Kapalı Havuz'] },
+    { name: 'Titanic Deluxe Beach', image: 'img/antot2.jpg', rating: 4.7, price: 1650, features: ['All-Inclusive', 'Animasyon', 'Su Parkı', 'Konsiyerj'] },
+    { name: 'Kémer Luxury Hotels', image: 'img/antot3.jpg', rating: 4.6, price: 1450, features: ['Dağ Manzarası', 'Private Plaj', 'Yoga', 'Kütüphane'] },
+    { name: 'Side Sun Garden', image: 'img/antot4.jpg', rating: 4.5, price: 1200, features: ['Antik Şehir Yakın', 'Balık Restoranı', 'Masaj', 'Kino'] },
+    { name: 'Lara Family Resort', image: 'img/antot5.jpg', rating: 4.4, price: 980, features: ['Ailelere Uygun', 'Çocuk Kulübü', 'Oyun Parkı', 'Beslenme'] },
+    { name: 'Marina Resort Antalya', image: 'img/antot6.jpg', rating: 4.3, price: 1100, features: ['Modern Mimari', 'Teknoloji', 'Business Merkezi', 'Uydu TV'] },
+    { name: 'Alp Pasa Boutique Hotel', image: 'img/antot7.jpg', rating: 4.6, price: 750, features: ['Tarih Başıboş', 'Eski Şehir', 'Çay Saati', 'Rehber'] },
+    { name: 'Beachfront Paradise', image: 'img/antot8.jpg', rating: 4.9, price: 2200, features: ['Kasırgalar Sahili', 'Sunset Bar', 'Gourmet', 'Helikopter'] }
 ];
 
 const bodrum_hotels = [
-    { name: 'Divum Otel', image: 'img/96.jpg', rating: 4.8, price: 1200, features: ['WiFi', 'Pool', 'Restaurant', 'Beach Access'] },
-    { name: 'Viking Infinity Resort', image: 'img/97.jpg', rating: 4.9, price: 1500, features: ['All-Inclusive', 'Water Sports', 'Kids Club'] },
-    { name: 'Club Med Bodrum', image: 'img/98.jpg', rating: 4.7, price: 1350, features: ['Animation', 'Gym', 'Spa', 'Nightclub'] },
-    { name: 'Rixos Bodrum', image: 'img/99.jpg', rating: 5.0, price: 1800, features: ['Luxury', 'Private Beach', 'Spa', 'Fine Dining'] },
-    { name: 'Bougainville Otel', image: 'img/100.jpg', rating: 4.6, price: 950, features: ['Budget Friendly', 'Central Location', 'Breakfast'] },
-    { name: 'Lagoon Resort', image: 'img/101.jpg', rating: 4.8, price: 1400, features: ['Lagoon View', 'Water Park', 'Kids Pool'] },
-    { name: 'Marina Turizm Oteli', image: 'img/102.jpg', rating: 4.5, price: 1100, features: ['Marina View', 'Restaurant', 'Bar'] },
-    { name: 'Bodrum Sapphire', image: 'img/103.jpg', rating: 4.9, price: 1600, features: ['Luxury Rooms', 'Spa', 'Beach Club'] }
+    { name: 'Duja Bodrum', image: 'img/bodot1.jpg', rating: 4.8, price: 1200, features: ['WiFi', 'Pool', 'Restaurant', 'Beach Access'] },
+    { name: 'Viking Infinity Resort', image: 'img/bodot2.jpg', rating: 4.9, price: 1500, features: ['All-Inclusive', 'Gym', 'Water Sports', 'Kids Club'] },
+    { name: 'Club Med Bodrum', image: 'img/bodot3.jpg', rating: 4.7, price: 1350, features: ['Animation', 'Gym', 'Spa', 'Nightclub'] },
+    { name: 'Rixos Bodrum', image: 'img/bodot4.jpg', rating: 5.0, price: 1800, features: ['Luxury', 'Private Beach', 'Spa'] },
+    { name: 'Bougainville Otel', image: 'img/bodot5.jpg', rating: 4.6, price: 950, features: ['Budget Friendly', 'Central Location', 'Breakfast'] },
+    { name: 'Lagoon Resort', image: 'img/bodot6.jpg', rating: 4.8, price: 1400, features: ['Lagoon View', 'Water Park', 'Kids Pool'] },
+    { name: 'Marina Turizm Oteli', image: 'img/bodot7.jpg', rating: 4.5, price: 1100, features: ['Marina View', 'Restaurant', 'Bar'] },
+    { name: 'Bodrum Sapphire', image: 'img/bodot8.jpg', rating: 4.9, price: 1600, features: ['Luxury Rooms', 'Spa', 'Beach Club'] }
 ];
 
 const bursa_hotels = [
-    { name: 'Mountain Peak Resort', image: 'img/100.jpg', rating: 4.9, price: 1850, features: ['Dağ', 'Thermal', 'Spa', 'Harita'] },
-    { name: 'Thermal Springs Luxury', image: 'img/101.jpg', rating: 4.8, price: 1750, features: ['Kaplıca', 'Sıcak', 'Termal', 'Sauna'] },
-    { name: 'Winter Sports Lodge', image: 'img/102.jpg', rating: 4.7, price: 1550, features: ['Kayak', 'Kış', 'Kar', 'Spor'] },
-    { name: 'Forest Valley Inn', image: 'img/103.jpg', rating: 4.6, price: 1300, features: ['Orman', 'Vadi', 'Doğa', 'Sakin'] },
-    { name: 'Historic Grand Hotel', image: 'img/90.jpg', rating: 4.8, price: 1650, features: ['Tarih', 'Mimari', 'Köklü', 'Şık'] },
-    { name: 'Adventure Base Camp', image: 'img/91.jpg', rating: 4.5, price: 1200, features: ['Macera', 'Trekking', 'Rota', 'Rehber'] },
-    { name: 'Premium Alpine Suite', image: 'img/92.jpg', rating: 4.9, price: 2000, features: ['Suite', 'Termal', 'Private', 'Lüks'] },
-    { name: 'Budget Mountain Stay', image: 'img/93.jpg', rating: 4.2, price: 850, features: ['Ekonomik', 'Temel', 'Isıtma', 'Fan'] }
+    { name: 'Kaya Uludağ Resorts', image: 'img/burot1.webp', rating: 4.9, price: 1850, features: ['Dağ', 'Thermal', 'Spa', 'Harita'] },
+    { name: 'Thermal Springs Luxury', image: 'img/burot2.webp', rating: 4.8, price: 1750, features: ['Kaplıca', 'Sıcak', 'Termal', 'Sauna'] },
+    { name: 'Trendlife Hotel', image: 'img/burot3.jpg', rating: 4.7, price: 1550, features: ['Kayak', 'Kış', 'Kar', 'Spor'] },
+    { name: 'Karinna Forest Mansion', image: 'img/burot4.webp', rating: 4.6, price: 1300, features: ['Orman', 'Vadi', 'Doğa', 'Sakin'] },
+    { name: 'Kadı Konağı', image: 'img/burot5.jpg', rating: 4.8, price: 1650, features: ['Tarih', 'Mimari', 'Köklü', 'Şık'] },
+    { name: 'Dağönü Bungalov', image: 'img/burot6.jpg', rating: 4.5, price: 1200, features: ['Macera', 'Trekking', 'Rota', 'Rehber'] },
+    { name: 'Mövenpick Bursa', image: 'img/burot7.jpg', rating: 4.9, price: 2000, features: ['Suite', 'Termal', 'Private', 'Lüks'] },
+    { name: 'Avdan Dağ Evi', image: 'img/burot8.jpg', rating: 4.2, price: 850, features: ['Ekonomik', 'Temel', 'Isıtma', 'Fan'] }
 ];
 
 const diyarbakir_hotels = [
-    { name: "Kale Otel Diyarbakır", image: "img/90.jpg", rating: 4.7, price: 1100, features: ["Kale", "Manzara", "Balkon", "Tarihi"] },
-    { name: "Dicle Heritage Hotel", image: "img/91.jpg", rating: 4.6, price: 1000, features: ["Kaliteli", "Restaurant", "Bahçe", "Konfor"] },
-    { name: "Mesopotamia Boutique", image: "img/92.jpg", rating: 4.5, price: 950, features: ["Lüks", "Modern", "Tasarım", "Safe"] },
-    { name: "Dicle Riverside Inn", image: "img/93.jpg", rating: 4.4, price: 850, features: ["Nəhr", "Terasa", "Sakin", "Güzel"] },
-    { name: "Antik Diyarbakır Konak", image: "img/94.jpg", rating: 4.8, price: 1250, features: ["Restorasyon", "Geleneksel", "Özgün", "Romantik"] },
-    { name: "Tur Merkezi Hotel", image: "img/95.jpg", rating: 4.3, price: 900, features: ["Turizm", "Bilgi", "Rehber", "Tur"] },
-    { name: "Sur Çatı Otel", image: "img/96.jpg", rating: 4.6, price: 1150, features: ["Surlar", "Gözlem", "Fotoğraf", "İkonodik"] },
-    { name: "Dicle Palace Resort", image: "img/97.jpg", rating: 4.5, price: 1050, features: ["Resort", "Havuz", "SPA", "Aktivite"] }
+    { name: "Anemon Otel", image: "img/diyot1.jpg", rating: 4.7, price: 1100, features: ["Kale", "Manzara", "Balkon", "Tarihi"] },
+    { name: "Wyndham Garden Diyarbakır", image: "img/diyot2.jpg", rating: 4.6, price: 1000, features: ["Kaliteli", "Restaurant", "Bahçe", "Konfor"] },
+    { name: "Amida Boutique", image: "img/diyot3.jpg", rating: 4.5, price: 950, features: ["Lüks", "Modern", "Tasarım", "Safe"] },
+    { name: "Liv Suite", image: "img/diyot4.avif", rating: 4.4, price: 850, features: ["Nəhr", "Terasa", "Sakin", "Güzel"] },
+    { name: "Antik Diyarbakır Konak", image: "img/diyot5.webp", rating: 4.8, price: 1250, features: ["Restorasyon", "Geleneksel", "Özgün", "Romantik"] },
+    { name: "Tur Merkezi Hotel", image: "img/diyot6.webp", rating: 4.3, price: 900, features: ["Turizm", "Bilgi", "Rehber", "Tur"] },
+    { name: "Sur Royals Otel", image: "img/diyot7.avif", rating: 4.6, price: 1150, features: ["Surlar", "Gözlem", "Fotoğraf", "İkonodik"] },
+    { name: "Beyoğlu Palace Hotel", image: "img/diyot8.jpg", rating: 4.5, price: 1050, features: ["Resort", "Havuz", "SPA", "Aktivite"] }
 ];
 
 const izmir_hotels = [
-    { name: 'Swissôtel Büyük Efes', image: 'img/99.jpg', rating: 4.8, price: 1650, features: ['5 Yıldız', 'Kordon', 'Business', 'Spa'] },
-    { name: 'Çeşme Beach Resort', image: 'img/100.jpg', rating: 4.7, price: 1450, features: ['Sahil', 'Windsurf', 'Beach Club', 'Nightlife'] },
-    { name: 'Alaçatı Boutique Hotel', image: 'img/101.jpg', rating: 4.9, price: 1850, features: ['Butik', 'Taş Evler', 'Rüzgar Sörfü', 'Şarap'] },
-    { name: 'İzmir Marina Hotel', image: 'img/102.jpg', rating: 4.6, price: 1200, features: ['Yat Limanı', 'Deniz Manzarası', 'Restaurant', 'Bar'] },
-    { name: 'Bergama Historical Inn', image: 'img/103.jpg', rating: 4.4, price: 780, features: ['Antik Kent', 'Arkeoloji', 'Müze', 'Kültür Turu'] },
-    { name: 'Foça Seaside Resort', image: 'img/90.jpg', rating: 4.5, price: 950, features: ['Sahil Kasabası', 'Balık', 'Dalış', 'Tekne Turu'] },
-    { name: 'Urla Bağ Evi', image: 'img/91.jpg', rating: 4.8, price: 1550, features: ['Bağlar', 'Şarap Tadımı', 'Organik Yemek', 'Sanat'] },
-    { name: 'Kordon Luxury Suites', image: 'img/92.jpg', rating: 4.9, price: 2100, features: ['Lüks', 'Deniz Manzarası', 'Penthouse', 'Concierge'] }
+    { name: 'Swissôtel Büyük Efes', image: 'img/izot1.jpg', rating: 4.8, price: 1650, features: ['5 Yıldız', 'Kordon', 'Business', 'Spa'] },
+    { name: 'Boheme Beach Resort', image: 'img/izot2.jpg', rating: 4.7, price: 1450, features: ['Sahil', 'Windsurf', 'Beach Club', 'Nightlife'] },
+    { name: 'D"Mira Alaçatı', image: 'img/izot3.jpg', rating: 4.9, price: 1850, features: ['Butik', 'Taş Evler', 'Rüzgar Sörfü', 'Şarap'] },
+    { name: 'İzmir Marina Hotel', image: 'img/izot4.jpg', rating: 4.6, price: 1200, features: ['Yat Limanı', 'Deniz Manzarası', 'Restaurant', 'Bar'] },
+    { name: 'Bergama Aristonicus Hotel', image: 'img/izot5.webp', rating: 4.4, price: 780, features: ['Antik Kent', 'Arkeoloji', 'Müze', 'Kültür Turu'] },
+    { name: 'Leon Otel Foça', image: 'img/izot6.avif', rating: 4.5, price: 950, features: ['Sahil Kasabası', 'Balık', 'Dalış', 'Tekne Turu'] },
+    { name: 'Urla Bağ Evi', image: 'img/izot7.webp', rating: 4.8, price: 1550, features: ['Bağlar', 'Şarap Tadımı', 'Organik Yemek', 'Sanat'] },
+    { name: 'Kordon Çankaya Hotel', image: 'img/izot8.jpg', rating: 4.9, price: 2100, features: ['Lüks', 'Deniz Manzarası', 'Penthouse', 'Concierge'] }
 ];
 
 const mardin_hotels = [
-    { name: 'Mardin Konukevi', image: 'img/93.jpg', rating: 4.7, price: 1200, features: ['Taş', 'Geleneksel', 'Balkon', 'Manzara'] },
-    { name: 'Mesopotamia Hotel', image: 'img/94.jpg', rating: 4.6, price: 1100, features: ['Lüks', 'Misafir', 'Restaurant', 'Terasa'] },
-    { name: 'Altınbaşak Otel', image: 'img/95.jpg', rating: 4.5, price: 950, features: ['Konfor', 'Klima', 'Modern', 'Safe'] },
-    { name: 'Diyarbakır Kapısı Inn', image: 'img/96.jpg', rating: 4.4, price: 850, features: ['İlçe', 'Tarih', 'Tasarım', 'Sakin'] },
-    { name: 'Mardin Stone House', image: 'img/97.jpg', rating: 4.8, price: 1350, features: ['Restorasyon', 'Antik', 'Özel', 'Şarmlı'] },
-    { name: 'Antik Şehir Otel', image: 'img/98.jpg', rating: 4.3, price: 900, features: ['Gozlem', 'Balkon', 'Kahvaltı', 'Sessiz'] },
-    { name: 'Taş Konağı Boutique', image: 'img/99.jpg', rating: 4.6, price: 1250, features: ['Romantik', 'Spa', 'Hamam', 'Lüks'] },
-    { name: 'Turizm Merkezi Resort', image: 'img/100.jpg', rating: 4.5, price: 1050, features: ['Konaklama', 'Aktivite', 'Tur', 'Rehber'] }
+    { name: 'Mardin Konukevi', image: 'img/madot1.jpg', rating: 4.7, price: 1200, features: ['Taş', 'Geleneksel', 'Balkon', 'Manzara'] },
+    { name: 'Mesopotamia Hotel', image: 'img/madot2.jpg', rating: 4.6, price: 1100, features: ['Lüks', 'Misafir', 'Restaurant', 'Terasa'] },
+    { name: 'Başak Hotel', image: 'img/madot3.jpg', rating: 4.5, price: 950, features: ['Konfor', 'Klima', 'Modern', 'Safe'] },
+    { name: 'Mardius Hotel', image: 'img/madot4.webp', rating: 4.4, price: 850, features: ['İlçe', 'Tarih', 'Tasarım', 'Sakin'] },
+    { name: 'Selçuklu Konağı', image: 'img/madot5.webp', rating: 4.8, price: 1350, features: ['Restorasyon', 'Antik', 'Özel', 'Şarmlı'] },
+    { name: 'Antik Han Hotel', image: 'img/madot6.jpg', rating: 4.3, price: 900, features: ['Gozlem', 'Balkon', 'Kahvaltı', 'Sessiz'] },
+    { name: 'Darius Stone House', image: 'img/madot7.jpg', rating: 4.6, price: 1250, features: ['Romantik', 'Spa', 'Hamam', 'Lüks'] },
+    { name: 'Maridin Hotel', image: 'img/madot8.webp', rating: 4.5, price: 1050, features: ['Konaklama', 'Aktivite', 'Tur', 'Rehber'] }
 ];
 
 const mugla_hotels = [
-    { name: 'Marmaris Grand Resort', image: 'img/90.jpg', rating: 4.7, price: 1350, features: ['All-Inclusive', 'Aquapark', 'Beach', 'Animation'] },
-    { name: 'Bodrum Bay Resort', image: 'img/91.jpg', rating: 4.8, price: 1650, features: ['Sahil', 'Yat Turu', 'Gece Hayatı', 'Spa'] },
-    { name: 'Datça Peninsula Lodge', image: 'img/92.jpg', rating: 4.6, price: 980, features: ['Sakin', 'Doğa', 'Badem Ağaçları', 'Yoga'] },
-    { name: 'Fethiye Butterfly Valley', image: 'img/93.jpg', rating: 4.9, price: 850, features: ['Kamp', 'Trekking', 'Şelale', 'Doğa'] },
-    { name: 'Ölüdeniz Blue Lagoon', image: 'img/94.jpg', rating: 4.8, price: 1450, features: ['Lagün', 'Yamaç Paraşütü', 'Beach', 'Water Sports'] },
-    { name: 'Köyceğiz Lake Hotel', image: 'img/95.jpg', rating: 4.5, price: 750, features: ['Göl', 'Tekne Turu', 'Termal', 'Kaplıca'] },
-    { name: 'Dalyan River Resort', image: 'img/96.jpg', rating: 4.7, price: 1100, features: ['Nehir', 'Caretta Plajı', 'Kaya Mezarları', 'Tekne'] },
-    { name: 'Muğla Castle View', image: 'img/97.jpg', rating: 4.4, price: 650, features: ['Tarihi', 'Şehir Merkezi', 'Otopark', 'Restaurant'] }
+    { name: 'Marmaris Grand Resort', image: 'img/mugot1.jpg', rating: 4.7, price: 1350, features: ['All-Inclusive', 'Aquapark', 'Beach', 'Animation'] },
+    { name: 'Bodrum Bay Resort', image: 'img/mugot2.jpg', rating: 4.8, price: 1650, features: ['Sahil', 'Yat Turu', 'Gece Hayatı', 'Spa'] },
+    { name: 'Datça Cape Krio', image: 'img/mugot3.jpg', rating: 4.6, price: 980, features: ['Sakin', 'Doğa', 'Badem Ağaçları', 'Yoga'] },
+    { name: 'Fethiye Butterfly Valley', image: 'img/mugot4.jpg', rating: 4.9, price: 850, features: ['Kamp', 'Trekking', 'Şelale', 'Doğa'] },
+    { name: 'Ölüdeniz Beach Hotel', image: 'img/mugot5.jpg', rating: 4.8, price: 1450, features: ['Lagün', 'Yamaç Paraşütü', 'Beach', 'Water Sports'] },
+    { name: 'Köyceğiz Kaunos Hotel', image: 'img/mugot6.jpg', rating: 4.5, price: 750, features: ['Göl', 'Tekne Turu', 'Termal', 'Kaplıca'] },
+    { name: 'Dalyan River Resort', image: 'img/mugot7.jpg', rating: 4.7, price: 1100, features: ['Nehir', 'Caretta Plajı', 'Kaya Mezarları', 'Tekne'] },
+    { name: 'Gulet Otel', image: 'img/mugot8.jpg', rating: 4.4, price: 650, features: ['Tarihi', 'Şehir Merkezi', 'Otopark', 'Restaurant'] }
 ];
 
 const trabzon_hotels = [
-    { name: 'Sumela Monastery Hotel', image: 'img/91.jpg', rating: 4.7, price: 850, features: ['Dağ Manzarası', 'Yayla Turu', 'Kahvaltı', 'Kültür'] },
-    { name: 'Uzungöl Nature Resort', image: 'img/92.jpg', rating: 4.8, price: 950, features: ['Göl Kenarı', 'Doğa Yürüyüşü', 'Balık Tutma', 'Fotoğrafçılık'] },
-    { name: 'Trabzon City Hotel', image: 'img/93.jpg', rating: 4.5, price: 650, features: ['Şehir Merkezi', 'Restoran', 'Otopark', 'Wi-Fi'] },
-    { name: 'Ayder Plateau Lodge', image: 'img/94.jpg', rating: 4.6, price: 780, features: ['Yayla Bungalov', 'Termal', 'Kaplıca', 'Mangal'] },
-    { name: 'Karadeniz Pearl Resort', image: 'img/95.jpg', rating: 4.4, price: 720, features: ['Sahil', 'Balık Restoranı', 'Hamsi', 'Müzik'] },
-    { name: 'Historical Trabzon Inn', image: 'img/96.jpg', rating: 4.3, price: 550, features: ['Tarihi Konak', 'Çay Bahçesi', 'Antika', 'Kütüphane'] },
-    { name: 'Zigana Mountain Hotel', image: 'img/98.jpg', rating: 4.7, price: 880, features: ['Kayak', 'Kış Sporları', 'Dağcılık', 'Sauna'] },
-    { name: 'Green Trabzon Resort', image: 'img/99.jpg', rating: 4.8, price: 1100, features: ['Çay Bahçeleri', 'Organik Yemek', 'Spa', 'Yoga'] }
+    { name: 'Park Dedeman', image: 'img/trabot1.jpg', rating: 4.7, price: 850, features: ['Dağ Manzarası', 'Yayla Turu', 'Kahvaltı', 'Kültür'] },
+    { name: 'Uzungöl Nature Resort', image: 'img/trabot2.jpg', rating: 4.8, price: 950, features: ['Göl Kenarı', 'Doğa Yürüyüşü', 'Balık Tutma', 'Fotoğrafçılık'] },
+    { name: 'İnanlar City Hotel', image: 'img/trabot3.jpg', rating: 4.5, price: 650, features: ['Şehir Merkezi', 'Restoran', 'Otopark', 'Wi-Fi'] },
+    { name: 'Ayder Plateau Gelgor Hotel', image: 'img/trabot4.jpg', rating: 4.6, price: 780, features: ['Yayla Bungalov', 'Termal', 'Kaplıca', 'Mangal'] },
+    { name: 'Karadeniz Sun Pearl Resort', image: 'img/trabot5.webp', rating: 4.4, price: 720, features: ['Sahil', 'Balık Restoranı', 'Hamsi', 'Müzik'] },
+    { name: 'Historical Sümela Hotel', image: 'img/trabot6.jpg', rating: 4.3, price: 550, features: ['Tarihi Konak', 'Çay Bahçesi', 'Antika', 'Kütüphane'] },
+    { name: 'Zigana Bungalov Hotel', image: 'img/trabot7.jpg', rating: 4.7, price: 880, features: ['Kayak', 'Kış Sporları', 'Dağcılık', 'Sauna'] },
+    { name: 'Green Palace Suite', image: 'img/trabot8.jpg', rating: 4.8, price: 1100, features: ['Çay Bahçeleri', 'Organik Yemek', 'Spa', 'Yoga'] }
 ];
 
 const van_hotels = [
-    { name: 'Van Gölü Resort', image: 'img/98.jpg', rating: 4.6, price: 780, features: ['Göl Manzarası', 'Balıkçılık', 'Tekne Turu', 'Kahvaltı'] },
-    { name: 'Akdamar Island Hotel', image: 'img/99.jpg', rating: 4.7, price: 850, features: ['Ada Yakını', 'Tarihi Kilise', 'Fotoğraf', 'Restaurant'] },
-    { name: 'Van City Boutique', image: 'img/100.jpg', rating: 4.4, price: 650, features: ['Şehir Merkezi', 'Kalede Yakın', 'Otantik', 'Kafe'] },
-    { name: 'Eastern Anatolia Lodge', image: 'img/101.jpg', rating: 4.5, price: 720, features: ['Dağ Evi', 'Kayak', 'Trekking', 'Mangal'] },
-    { name: 'Van Cat Hotel', image: 'img/102.jpg', rating: 4.8, price: 980, features: ['Lüks', 'Van Kedisi Bahçesi', 'SPA', 'Havuz'] },
-    { name: 'Historical Caravanserai', image: 'img/103.jpg', rating: 4.3, price: 580, features: ['Tarihi Bina', 'Müze Yakını', 'Çay Evi', 'Antika'] },
-    { name: 'Çavuştepe View Hotel', image: 'img/90.jpg', rating: 4.5, price: 750, features: ['Urartu Kalıntıları', 'Arkeoloji Turu', 'Rehber', 'Kültür'] },
-    { name: 'Van Palace Resort', image: 'img/91.jpg', rating: 4.9, price: 1200, features: ['5 Yıldız', 'Gourmet', 'Konferans', 'Business'] }
+    { name: 'Şahmaran Resort Otel', image: 'img/vanot1.jpg', rating: 4.6, price: 780, features: ['Göl Manzarası', 'Balıkçılık', 'Tekne Turu', 'Kahvaltı'] },
+    { name: 'Double Tree Hotel', image: 'img/vanot2.webp', rating: 4.7, price: 850, features: ['Ada Yakını', 'Tarihi Kilise', 'Fotoğraf', 'Restaurant'] },
+    { name: 'Miro Mara Boutique Hotel', image: 'img/vanot3.jpg', rating: 4.4, price: 650, features: ['Şehir Merkezi', 'Kalede Yakın', 'Otantik', 'Kafe'] },
+    { name: 'Suites Hotel', image: 'img/vanot4.jpg', rating: 4.5, price: 720, features: ['Dağ Evi', 'Kayak', 'Trekking', 'Mangal'] },
+    { name: 'Van Cat House', image: 'img/vanot5.jpg', rating: 4.8, price: 980, features: ['Lüks', 'Van Kedisi Bahçesi', 'SPA', 'Havuz'] },
+    { name: 'Historical Caravanserai Hotel', image: 'img/vanot6.jpg', rating: 4.3, price: 580, features: ['Tarihi Bina', 'Müze Yakını', 'Çay Evi', 'Antika'] },
+    { name: 'Hotel Dosco', image: 'img/vanot7.jpg', rating: 4.5, price: 750, features: ['Urartu Kalıntıları', 'Arkeoloji Turu', 'Rehber', 'Kültür'] },
+    { name: 'Royale Palace Resort', image: 'img/vanot8.webp', rating: 4.9, price: 1200, features: ['5 Yıldız', 'Gourmet', 'Konferans', 'Business'] }
 ];
 function loadHotels() {
     const grid = document.getElementById('hotelsGrid');
@@ -137,7 +137,7 @@ function loadHotels() {
     
     target.innerHTML = hotels.map(hotel => `
         <div class="hotel-card">
-            <img src="${hotel.image}" alt="${hotel.name}" onerror="this.src='img/1.jpg'">
+            <img src="${hotel.image}" alt="${hotel.name}" onerror="this.src='img/logo.png'">
             <div class="hotel-info">
                 <h3 class="hotel-name">${hotel.name}</h3>
                 <div class="hotel-rating">${'⭐'.repeat(Math.floor(hotel.rating))} ${hotel.rating}</div>
@@ -291,15 +291,15 @@ const slideTestimonial = (direction) => {
 };
 
 const regions = [
-    { name: 'Antalya', hotels: 172, image: 'img/1.jpg', link: 'antalya.html', class: 'large-left' },
-    { name: 'Mardin', hotels: 106, image: 'img/11.jpg', link: 'mardin.html', class: 'top-right' },
-    { name: 'Diyarbakır', hotels: 145, image: 'img/67.jpg', link: 'diyarbakir.html', class: 'middle-left' },
-    { name: 'Muğla', hotels: 238, image: 'img/72.jpg', link: 'mugla.html', class: 'middle-right' },
-    { name: 'Van', hotels: 221, image: 'img/97.jpg', link: 'van.html', class: 'middle-left' },
-    { name: 'Trabzon', hotels: 84, image: 'img/90.jpg', link: 'trabzon.html', class: 'bottom-left' },
-    { name: 'Bodrum', hotels: 189, image: 'img/95.jpg', link: 'bodrum.html', class: 'bottom-left' },
-    { name: 'Bursa', hotels: 156, image: 'img/99.jpg', link: 'bursa.html', class: 'bottom-right' },
-    { name: 'İzmir', hotels: 267, image: 'img/98.jpg', link: 'izmir.html', class: 'bottom-right' }
+    { name: 'Antalya', hotels: 172, image: 'img/antreg.jpg', link: 'antalya.html', class: 'large-left' },
+    { name: 'Mardin', hotels: 106, image: 'img/marreg.jpg', link: 'mardin.html', class: 'top-right' },
+    { name: 'Diyarbakır', hotels: 145, image: 'img/diyreg.jpg', link: 'diyarbakir.html', class: 'middle-left' },
+    { name: 'Muğla', hotels: 238, image: 'img/mugreg.jpg', link: 'mugla.html', class: 'middle-right' },
+    { name: 'Van', hotels: 221, image: 'img/vanreg.jpg', link: 'van.html', class: 'middle-left' },
+    { name: 'Trabzon', hotels: 84, image: 'img/trabreg.jpg', link: 'trabzon.html', class: 'bottom-left' },
+    { name: 'Bodrum', hotels: 189, image: 'img/bodreg.jpg', link: 'bodrum.html', class: 'bottom-left' },
+    { name: 'Bursa', hotels: 156, image: 'img/burreg.jpg', link: 'bursa.html', class: 'bottom-right' },
+    { name: 'İzmir', hotels: 267, image: 'img/izreg.jpg', link: 'izmir.html', class: 'bottom-right' }
 ];
 
 const loadRegions = () => {
