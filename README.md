@@ -46,7 +46,7 @@ git clone https://github.com/umutsadebal1/holiday-rezervation.git
 Sonra `index.html` dosyasını açarak projeyi çalıştırabilirsin.
 
 ## 📷 Proje Görüntüsü
-
+<a href="https://hizliresim.com/4og8pw7"><img src="https://i.hizliresim.com/4og8pw7.png" alt="ff"></a>
 
 ## 👨‍💻 Geliştirici
 
