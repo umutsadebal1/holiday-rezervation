@@ -14,29 +14,6 @@ HolidayRez, kullanıcıların Türkiye'deki popüler turistik şehirler hakkınd
 ```
 holiday-rezervation/
 ├── img/
-│   ├── logo.png
-│   ├── my-avatar.jpeg
-│   ├── tatilrez.png
-│   ├── 1.jpg
-│   ├── 11.jpg
-│   ├── 67.jpg
-│   ├── 72.jpg
-│   ├── 90.jpg
-│   ├── 95.jpg
-│   ├── 97.jpg
-│   ├── 98.jpg
-│   ├── 99.jpg
-│   ├── anthero.jpg
-│   ├── antot1.jpg - antot8.jpg
-│   ├── bodot1.jpg - bodot8.jpg
-│   ├── burot1.webp - burot8.jpg
-│   ├── madot1.jpg - madot8.webp
-│   ├── diyot1.jpg - diyot8.jpg
-│   ├── izot1.jpg - izot8.jpg
-│   ├── trabot1.jpg - trabot8.jpg
-│   ├── vanot1.jpg - vanot8.webp
-│   ├── mugot1.jpg - mugot8.jpg
-│   └── [region images]
 ├── antalya.html
 ├── bodrum.html
 ├── bursa.html
