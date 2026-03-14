@@ -10,25 +10,22 @@ HolidayRez, kullanıcıların Türkiye'deki popüler turistik şehirler hakkınd
 - ⚡ HTML, CSS ve JavaScript kullanılarak geliştirildi
 
 ## 🗂️ Proje Yapısı
-holidayrez
-│
-├── index.html
-├── rezervations.html
-├── styles.css
-├── script.js
-│
-├── img
-│ ├── logo.png
-│ ├── my-avatar.jpeg
-│ └── tatilrez.png
-│
+holidayrez/
+├── img/
+│   ├── logo.png
+│   ├── my-avatar.jpeg
+│   └── tatilrez.png
 ├── antalya.html
 ├── bodrum.html
 ├── bursa.html
-├── diyarbakır.html
+├── diyabakir.html
+├── index.html
 ├── izmir.htm
 ├── mardin.html
 ├── mugla.html
+├── rezervations.html
+├── script.js
+├── styles.css
 ├── trabzon.html
 └── van.html
 
