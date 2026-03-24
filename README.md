@@ -1,6 +1,6 @@
 # 🌍 HolidayRez - Tatil Rezervasyon Sitesi
 
-HolidayRez, kullanıcıların Türkiye'deki popüler turistik şehirler hakkında bilgi alabileceği ve rezervasyon yapabileceği bir web projesidir.
+HolidayRez, kullanıcıların Türkiye'deki popüler turistik şehirler hakkında bilgi alabileceği ve rezervasyon yapabileceği bir web projesidir. s
 
 ## ✨ Özellikler
 

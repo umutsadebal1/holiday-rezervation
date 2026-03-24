@@ -2,12 +2,6 @@
 
 :root {
 
-  /**
-   * colors
-   */
-
-  /* gradient */
-
   --bg-gradient-onyx: linear-gradient(
     to bottom right, 
     hsl(240, 1%, 25%) 3%, 

@@ -18,7 +18,7 @@ const initThemeToggle = () => {
 };
 
 const antalya_hotels = [
-    { name: 'Rixos Downtown Antalya', image: 'img/antot1.jpg', rating: 4.8, price: 1850, features: ['Sahil Kenarı', '5 Restoran', 'Spa', 'Kapalı Havuz'] },
+    { name: 'Rixos Downtown Antalyas', image: 'img/antot1.jpg', rating: 4.8, price: 1850, features: ['Sahil Kenarı', '5 Restoran', 'Spa', 'Kapalı Havuz'] },
     { name: 'Titanic Deluxe Beach', image: 'img/antot2.jpg', rating: 4.7, price: 1650, features: ['All-Inclusive', 'Animasyon', 'Su Parkı', 'Konsiyerj'] },
     { name: 'Kémer Luxury Hotels', image: 'img/antot3.jpg', rating: 4.6, price: 1450, features: ['Dağ Manzarası', 'Private Plaj', 'Yoga', 'Kütüphane'] },
     { name: 'Side Sun Garden', image: 'img/antot4.jpg', rating: 4.5, price: 1200, features: ['Antik Şehir Yakın', 'Balık Restoranı', 'Masaj', 'Kino'] },
