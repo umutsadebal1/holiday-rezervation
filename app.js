@@ -242,6 +242,7 @@ function submitReservation(event) {
     const bookingForm = document.getElementById('bookingForm');
     if (bookingForm) bookingForm.reset();
 }
+
 let currentSlide = 0;
 let currentTestimonial = 0;
 
