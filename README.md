@@ -14,22 +14,16 @@ HolidayRez, kullanıcıların Türkiye'deki popüler turistik şehirler hakkınd
 ```
 holiday-rezervation/
 ├── img/
-├── antalya.html
-├── bodrum.html
-├── bursa.html
-├── diyarbakir.html
 ├── index.html
-├── izmir.html
-├── mardin.html
-├── mugla.html
-├── reservations.html
+├── city.html
+├── cities.js
+├── hotels.js
+├── title.js
+├── app.js
 ├── aboutme.html
 ├── aboutme.css
-├── app.js
+├── reservations.html
 ├── styles.css
-├── trabzon.html
-├── van.html
-├── IMAGES_GUIDE.txt
 └── README.md
 ```
 
