@@ -17,139 +17,10 @@ const initThemeToggle = () => {
     }
 };
 
-const antalya_hotels = [
-    { name: 'Rixos Downtown Antalyas', image: 'img/antot1.jpg', rating: 4.8, price: 1850, features: ['Sahil Kenarı', '5 Restoran', 'Spa', 'Kapalı Havuz'] },
-    { name: 'Titanic Deluxe Beach', image: 'img/antot2.jpg', rating: 4.7, price: 1650, features: ['All-Inclusive', 'Animasyon', 'Su Parkı', 'Konsiyerj'] },
-    { name: 'Kémer Luxury Hotels', image: 'img/antot3.jpg', rating: 4.6, price: 1450, features: ['Dağ Manzarası', 'Private Plaj', 'Yoga', 'Kütüphane'] },
-    { name: 'Side Sun Garden', image: 'img/antot4.jpg', rating: 4.5, price: 1200, features: ['Antik Şehir Yakın', 'Balık Restoranı', 'Masaj', 'Kino'] },
-    { name: 'Lara Family Resort', image: 'img/antot5.jpg', rating: 4.4, price: 980, features: ['Ailelere Uygun', 'Çocuk Kulübü', 'Oyun Parkı', 'Beslenme'] },
-    { name: 'Marina Resort Antalya', image: 'img/antot6.jpg', rating: 4.3, price: 1100, features: ['Modern Mimari', 'Teknoloji', 'Business Merkezi', 'Uydu TV'] },
-    { name: 'Alp Pasa Boutique Hotel', image: 'img/antot7.jpg', rating: 4.6, price: 750, features: ['Tarih Başıboş', 'Eski Şehir', 'Çay Saati', 'Rehber'] },
-    { name: 'Beachfront Paradise', image: 'img/antot8.jpg', rating: 4.9, price: 2200, features: ['Kasırgalar Sahili', 'Sunset Bar', 'Gourmet', 'Helikopter'] }
-];
+  const HOTEL_DATA = (typeof window !== "undefined" && window.HOTELS_BY_CITY)
+    ? window.HOTELS_BY_CITY
+    : {};
 
-const bodrum_hotels = [
-    { name: 'Duja Bodrum', image: 'img/bodot1.jpg', rating: 4.8, price: 1200, features: ['WiFi', 'Pool', 'Restaurant', 'Beach Access'] },
-    { name: 'Viking Infinity Resort', image: 'img/bodot2.jpg', rating: 4.9, price: 1500, features: ['All-Inclusive', 'Gym', 'Water Sports', 'Kids Club'] },
-    { name: 'Club Med Bodrum', image: 'img/bodot3.jpg', rating: 4.7, price: 1350, features: ['Animation', 'Gym', 'Spa', 'Nightclub'] },
-    { name: 'Rixos Bodrum', image: 'img/bodot4.jpg', rating: 5.0, price: 1800, features: ['Luxury', 'Private Beach', 'Spa'] },
-    { name: 'Bougainville Otel', image: 'img/bodot5.jpg', rating: 4.6, price: 950, features: ['Budget Friendly', 'Central Location', 'Breakfast'] },
-    { name: 'Lagoon Resort', image: 'img/bodot6.jpg', rating: 4.8, price: 1400, features: ['Lagoon View', 'Water Park', 'Kids Pool'] },
-    { name: 'Marina Turizm Oteli', image: 'img/bodot7.jpg', rating: 4.5, price: 1100, features: ['Marina View', 'Restaurant', 'Bar'] },
-    { name: 'Bodrum Sapphire', image: 'img/bodot8.jpg', rating: 4.9, price: 1600, features: ['Luxury Rooms', 'Spa', 'Beach Club'] }
-];
-
-const bursa_hotels = [
-    { name: 'Kaya Uludağ Resorts', image: 'img/burot1.webp', rating: 4.9, price: 1850, features: ['Dağ', 'Thermal', 'Spa', 'Harita'] },
-    { name: 'Thermal Springs Luxury', image: 'img/burot2.webp', rating: 4.8, price: 1750, features: ['Kaplıca', 'Sıcak', 'Termal', 'Sauna'] },
-    { name: 'Trendlife Hotel', image: 'img/burot3.jpg', rating: 4.7, price: 1550, features: ['Kayak', 'Kış', 'Kar', 'Spor'] },
-    { name: 'Karinna Forest Mansion', image: 'img/burot4.webp', rating: 4.6, price: 1300, features: ['Orman', 'Vadi', 'Doğa', 'Sakin'] },
-    { name: 'Kadı Konağı', image: 'img/burot5.jpg', rating: 4.8, price: 1650, features: ['Tarih', 'Mimari', 'Köklü', 'Şık'] },
-    { name: 'Dağönü Bungalov', image: 'img/burot6.jpg', rating: 4.5, price: 1200, features: ['Macera', 'Trekking', 'Rota', 'Rehber'] },
-    { name: 'Mövenpick Bursa', image: 'img/burot7.jpg', rating: 4.9, price: 2000, features: ['Suite', 'Termal', 'Private', 'Lüks'] },
-    { name: 'Avdan Dağ Evi', image: 'img/burot8.jpg', rating: 4.2, price: 850, features: ['Ekonomik', 'Temel', 'Isıtma', 'Fan'] }
-];
-
-const diyarbakir_hotels = [
-    { name: "Anemon Otel", image: "img/diyot1.jpg", rating: 4.7, price: 1100, features: ["Kale", "Manzara", "Balkon", "Tarihi"] },
-    { name: "Wyndham Garden Diyarbakır", image: "img/diyot2.jpg", rating: 4.6, price: 1000, features: ["Kaliteli", "Restaurant", "Bahçe", "Konfor"] },
-    { name: "Amida Boutique", image: "img/diyot3.jpg", rating: 4.5, price: 950, features: ["Lüks", "Modern", "Tasarım", "Safe"] },
-    { name: "Liv Suite", image: "img/diyot4.avif", rating: 4.4, price: 850, features: ["Nəhr", "Terasa", "Sakin", "Güzel"] },
-    { name: "Antik Diyarbakır Konak", image: "img/diyot5.webp", rating: 4.8, price: 1250, features: ["Restorasyon", "Geleneksel", "Özgün", "Romantik"] },
-    { name: "Tur Merkezi Hotel", image: "img/diyot6.webp", rating: 4.3, price: 900, features: ["Turizm", "Bilgi", "Rehber", "Tur"] },
-    { name: "Sur Royals Otel", image: "img/diyot7.avif", rating: 4.6, price: 1150, features: ["Surlar", "Gözlem", "Fotoğraf", "İkonodik"] },
-    { name: "Beyoğlu Palace Hotel", image: "img/diyot8.jpg", rating: 4.5, price: 1050, features: ["Resort", "Havuz", "SPA", "Aktivite"] }
-];
-
-const izmir_hotels = [
-    { name: 'Swissôtel Büyük Efes', image: 'img/izot1.jpg', rating: 4.8, price: 1650, features: ['5 Yıldız', 'Kordon', 'Business', 'Spa'] },
-    { name: 'Boheme Beach Resort', image: 'img/izot2.jpg', rating: 4.7, price: 1450, features: ['Sahil', 'Windsurf', 'Beach Club', 'Nightlife'] },
-    { name: 'D"Mira Alaçatı', image: 'img/izot3.jpg', rating: 4.9, price: 1850, features: ['Butik', 'Taş Evler', 'Rüzgar Sörfü', 'Şarap'] },
-    { name: 'İzmir Marina Hotel', image: 'img/izot4.jpg', rating: 4.6, price: 1200, features: ['Yat Limanı', 'Deniz Manzarası', 'Restaurant', 'Bar'] },
-    { name: 'Bergama Aristonicus Hotel', image: 'img/izot5.webp', rating: 4.4, price: 780, features: ['Antik Kent', 'Arkeoloji', 'Müze', 'Kültür Turu'] },
-    { name: 'Leon Otel Foça', image: 'img/izot6.avif', rating: 4.5, price: 950, features: ['Sahil Kasabası', 'Balık', 'Dalış', 'Tekne Turu'] },
-    { name: 'Urla Bağ Evi', image: 'img/izot7.webp', rating: 4.8, price: 1550, features: ['Bağlar', 'Şarap Tadımı', 'Organik Yemek', 'Sanat'] },
-    { name: 'Kordon Çankaya Hotel', image: 'img/izot8.jpg', rating: 4.9, price: 2100, features: ['Lüks', 'Deniz Manzarası', 'Penthouse', 'Concierge'] }
-];
-
-const mardin_hotels = [
-    { name: 'Mardin Konukevi', image: 'img/madot1.jpg', rating: 4.7, price: 1200, features: ['Taş', 'Geleneksel', 'Balkon', 'Manzara'] },
-    { name: 'Mesopotamia Hotel', image: 'img/madot2.jpg', rating: 4.6, price: 1100, features: ['Lüks', 'Misafir', 'Restaurant', 'Terasa'] },
-    { name: 'Başak Hotel', image: 'img/madot3.jpg', rating: 4.5, price: 950, features: ['Konfor', 'Klima', 'Modern', 'Safe'] },
-    { name: 'Mardius Hotel', image: 'img/madot4.webp', rating: 4.4, price: 850, features: ['İlçe', 'Tarih', 'Tasarım', 'Sakin'] },
-    { name: 'Selçuklu Konağı', image: 'img/madot5.webp', rating: 4.8, price: 1350, features: ['Restorasyon', 'Antik', 'Özel', 'Şarmlı'] },
-    { name: 'Antik Han Hotel', image: 'img/madot6.jpg', rating: 4.3, price: 900, features: ['Gozlem', 'Balkon', 'Kahvaltı', 'Sessiz'] },
-    { name: 'Darius Stone House', image: 'img/madot7.jpg', rating: 4.6, price: 1250, features: ['Romantik', 'Spa', 'Hamam', 'Lüks'] },
-    { name: 'Maridin Hotel', image: 'img/madot8.webp', rating: 4.5, price: 1050, features: ['Konaklama', 'Aktivite', 'Tur', 'Rehber'] }
-];
-
-const mugla_hotels = [
-    { name: 'Marmaris Grand Resort', image: 'img/mugot1.jpg', rating: 4.7, price: 1350, features: ['All-Inclusive', 'Aquapark', 'Beach', 'Animation'] },
-    { name: 'Bodrum Bay Resort', image: 'img/mugot2.jpg', rating: 4.8, price: 1650, features: ['Sahil', 'Yat Turu', 'Gece Hayatı', 'Spa'] },
-    { name: 'Datça Cape Krio', image: 'img/mugot3.jpg', rating: 4.6, price: 980, features: ['Sakin', 'Doğa', 'Badem Ağaçları', 'Yoga'] },
-    { name: 'Fethiye Butterfly Valley', image: 'img/mugot4.jpg', rating: 4.9, price: 850, features: ['Kamp', 'Trekking', 'Şelale', 'Doğa'] },
-    { name: 'Ölüdeniz Beach Hotel', image: 'img/mugot5.jpg', rating: 4.8, price: 1450, features: ['Lagün', 'Yamaç Paraşütü', 'Beach', 'Water Sports'] },
-    { name: 'Köyceğiz Kaunos Hotel', image: 'img/mugot6.jpg', rating: 4.5, price: 750, features: ['Göl', 'Tekne Turu', 'Termal', 'Kaplıca'] },
-    { name: 'Dalyan River Resort', image: 'img/mugot7.jpg', rating: 4.7, price: 1100, features: ['Nehir', 'Caretta Plajı', 'Kaya Mezarları', 'Tekne'] },
-    { name: 'Gulet Otel', image: 'img/mugot8.jpg', rating: 4.4, price: 650, features: ['Tarihi', 'Şehir Merkezi', 'Otopark', 'Restaurant'] }
-];
-
-const trabzon_hotels = [
-    { name: 'Park Dedeman', image: 'img/trabot1.jpg', rating: 4.7, price: 850, features: ['Dağ Manzarası', 'Yayla Turu', 'Kahvaltı', 'Kültür'] },
-    { name: 'Uzungöl Nature Resort', image: 'img/trabot2.jpg', rating: 4.8, price: 950, features: ['Göl Kenarı', 'Doğa Yürüyüşü', 'Balık Tutma', 'Fotoğrafçılık'] },
-    { name: 'İnanlar City Hotel', image: 'img/trabot3.jpg', rating: 4.5, price: 650, features: ['Şehir Merkezi', 'Restoran', 'Otopark', 'Wi-Fi'] },
-    { name: 'Ayder Plateau Gelgor Hotel', image: 'img/trabot4.jpg', rating: 4.6, price: 780, features: ['Yayla Bungalov', 'Termal', 'Kaplıca', 'Mangal'] },
-    { name: 'Karadeniz Sun Pearl Resort', image: 'img/trabot5.webp', rating: 4.4, price: 720, features: ['Sahil', 'Balık Restoranı', 'Hamsi', 'Müzik'] },
-    { name: 'Historical Sümela Hotel', image: 'img/trabot6.jpg', rating: 4.3, price: 550, features: ['Tarihi Konak', 'Çay Bahçesi', 'Antika', 'Kütüphane'] },
-    { name: 'Zigana Bungalov Hotel', image: 'img/trabot7.jpg', rating: 4.7, price: 880, features: ['Kayak', 'Kış Sporları', 'Dağcılık', 'Sauna'] },
-    { name: 'Green Palace Suite', image: 'img/trabot8.jpg', rating: 4.8, price: 1100, features: ['Çay Bahçeleri', 'Organik Yemek', 'Spa', 'Yoga'] }
-];
-
-const van_hotels = [
-    { name: 'Şahmaran Resort Otel', image: 'img/vanot1.jpg', rating: 4.6, price: 780, features: ['Göl Manzarası', 'Balıkçılık', 'Tekne Turu', 'Kahvaltı'] },
-    { name: 'Double Tree Hotel', image: 'img/vanot2.webp', rating: 4.7, price: 850, features: ['Ada Yakını', 'Tarihi Kilise', 'Fotoğraf', 'Restaurant'] },
-    { name: 'Miro Mara Boutique Hotel', image: 'img/vanot3.jpg', rating: 4.4, price: 650, features: ['Şehir Merkezi', 'Kalede Yakın', 'Otantik', 'Kafe'] },
-    { name: 'Suites Hotel', image: 'img/vanot4.jpg', rating: 4.5, price: 720, features: ['Dağ Evi', 'Kayak', 'Trekking', 'Mangal'] },
-    { name: 'Van Cat House', image: 'img/vanot5.jpg', rating: 4.8, price: 980, features: ['Lüks', 'Van Kedisi Bahçesi', 'SPA', 'Havuz'] },
-    { name: 'Historical Caravanserai Hotel', image: 'img/vanot6.jpg', rating: 4.3, price: 580, features: ['Tarihi Bina', 'Müze Yakını', 'Çay Evi', 'Antika'] },
-    { name: 'Hotel Dosco', image: 'img/vanot7.jpg', rating: 4.5, price: 750, features: ['Urartu Kalıntıları', 'Arkeoloji Turu', 'Rehber', 'Kültür'] },
-    { name: 'Royale Palace Resort', image: 'img/vanot8.webp', rating: 4.9, price: 1200, features: ['5 Yıldız', 'Gourmet', 'Konferans', 'Business'] }
-];
-function loadHotels() {
-    const grid = document.getElementById('hotelsGrid');
-    const list = document.getElementById('hotelsList');
-    const target = grid || list;
-    
-    if (!target) return;
-    
-    let hotels = [];
-    const page = window.location.pathname;
-    
-    if (page.includes('antalya')) hotels = antalya_hotels;
-    else if (page.includes('bodrum')) hotels = bodrum_hotels;
-    else if (page.includes('bursa')) hotels = bursa_hotels;
-    else if (page.includes('diyarbakir')) hotels = diyarbakir_hotels;
-    else if (page.includes('izmir')) hotels = izmir_hotels;
-    else if (page.includes('mardin')) hotels = mardin_hotels;
-    else if (page.includes('mugla')) hotels = mugla_hotels;
-    else if (page.includes('trabzon')) hotels = trabzon_hotels;
-    else if (page.includes('van')) hotels = van_hotels;
-    
-    target.innerHTML = hotels.map(hotel => `
-        <div class="hotel-card">
-            <img src="${hotel.image}" alt="${hotel.name}" onerror="this.src='img/logo.png'">
-            <div class="hotel-info">
-                <h3 class="hotel-name">${hotel.name}</h3>
-                <div class="hotel-rating">${'⭐'.repeat(Math.floor(hotel.rating))} ${hotel.rating}</div>
-                <div class="hotel-price">₺${hotel.price}/gece</div>
-                <ul class="hotel-features">
-                    ${hotel.features.map(f => `<li>${f}</li>`).join('')}
-                </ul>
-                <button class="btn-book" onclick="openBooking('${hotel.name}', ${hotel.price})">Rezervasyon Yap</button>
-            </div>
-        </div>
-    `).join('');
-}
 let selectedPackagePrice = 0;
 
 function openBooking(hotelName, price) {
@@ -296,15 +167,15 @@ const slideTestimonial = (direction) => {
 };
 
 const regions = [
-    { name: 'Antalya', hotels: 172, image: 'img/antreg.jpg', link: 'antalya.html', class: 'large-left' },
-    { name: 'Mardin', hotels: 106, image: 'img/marreg.jpg', link: 'mardin.html', class: 'top-right' },
-    { name: 'Diyarbakır', hotels: 145, image: 'img/diyreg.jpg', link: 'diyarbakir.html', class: 'middle-left' },
-    { name: 'Muğla', hotels: 238, image: 'img/mugreg.jpg', link: 'mugla.html', class: 'middle-right' },
-    { name: 'Van', hotels: 221, image: 'img/vanreg.jpg', link: 'van.html', class: 'middle-left' },
-    { name: 'Trabzon', hotels: 84, image: 'img/trabreg.jpg', link: 'trabzon.html', class: 'bottom-left' },
-    { name: 'Bodrum', hotels: 189, image: 'img/bodreg.jpg', link: 'bodrum.html', class: 'bottom-left' },
-    { name: 'Bursa', hotels: 156, image: 'img/burreg.jpg', link: 'bursa.html', class: 'bottom-right' },
-    { name: 'İzmir', hotels: 267, image: 'img/izreg.jpg', link: 'izmir.html', class: 'bottom-right' }
+  { name: 'Antalya', hotels: 172, image: 'img/antreg.jpg', link: 'city.html?city=antalya', class: 'large-left' },
+  { name: 'Mardin', hotels: 106, image: 'img/marreg.jpg', link: 'city.html?city=mardin', class: 'top-right' },
+  { name: 'Diyarbakır', hotels: 145, image: 'img/diyreg.jpg', link: 'city.html?city=diyarbakir', class: 'middle-left' },
+  { name: 'Muğla', hotels: 238, image: 'img/mugreg.jpg', link: 'city.html?city=mugla', class: 'middle-right' },
+  { name: 'Van', hotels: 221, image: 'img/vanreg.jpg', link: 'city.html?city=van', class: 'middle-left' },
+  { name: 'Trabzon', hotels: 84, image: 'img/trabreg.jpg', link: 'city.html?city=trabzon', class: 'bottom-left' },
+  { name: 'Bodrum', hotels: 189, image: 'img/bodreg.jpg', link: 'city.html?city=bodrum', class: 'bottom-left' },
+  { name: 'Bursa', hotels: 156, image: 'img/burreg.jpg', link: 'city.html?city=bursa', class: 'bottom-right' },
+  { name: 'İzmir', hotels: 267, image: 'img/izreg.jpg', link: 'city.html?city=izmir', class: 'bottom-right' }
 ];
 
 const loadRegions = () => {
@@ -606,6 +477,8 @@ const FILTER_STATE = {
 function normalizeText(text) {
   return (text || "")
     .toString()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
     .replace(/ı/g, "i")
     .replace(/ğ/g, "g")
@@ -613,6 +486,83 @@ function normalizeText(text) {
     .replace(/ş/g, "s")
     .replace(/ö/g, "o")
     .replace(/ç/g, "c");
+}
+
+const CITY_DATA = (typeof window !== "undefined" && window.CITIES) ? window.CITIES : {};
+const CITY_TITLES = (typeof window !== "undefined" && window.CITY_TITLES) ? window.CITY_TITLES : {};
+
+function resolveCitySlug(input) {
+  const normalizedInput = normalizeText(input || "").trim();
+  if (!normalizedInput) return "";
+
+  const cityEntries = Object.entries(CITY_DATA);
+  for (const [slug, city] of cityEntries) {
+    const aliases = Array.isArray(city.aliases) ? city.aliases : [];
+    const candidates = [slug, city.name, ...aliases].map(normalizeText);
+    if (candidates.some(candidate => candidate === normalizedInput || normalizedInput.includes(candidate))) {
+      return slug;
+    }
+  }
+
+  return "";
+}
+
+function getCityFromQuery() {
+  const params = new URLSearchParams(window.location.search);
+  return resolveCitySlug(params.get("city"));
+}
+
+function renderCityPage() {
+  const cityNameEl = document.getElementById("cityName");
+  if (!cityNameEl) return;
+
+  const slug = getCityFromQuery();
+  const city = slug ? CITY_DATA[slug] : null;
+  const titleData = slug ? CITY_TITLES[slug] : null;
+
+  const pageTitleEl = document.getElementById("cityPageTitle");
+  const cityDescriptionEl = document.getElementById("cityDescription");
+  const cityImageEl = document.getElementById("cityImage");
+  const cityHeroEl = document.getElementById("cityHero");
+  const cityHotelsTitleEl = document.getElementById("cityHotelsTitle");
+  const hotelsGridEl = document.getElementById("hotelsGrid");
+
+  if (!city) {
+    cityNameEl.textContent = "Sehir bulunamadi";
+    if (cityDescriptionEl) cityDescriptionEl.textContent = "Gecerli bir sehir secerek tekrar deneyin.";
+    if (cityHotelsTitleEl) cityHotelsTitleEl.textContent = "Sonuc yok";
+    if (hotelsGridEl) {
+      hotelsGridEl.innerHTML = "<div class='hotel-card'><div class='hotel-info'><h3 class='hotel-name'>Gecersiz sehir</h3><p>Index sayfasindan bir sehir secip tekrar deneyin.</p><a class='btn-book' href='index.html'>Anasayfaya Don</a></div></div>";
+    }
+    return;
+  }
+
+  const resolvedPageTitle = titleData?.pageTitle || (city.name + " Otelleri - TatilRez");
+  const resolvedHeroTitle = titleData?.heroTitle || city.name;
+  const resolvedHeroDescription = titleData?.heroDescription || city.description;
+  const resolvedHotelsTitle = titleData?.hotelsSectionTitle || (city.name + "'da Populer Oteller");
+
+  document.title = resolvedPageTitle;
+  if (pageTitleEl) pageTitleEl.textContent = resolvedPageTitle;
+
+  cityNameEl.textContent = resolvedHeroTitle;
+  if (cityDescriptionEl) cityDescriptionEl.textContent = resolvedHeroDescription;
+  if (cityHotelsTitleEl) cityHotelsTitleEl.textContent = resolvedHotelsTitle;
+
+  if (cityImageEl) {
+    cityImageEl.src = city.image;
+    cityImageEl.alt = city.name;
+  }
+
+  if (cityHeroEl && city.heroBackground) {
+    cityHeroEl.style.background = city.heroBackground;
+  }
+
+  document.body.className = document.body.className
+    .split(" ")
+    .filter(cls => cls && !cls.startsWith("page-"))
+    .concat(["page-" + slug])
+    .join(" ");
 }
 
 function inferMeta(hotel, index) {
@@ -641,16 +591,19 @@ function inferMeta(hotel, index) {
 }
 
 function getHotelsByPage() {
+  const cityFromQuery = getCityFromQuery();
+  if (cityFromQuery && HOTEL_DATA[cityFromQuery]) return HOTEL_DATA[cityFromQuery];
+
   const page = window.location.pathname;
-  if (page.includes("antalya")) return antalya_hotels;
-  if (page.includes("bodrum")) return bodrum_hotels;
-  if (page.includes("bursa")) return bursa_hotels;
-  if (page.includes("diyarbakir")) return diyarbakir_hotels;
-  if (page.includes("izmir")) return izmir_hotels;
-  if (page.includes("mardin")) return mardin_hotels;
-  if (page.includes("mugla")) return mugla_hotels;
-  if (page.includes("trabzon")) return trabzon_hotels;
-  if (page.includes("van")) return van_hotels;
+  if (page.includes("antalya")) return HOTEL_DATA.antalya || [];
+  if (page.includes("bodrum")) return HOTEL_DATA.bodrum || [];
+  if (page.includes("bursa")) return HOTEL_DATA.bursa || [];
+  if (page.includes("diyarbakir")) return HOTEL_DATA.diyarbakir || [];
+  if (page.includes("izmir")) return HOTEL_DATA.izmir || [];
+  if (page.includes("mardin")) return HOTEL_DATA.mardin || [];
+  if (page.includes("mugla")) return HOTEL_DATA.mugla || [];
+  if (page.includes("trabzon")) return HOTEL_DATA.trabzon || [];
+  if (page.includes("van")) return HOTEL_DATA.van || [];
   return [];
 }
 
@@ -843,10 +796,9 @@ function saveRecentSearch(value) {
 
 function getSuggestionPool() {
   const regions = ["Antalya", "Bodrum", "Bursa", "Diyarbakır", "İzmir", "Mardin", "Muğla", "Trabzon", "Van"];
-  const hotels = [
-    ...antalya_hotels, ...bodrum_hotels, ...bursa_hotels, ...diyarbakir_hotels,
-    ...izmir_hotels, ...mardin_hotels, ...mugla_hotels, ...trabzon_hotels, ...van_hotels
-  ].map(h => h.name);
+  const hotels = Object.values(HOTEL_DATA)
+    .flatMap(list => Array.isArray(list) ? list : [])
+    .map(h => h.name);
 
   return Array.from(new Set([...regions, ...hotels]));
 }
@@ -930,22 +882,6 @@ function initSmartSearch() {
     if (!box.contains(e.target) && e.target !== destinationEl) hideSuggestions();
   });
 }
-const CITY_PAGES = {
-  "antalya": "antalya.html",
-  "bodrum": "bodrum.html",
-  "mardin": "mardin.html",
-  "diyarbakir": "diyarbakir.html",
-  "diyarbakır": "diyarbakir.html",
-  "bursa": "bursa.html",
-  "trabzon": "trabzon.html",
-  "van": "van.html",
-  "izmir": "izmir.html",
-  "muğla": "mugla.html",
-  "mugla": "mugla.html"
-};
-
-const CITY_KEYS = Object.keys(CITY_PAGES);
-
 function searchResorts() {
   const destination = (document.getElementById("destination")?.value || "").trim();
   const checkIn = document.getElementById("checkIn")?.value || "";
@@ -960,27 +896,27 @@ function searchResorts() {
   saveRecentSearch(destination);
   renderChipList("recentSearches", getRecentSearches());
 
-  const normalized = normalizeText(destination);
-  const matchedCity = CITY_KEYS.find(k => normalized.includes(normalizeText(k)));
+  const matchedCity = resolveCitySlug(destination);
 
   if (!matchedCity) {
     alert("\"" + destination + "\" için sayfa bulunamadı.");
     return;
   }
 
-  const page = CITY_PAGES[matchedCity];
   const params = new URLSearchParams({
+    city: matchedCity,
     q: destination,
     checkIn,
     checkOut,
     guests
   });
 
-  window.location.href = page + "?" + params.toString();
+  window.location.href = "city.html?" + params.toString();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   initThemeToggle();
+  renderCityPage();
 
   loadTestimonials();
   loadRegions();

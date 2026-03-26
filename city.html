@@ -3,40 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mardin Otelleri - TatilRezerve</title>
+    <title id="cityPageTitle">Sehir Detayi - TatilRez</title>
     <link rel="icon" type="image/png" href="img/logo.png">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="page-mardin">
+<body class="page-city">
     <header class="header">
         <div class="navbar">
-           <div class="logo"><img src="img/logo.png" alt="logo" style="height:100px;margin-right:8px;"></div>
+            <div class="logo"><img src="img/logo.png" alt="logo" style="height:100px;margin-right:8px;"></div>
             <nav class="nav-links">
                 <a href="index.html">Anasayfa</a>
-                <a href="index.html#locations">Bölgeler</a>
+                <a href="index.html#locations">Bolgeler</a>
                 <a href="index.html#specials">Tatilim</a>
-                <a href="index.html#contact">İletişim</a>
+                <a href="index.html#contact">Iletisim</a>
             </nav>
             <div class="header-actions">
-                <button id="themeToggle" class="theme-toggle">🌙</button>
-                <a href="reservations.html" class="btn-reservations">Rezervasyonlarım</a>
+                <button id="themeToggle" class="theme-toggle" title="Karanlik modu ac/kapat">🌙</button>
+                <a href="reservations.html" class="btn-reservations">Rezervasyonlarim</a>
             </div>
         </div>
-        <section class="location-hero" style="background: linear-gradient(135deg, rgba(139, 69, 19, 0.9), rgba(184, 134, 11, 0.9));">
-            <img src="img/marhero.jpg" alt="Mardin" class="hero-image">
+
+        <section class="location-hero" id="cityHero" style="background: linear-gradient(135deg, rgba(11, 137, 105, 0.667), rgba(4, 102, 132, 0.7));">
+            <img src="img/logo.png" alt="Sehir gorseli" class="hero-image" id="cityImage">
             <div class="hero-content">
-                <h1>Mardin</h1>
-                <p>Tarihler İçinde Kayıp Bir Şehir - Mezopotamya'nın Mücevheri</p>
+                <h1 id="cityName">Yukleniyor...</h1>
+                <p id="cityDescription">Sehir bilgileri yukleniyor.</p>
             </div>
         </section>
     </header>
 
     <main class="location-main">
         <section class="advanced-filters" id="advancedFilters">
-            <h3>Filtrele ve Sırala</h3>
+            <h3>Filtrele ve Sirala</h3>
 
             <div class="filter-row">
-                <label>Fiyat Aralığı (₺)</label>
+                <label>Fiyat Araligi (₺)</label>
                 <div class="price-inputs">
                     <div class="price-input-group">
                         <label for="minPriceInput">Min</label>
@@ -54,33 +55,33 @@
             </div>
 
             <div class="filter-row">
-                <label>Puan / Yıldız</label>
+                <label>Puan / Yildiz</label>
                 <select id="ratingFilter">
-                    <option value="0">Tümü</option>
-                    <option value="4">4.0 ve üzeri</option>
-                    <option value="4.5">4.5 ve üzeri</option>
-                    <option value="4.8">4.8 ve üzeri</option>
+                    <option value="0">Tumu</option>
+                    <option value="4">4.0 ve uzeri</option>
+                    <option value="4.5">4.5 ve uzeri</option>
+                    <option value="4.8">4.8 ve uzeri</option>
                 </select>
             </div>
 
             <div class="filter-row">
                 <label>Oda-Konsept</label>
                 <select id="conceptFilter">
-                    <option value="">Tümü</option>
-                    <option value="Her Sey Dahil">Her Şey Dahil</option>
-                    <option value="Yarim Pansiyon">Yarım Pansiyon</option>
-                    <option value="Oda Kahvalti">Oda Kahvaltı</option>
+                    <option value="">Tumu</option>
+                    <option value="Her Sey Dahil">Her Sey Dahil</option>
+                    <option value="Yarim Pansiyon">Yarim Pansiyon</option>
+                    <option value="Oda Kahvalti">Oda Kahvalti</option>
                 </select>
             </div>
 
             <div class="filter-row">
                 <label>Tema</label>
                 <select id="themeFilter">
-                    <option value="">Tümü</option>
-                    <option value="Balayi">Balayı</option>
-                    <option value="Cocuk Dostu">Çocuk Dostu</option>
+                    <option value="">Tumu</option>
+                    <option value="Balayi">Balayi</option>
+                    <option value="Cocuk Dostu">Cocuk Dostu</option>
                     <option value="Aquapark">Aquapark</option>
-                    <option value="Yetiskin">Yetişkin</option>
+                    <option value="Yetiskin">Yetiskin</option>
                 </select>
             </div>
 
@@ -89,20 +90,20 @@
                 <div class="amenities-wrap">
                     <label><input type="checkbox" class="amenityCheck" value="Spa"> Spa</label>
                     <label><input type="checkbox" class="amenityCheck" value="Havuz"> Havuz</label>
-                    <label><input type="checkbox" class="amenityCheck" value="Denize Sifir"> Denize Sıfır</label>
+                    <label><input type="checkbox" class="amenityCheck" value="Denize Sifir"> Denize Sifir</label>
                     <label><input type="checkbox" class="amenityCheck" value="Otopark"> Otopark</label>
                     <label><input type="checkbox" class="amenityCheck" value="Evcil Hayvan"> Evcil Hayvan</label>
                 </div>
             </div>
 
             <div class="filter-row">
-                <label>Sıralama</label>
+                <label>Siralama</label>
                 <select id="sortBy">
-                    <option value="recommended">Önerilen</option>
-                    <option value="priceAsc">En Düşük Fiyat</option>
-                    <option value="priceDesc">En Yüksek Fiyat</option>
-                    <option value="ratingDesc">En Yüksek Puan</option>
-                    <option value="distanceAsc">Mesafeye Göre</option>
+                    <option value="recommended">Onerilen</option>
+                    <option value="priceAsc">En Dusuk Fiyat</option>
+                    <option value="priceDesc">En Yuksek Fiyat</option>
+                    <option value="ratingDesc">En Yuksek Puan</option>
+                    <option value="distanceAsc">Mesafeye Gore</option>
                 </select>
             </div>
 
@@ -112,30 +113,31 @@
         </section>
 
         <section class="hotels-section">
-            <h2>Mardin'de Popüler Oteller</h2>
-            <div class="hotels-grid" id="hotelsGrid"></div>
+            <h2 id="cityHotelsTitle">Populer Oteller</h2>
+            <div class="hotels-grid" id="hotelsGrid">
+                <p id="cityLoadingState">Sehir yukleniyor...</p>
+            </div>
         </section>
     </main>
 
-        <footer class="site-footer">
-            <div class="footer-content">
-                <span class="texts4">© 2026 TatilRez. Tüm hakları saklıdır.</span>
-                <a href="aboutme.html" class="my-name">Umut Sadebal</a>
-            </div>
-        </footer>
-
+    <footer class="site-footer">
+        <div class="footer-content">
+            <span class="texts4">© 2026 TatilRez. Tum haklari saklidir.</span>
+            <a href="aboutme.html" class="my-name">Umut Sadebal</a>
+        </div>
+    </footer>
 
     <div id="bookingModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Rezervasyonunuzu Tamamlayın</h2>
+            <h2>Rezervasyonunuzu Tamamlayin</h2>
             <form id="bookingForm" onsubmit="submitReservation(event)">
                 <div class="form-group">
-                    <label>Tatil Yeri / Otel Adı</label>
+                    <label>Tatil Yeri / Otel Adi</label>
                     <input type="text" id="resortName" readonly>
                 </div>
                 <div class="form-group">
-                    <label>Tam Adınız</label>
+                    <label>Tam Adiniz</label>
                     <input type="text" id="guestName" required>
                 </div>
                 <div class="form-group">
@@ -147,30 +149,30 @@
                     <input type="tel" id="guestPhone" required>
                 </div>
                 <div class="form-group">
-                    <label>Giriş Tarihi</label>
+                    <label>Giris Tarihi</label>
                     <input type="date" id="bookingCheckIn" required>
                 </div>
                 <div class="form-group">
-                    <label>Çıkış Tarihi</label>
+                    <label>Cikis Tarihi</label>
                     <input type="date" id="bookingCheckOut" required>
                 </div>
                 <div class="form-group">
-                    <label>Konuk Sayısı</label>
+                    <label>Konuk Sayisi</label>
                     <input type="number" id="bookingGuests" min="1" required>
                 </div>
                 <div class="form-group">
                     <label>Oda Tipi</label>
                     <select id="roomType" required>
-                        <option value="">Oda Tipi Seçin</option>
+                        <option value="">Oda Tipi Secin</option>
                         <option value="Standard">Standart Oda</option>
                         <option value="Deluxe">Deluxe Oda</option>
                         <option value="Suite">Suite</option>
-                        <option value="Villa">Özel Villa</option>
+                        <option value="Villa">Ozel Villa</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Özel İstekler</label>
-                    <textarea id="specialRequests" rows="4" placeholder="Herhangi bir özel istek..."></textarea>
+                    <label>Ozel Istekler</label>
+                    <textarea id="specialRequests" rows="4" placeholder="Herhangi bir ozel istek..."></textarea>
                 </div>
                 <div class="price-summary">
                     <p>Toplam Fiyat: <strong id="totalPrice">₺0</strong></p>
@@ -180,6 +182,9 @@
         </div>
     </div>
 
+    <script src="cities.js"></script>
+    <script src="title.js"></script>
+    <script src="hotels.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
