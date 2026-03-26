@@ -1,0 +1,124 @@
+**WHAT I DO?**
+
+
+2) Gelismis arama + filtre paneli
+- Fiyat araligi slider
+- Puan/yildiz filtresi
+- Oda-konsept (her sey dahil, yarim pansiyon vb.)
+- Tema filtresi (balayi, cocuk dostu, aquapark, yetiskin oteli)
+- Olanak filtresi (spa, havuz, denize sifir, otopark, evcil hayvan)
+3) Siralama secenekleri
+- En dusuk fiyat, en yuksek puan, onerilen, mesafeye gore vb.
+5) Akilli arama onerileri
+- Populer aramalar
+- Son aramalar
+- Yazarken otomatik tamamlanan lokasyon/otel onerileri (daha gelismis)
+
+
+
+
+
+
+
+
+
+
+**TO DO**
+TATILBUDUR + ETSTUR KARSILASTIRMASI
+
+1) Coklu urun sekmeleri (Otel / Tur / Ucak / Villa / Otobus)
+- Rakiplerde ana aramada farkli urun tipleri sekmeli.
+- Sende sadece otel/destinasyon aramasi var.
+
+
+4) Sonuc sayfasinda harita gorunumu
+- Liste + harita birlikte kullanilabilen arayuz.
+
+
+6) Kampanya merkezi ve kampanya kartlari
+- Ayrintili kampanya landing bolumleri
+- Kampanya detay popup/landing
+- Kupon kodu odakli UI
+
+7) Geri sayim (countdown) kampanya bilesenleri
+- Erken rezervasyon gibi sureli firsatlar icin timer bar/hello bar.
+
+8) Uyelik/Giris kayit arayuzleri
+- Uye ol / giris yap modallari
+- Uyelere ozel fiyat etiketi ve indirim gorunumu
+
+9) Favorilerim / kaydetme (wishlist)
+- Otel kartindan kalp ile favorilere ekleme ve favori listesi.
+
+10) Karsilastirma ozelligi
+- Birden fazla oteli secip yan yana karsilastirma ekrani.
+
+11) Detayli otel urun sayfasi bilesenleri
+- Galeri + thumbnail yapisi
+- Oda tipleri/konsept bloklari
+- Olanaklarin kategorik sunumu
+- Fiyat takvimi gorunumu
+
+12) Yorum puan dagilimi ve dogrulanmis yorum sunumu
+- Sadece yorum carousel yerine skor dagilimi, filtrelenebilir yorumlar.
+
+13) Taksit ve odeme avantajlari UI
+- Kredi kartina gore taksit tablolarini gosteren alanlar
+- Puan/indirim avantaj etiketleri (Worldpuan/Maxipuan gibi)
+
+14) Esnek odeme akis bilesenleri
+- "Simdi %50, kalani sonra" gibi odeme secenegi kutulari
+- Odeme adim gostergesi (stepper)
+
+15) Cok adimli checkout/rezervasyon adimlayici
+- Bilgiler > Yolcu/Misafir > Odeme > Onay gibi step bazli UX.
+
+16) Cihazlar arasi hesap baglantili rezervasyon deneyimi
+- Girisli kullanici icin rezervasyon gecmisi (yalniz localStorage degil).
+
+17) Cagri merkezi ve "Sizi Arayalim" bileseni
+- Sabit CTA bar veya floating destek butonu
+- Hizli geri arama formu
+
+18) Mobil uygulama yonlendirmeleri
+- App Store / Google Play banner ve deep-link CTA'lari.
+
+19) Cookie tercih merkezi (gelismis)
+- Kabul/Red/Ayarlar seklinde kategori bazli cerez yonetim modal'i.
+
+20) Guven rozetleri ve yasal guven sinyalleri UI
+- ETBIS/TURSAB rozetleri, sozlesme linkleri, KVKK/aydinlatma bloklari.
+
+21) Populer bolgelerde daha derin gezinme
+- Sehir > ilce > tema > otel gibi cok katmanli kesif kartlari.
+
+22) Kisilestirilmis oneriler
+- "Kararsiz misin?" tarzinda tema bazli kesif bloklari
+- Kullanici tipine gore one cikan koleksiyonlar.
+
+23) Cok daha zengin ana sayfa icerik modulleri
+- Firsat vitrinleri, kategori raflari, promo slider'lar, one cikan kampanyalar.
+
+24) Bos durum ve hata durumlarinda daha gelismis UX
+- Sonuc bulunamadi ekranlari
+- Alternatif oneriler
+- Filtreyi sifirla aksiyonu
+
+25) Arama parametrelerini URL ile tasima
+- check-in, check-out, misafir, oda secimi gibi bilgilerin query param olarak tasinmasi.
+- Geri geldiginde formun state korumasi.
+
+26) Sticky filtre/siralama bar
+- Liste asagi kayarken filtre/siralama araclarinin erisilebilir kalmasi.
+
+27) Son goruntulenenler modulu
+- Kullaniciya en son baktigi otelleri tekrar gosteren yatay liste.
+
+28) Promosyon bildirimleri icin izin/kanal yonetimi UI
+- E-posta/SMS/push tercihi ekranlari (hesap ayarlari tarafinda).
+
+29) Kapsamli footer bilgi mimarisi
+- Urun kategorileri, kurumsal, destek, sozlesmeler, sosyal, uygulama linkleri.
+
+30) Profesyonel microcopy ve ticari ikna bilesenleri
+- "X TL'den baslayan fiyat", "son N oda", "bugun su kadar incelendi" gibi ikna metinleri.

@@ -36,7 +36,6 @@ body.dark-mode {
     color: var(--dark-text);
 }
 
-/* ===== HERO SLIDER ===== */
 .hero-slider-container {
     position: relative;
     height: 400px;
@@ -631,6 +630,7 @@ body.dark-mode .testimonials h2 {
     max-width: 900px;
     margin: 0 auto;
     height: 400px;
+    overflow: hidden;
 }
 
 .testimonials-track {
@@ -1735,7 +1735,7 @@ body.dark-mode .page-mardin .hotel-name { color: #D2B48C; }
 body.dark-mode .page-mardin .hotels-section h2 { color: #D2B48C; }
 .page-mardin .btn-book { background: linear-gradient(135deg, #8B4513, #B8860B); }
 
-/* ===== DIYARBAKIR THEME ===== */
+
 .page-diyarbakir {
     --location-primary: #C0392B;
     --location-secondary: #E74C3C;
@@ -1750,7 +1750,7 @@ body.dark-mode .page-diyarbakir .hotel-name { color: #E74C3C; }
 body.dark-mode .page-diyarbakir .hotels-section h2 { color: #E74C3C; }
 .page-diyarbakir .btn-book { background: linear-gradient(135deg, #C0392B, #E74C3C); }
 
-/* ===== BURSA THEME ===== */
+
 .page-bursa {
     --location-primary: #228B22;
     --location-secondary: #556B2F;
@@ -1760,7 +1760,7 @@ body.dark-mode .page-diyarbakir .hotels-section h2 { color: #E74C3C; }
 .page-bursa .hotel-features li:before { color: #228B22; }
 .page-bursa .btn-book { background: linear-gradient(135deg, #228B22, #556B2F); }
 
-/* ===== TRABZON THEME ===== */
+
 .page-trabzon {
     --location-primary: #2E7D32;
     --location-secondary: #1B5E20;
@@ -1772,7 +1772,7 @@ body.dark-mode .page-diyarbakir .hotels-section h2 { color: #E74C3C; }
 .page-trabzon .hotels-section h2 { color: #2E7D32; }
 body.dark-mode .page-trabzon .hotels-section h2 { color: #66BB6A; }
 
-/* ===== VAN THEME ===== */
+
 .page-van {
     --location-primary: #1976D2;
     --location-secondary: #0D47A1;
@@ -1785,7 +1785,7 @@ body.dark-mode .page-van .hotel-price { color: #42A5F5; }
 .page-van .hotels-section h2 { color: #1976D2; }
 body.dark-mode .page-van .hotels-section h2 { color: #42A5F5; }
 
-/* ===== İZMİR THEME ===== */
+
 .page-izmir {
     --location-primary: #EC407A;
     --location-secondary: #C2185B;
@@ -1798,7 +1798,7 @@ body.dark-mode .page-izmir .hotel-price { color: #F48FB1; }
 .page-izmir .hotels-section h2 { color: #EC407A; }
 body.dark-mode .page-izmir .hotels-section h2 { color: #F48FB1; }
 
-/* ===== MUĞLA THEME ===== */
+
 .page-mugla {
     --location-primary: #0097A7;
     --location-secondary: #00838F;
@@ -1811,3 +1811,395 @@ body.dark-mode .page-mugla .hotel-price { color: #26C6DA; }
 .page-mugla .hotels-section h2 { color: #0097A7; }
 body.dark-mode .page-mugla .hotels-section h2 { color: #26C6DA; }
 
+.advanced-filters {
+    --filter-accent: var(--location-primary, #ff1744);
+    margin: 1.25rem 0 2rem;
+    padding: 1.2rem;
+    border: 1px solid #dfe5ee;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+}
+
+.advanced-filters h3 {
+    margin-bottom: 0.8rem;
+    color: var(--filter-accent);
+    font-size: 1.45rem;
+}
+
+.filter-row {
+    margin-bottom: 0.95rem;
+    display: grid;
+    gap: 0.45rem;
+}
+
+.filter-row label {
+    font-weight: 600;
+    color: #1f2a37;
+}
+
+.advanced-filters select {
+    width: 100%;
+    padding: 0.62rem 0.75rem;
+    border: 1px solid #c9d3df;
+    border-radius: 10px;
+    background: #fff;
+    color: #1f2a37;
+    font-family: inherit;
+    font-size: 0.96rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.advanced-filters select:focus {
+    outline: none;
+    border-color: var(--filter-accent);
+    box-shadow: 0 0 0 3px rgba(255, 23, 68, 0.12);
+}
+
+.range-wrap {
+    display: grid;
+    gap: 0.45rem;
+}
+
+.price-inputs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
+    gap: 0.75rem;
+}
+
+.price-input-group {
+    display: grid;
+    gap: 0.3rem;
+}
+
+.price-input-group label {
+    font-size: 0.82rem;
+    color: #59677a;
+}
+
+.price-input-group input[type="number"] {
+    width: 100%;
+    padding: 0.62rem 0.75rem;
+    border: 1px solid #c9d3df;
+    border-radius: 10px;
+    background: #fff;
+    color: #1f2a37;
+    font-family: inherit;
+    font-size: 0.96rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.price-input-group input[type="number"]:focus {
+    outline: none;
+    border-color: var(--filter-accent);
+    box-shadow: 0 0 0 3px rgba(255, 23, 68, 0.12);
+}
+
+.advanced-filters input[type="range"] {
+    width: 100%;
+    height: 6px;
+    border-radius: 999px;
+    appearance: none;
+    background: linear-gradient(90deg, rgba(255, 23, 68, 0.25), rgba(220, 20, 60, 0.35));
+}
+
+.advanced-filters input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff1744, #dc143c);
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.28);
+    cursor: pointer;
+}
+
+.advanced-filters input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff1744, #dc143c);
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.28);
+    cursor: pointer;
+}
+
+.range-values {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.92rem;
+    color: #445467;
+    font-weight: 600;
+}
+
+.amenities-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+}
+
+.amenities-wrap label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.25rem 0.45rem;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.amenities-wrap input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--filter-accent);
+}
+
+.filter-actions {
+    margin-top: 0.9rem;
+}
+
+#clearFiltersBtn {
+    border: none;
+    border-radius: 10px;
+    padding: 0.62rem 1rem;
+    color: #fff;
+    background: linear-gradient(135deg, #ff1744, #dc143c);
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#clearFiltersBtn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 16px rgba(255, 23, 68, 0.25);
+}
+
+.smart-search-wrap {
+    position: relative;
+    margin-top: 0.85rem;
+    padding: 0.75rem;
+    border-radius: 12px;
+    border: 1px solid #e0e7f1;
+    background: rgba(255, 255, 255, 0.96);
+}
+
+.search-box .smart-search-wrap {
+    flex: 1 1 100%;
+    width: 100%;
+    margin-top: 0.25rem;
+}
+
+.index-mini-filters {
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0;
+    padding: 0.75rem;
+    border-radius: 12px;
+}
+
+.index-left-filters-wrap {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0.75rem auto 1.25rem;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.index-mini-filters h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.55rem;
+}
+
+.index-mini-filters .filter-row {
+    margin-bottom: 0.55rem;
+}
+
+.index-mini-filters .price-inputs {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.45rem;
+}
+
+.index-mini-filters .amenities-wrap {
+    gap: 0.4rem 0.65rem;
+}
+
+.index-mini-filters .amenities-wrap label {
+    font-size: 0.8rem;
+    padding: 0.15rem 0.3rem;
+}
+
+.index-mini-filters #clearFiltersBtn {
+    padding: 0.48rem 0.75rem;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+    .index-mini-filters {
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    .index-left-filters-wrap {
+        padding: 0 1rem;
+    }
+}
+
+.quick-searches {
+    margin-bottom: 0.55rem;
+}
+
+.quick-searches strong {
+    color: #344255;
+    font-size: 0.92rem;
+}
+
+.chip-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 0.45rem;
+}
+
+.chip-btn {
+    border: 1px solid var(--filter-accent);
+    background: rgba(255, 23, 68, 0.08);
+    color: #b11236;
+    border-radius: 999px;
+    padding: 0.28rem 0.7rem;
+    cursor: pointer;
+    font-size: 0.83rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.chip-btn:hover {
+    color: #fff;
+    background: linear-gradient(135deg, #ff1744, #dc143c);
+}
+
+.suggestions-dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #dbe4ef;
+    border-radius: 12px;
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.14);
+    max-height: 220px;
+    overflow: auto;
+    z-index: 50;
+    display: none;
+}
+
+.suggestions-dropdown.show {
+    display: block;
+}
+
+.suggestion-item {
+    padding: 0.62rem 0.85rem;
+    cursor: pointer;
+    border-bottom: 1px solid #edf2f7;
+    color: #263547;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-item:hover {
+    background: #f4f8ff;
+}
+
+body.dark-mode .advanced-filters {
+    background: linear-gradient(180deg, #121212 0%, #0d0d0d 100%);
+    border-color: #2d2d2d;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .advanced-filters h3,
+body.dark-mode .filter-row label,
+body.dark-mode .range-values,
+body.dark-mode .quick-searches strong {
+    color: #f1f1f1;
+}
+
+body.dark-mode .advanced-filters select {
+    background: #1f1f1f;
+    color: #f4f4f4;
+    border-color: #3a3a3a;
+}
+
+body.dark-mode .price-input-group label {
+    color: #c9c9c9;
+}
+
+body.dark-mode .price-input-group input[type="number"] {
+    background: #1f1f1f;
+    color: #f4f4f4;
+    border-color: #3a3a3a;
+}
+
+body.dark-mode .price-input-group input[type="number"]:focus {
+    border-color: var(--dark-accent);
+    box-shadow: 0 0 0 3px rgba(255, 23, 68, 0.2);
+}
+
+body.dark-mode .advanced-filters select:focus {
+    border-color: var(--dark-accent);
+    box-shadow: 0 0 0 3px rgba(255, 23, 68, 0.2);
+}
+
+body.dark-mode .advanced-filters input[type="range"] {
+    background: linear-gradient(90deg, rgba(255, 23, 68, 0.28), rgba(255, 23, 68, 0.45));
+}
+
+body.dark-mode .smart-search-wrap {
+    background: rgba(18, 18, 18, 0.96);
+    border-color: #2f2f2f;
+}
+
+body.dark-mode .chip-btn {
+    background: rgba(255, 23, 68, 0.18);
+    border-color: #ff4b6d;
+    color: #ffd4dd;
+}
+
+body.dark-mode .chip-btn:hover {
+    background: linear-gradient(135deg, #ff1744, #dc143c);
+    color: #fff;
+}
+
+body.dark-mode .suggestions-dropdown {
+    background: #141414;
+    border-color: #2c2c2c;
+}
+
+body.dark-mode .suggestion-item {
+    color: #f3f3f3;
+    border-bottom-color: #292929;
+}
+
+body.dark-mode .suggestion-item:hover {
+    background: #1e1e1e;
+}
+
+@media (max-width: 640px) {
+    .advanced-filters {
+        padding: 0.9rem;
+        border-radius: 12px;
+    }
+
+    .advanced-filters h3 {
+        font-size: 1.25rem;
+    }
+
+    .amenities-wrap {
+        gap: 0.5rem 0.7rem;
+    }
+
+    .price-inputs {
+        grid-template-columns: 1fr;
+    }
+}

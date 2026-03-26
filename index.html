@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TatilRezerve - Türkiye'nin En İyi Tatil Yerleri</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -98,7 +99,101 @@
                         </select>
                     </div>
                     <button class="btn-search" onclick="searchResorts()">Ara</button>
+                    <div class="smart-search-wrap">
+                        <div class="quick-searches">
+                            <strong>Popüler:</strong>
+                            <div id="popularSearches" class="chip-list"></div>
+                        </div>
+
+                        <div class="quick-searches">
+                            <strong>Son Aramalar:</strong>
+                            <div id="recentSearches" class="chip-list"></div>
+                        </div>
+
+                        <div id="suggestionsDropdown" class="suggestions-dropdown"></div>
+                    </div>
                 </div>
+            </div>
+
+            <div class="index-left-filters-wrap">
+                <section class="advanced-filters index-mini-filters" id="advancedFilters">
+                    <h3>Filtrele ve Sırala</h3>
+
+                    <div class="filter-row">
+                        <label>Fiyat Aralığı (₺)</label>
+                        <div class="price-inputs">
+                            <div class="price-input-group">
+                                <label for="minPriceInput">Min</label>
+                                <input type="number" id="minPriceInput" min="0" step="50" value="0" placeholder="0">
+                            </div>
+                            <div class="price-input-group">
+                                <label for="maxPriceInput">Max</label>
+                                <input type="number" id="maxPriceInput" min="0" step="50" value="3000" placeholder="3000">
+                            </div>
+                        </div>
+                        <div class="range-values">
+                            <span id="minPriceText">₺0</span>
+                            <span id="maxPriceText">₺3000</span>
+                        </div>
+                    </div>
+
+                    <div class="filter-row">
+                        <label>Puan / Yıldız</label>
+                        <select id="ratingFilter">
+                            <option value="0">Tümü</option>
+                            <option value="4">4.0 ve üzeri</option>
+                            <option value="4.5">4.5 ve üzeri</option>
+                            <option value="4.8">4.8 ve üzeri</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-row">
+                        <label>Oda-Konsept</label>
+                        <select id="conceptFilter">
+                            <option value="">Tümü</option>
+                            <option value="Her Sey Dahil">Her Şey Dahil</option>
+                            <option value="Yarim Pansiyon">Yarım Pansiyon</option>
+                            <option value="Oda Kahvalti">Oda Kahvaltı</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-row">
+                        <label>Tema</label>
+                        <select id="themeFilter">
+                            <option value="">Tümü</option>
+                            <option value="Balayi">Balayı</option>
+                            <option value="Cocuk Dostu">Çocuk Dostu</option>
+                            <option value="Aquapark">Aquapark</option>
+                            <option value="Yetiskin">Yetişkin</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-row">
+                        <label>Olanaklar</label>
+                        <div class="amenities-wrap">
+                            <label><input type="checkbox" class="amenityCheck" value="Spa"> Spa</label>
+                            <label><input type="checkbox" class="amenityCheck" value="Havuz"> Havuz</label>
+                            <label><input type="checkbox" class="amenityCheck" value="Denize Sifir"> Denize Sıfır</label>
+                            <label><input type="checkbox" class="amenityCheck" value="Otopark"> Otopark</label>
+                            <label><input type="checkbox" class="amenityCheck" value="Evcil Hayvan"> Evcil Hayvan</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-row">
+                        <label>Sıralama</label>
+                        <select id="sortBy">
+                            <option value="recommended">Önerilen</option>
+                            <option value="priceAsc">En Düşük Fiyat</option>
+                            <option value="priceDesc">En Yüksek Fiyat</option>
+                            <option value="ratingDesc">En Yüksek Puan</option>
+                            <option value="distanceAsc">Mesafeye Göre</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-actions">
+                        <button type="button" id="clearFiltersBtn">Filtreleri Temizle</button>
+                    </div>
+                </section>
             </div>
         </section>
     </header>

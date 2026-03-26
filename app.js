@@ -263,10 +263,14 @@ const testimonials = [
     { text: "Ege'nin en güzel kenti. Deniz, güneş, eğlence!", name: "xxxx xxx", location: "İzmir Tatili", rating: 5 }
 ];
 
+const MAX_TESTIMONIALS_ON_HOME = 3;
+
 const loadTestimonials = () => {
     const testimonialsTrack = document.getElementById('testimonialsTrack');
     if (!testimonialsTrack) return;
-    testimonialsTrack.innerHTML = testimonials.map((t, i) => `
+  const visibleTestimonials = testimonials.slice(0, MAX_TESTIMONIALS_ON_HOME);
+
+  testimonialsTrack.innerHTML = visibleTestimonials.map((t, i) => `
         <div class="testimonial-item">
             <div class="testimonial-card ${i === 0 ? 'active' : ''}">
                 <div class="stars">${'⭐'.repeat(t.rating)}</div>
@@ -319,40 +323,6 @@ const loadRegions = () => {
     `).join('');
 };
 
-const searchResorts = () => {
-    const destination = document.getElementById('destination')?.value || '';
-    const checkIn = document.getElementById('checkIn')?.value || '';
-    const checkOut = document.getElementById('checkOut')?.value || '';
-    const guests = document.getElementById('guests')?.value || '1';
-    
-    if (!destination) {
-        alert('Lütfen bir destinasyon seçin!');
-        return;
-    }
-    
-    const destinationLower = destination.toLowerCase();
-    const pages = {
-        'antalya': 'antalya.html',
-        'bodrum': 'bodrum.html',
-        'mardin': 'mardin.html',
-        'diyarbakır': 'diyarbakir.html',
-        'diyarbakir': 'diyarbakir.html',
-        'bursa': 'bursa.html',
-        'trabzon': 'trabzon.html',
-        'van': 'van.html',
-        'izmir': 'izmir.html',
-        'i̇zmir': 'izmir.html',
-        'muğla': 'mugla.html',
-        'mugla': 'mugla.html'
-    };
-    
-    const page = pages[destinationLower];
-    if (page) {
-        window.location.href = page;
-    } else {
-        alert(`"${destination}" için sayfa bulunamadı.`);
-    }
-};
 class ReservationManager {
     constructor() {
         this.storageKey = 'reservations';
@@ -621,25 +591,416 @@ const initAboutMePage = () => {
     });
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-    initThemeToggle();
-    
-    loadTestimonials();
-    loadRegions();
-    setInterval(() => slideHero(1), 5000);
-    
-    loadHotels();
-    const inputs = ['bookingCheckIn', 'bookingCheckOut', 'roomType'];
-    inputs.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.addEventListener('change', updateTotalPrice);
+let currentHotels = [];
+
+const FILTER_STATE = {
+  minPrice: 0,
+  maxPrice: 3000,
+  minRating: 0,
+  concept: "",
+  theme: "",
+  amenities: [],
+  sortBy: "recommended"
+};
+
+function normalizeText(text) {
+  return (text || "")
+    .toString()
+    .toLowerCase()
+    .replace(/ı/g, "i")
+    .replace(/ğ/g, "g")
+    .replace(/ü/g, "u")
+    .replace(/ş/g, "s")
+    .replace(/ö/g, "o")
+    .replace(/ç/g, "c");
+}
+
+function inferMeta(hotel, index) {
+  const featureText = normalizeText((hotel.features || []).join(" "));
+  const nameText = normalizeText(hotel.name || "");
+
+  const amenities = [];
+  if (featureText.includes("spa")) amenities.push("Spa");
+  if (featureText.includes("havuz") || featureText.includes("pool")) amenities.push("Havuz");
+  if (featureText.includes("sahil") || featureText.includes("beach") || featureText.includes("deniz")) amenities.push("Denize Sifir");
+  if (featureText.includes("otopark") || featureText.includes("parking")) amenities.push("Otopark");
+  if (featureText.includes("evcil") || featureText.includes("pet")) amenities.push("Evcil Hayvan");
+
+  const concept = featureText.includes("all-inclusive") ? "Her Sey Dahil"
+                : (featureText.includes("kahvalti") || featureText.includes("breakfast")) ? "Oda Kahvalti"
+                : "Yarim Pansiyon";
+
+  const theme = (featureText.includes("aile") || featureText.includes("kids")) ? "Cocuk Dostu"
+              : (featureText.includes("water park") || featureText.includes("aquapark")) ? "Aquapark"
+              : (nameText.includes("boutique") || nameText.includes("luxury") || featureText.includes("romantik")) ? "Balayi"
+              : "Yetiskin";
+
+  const distanceKm = (index % 8) + 1;
+
+  return { amenities, concept, theme, distanceKm };
+}
+
+function getHotelsByPage() {
+  const page = window.location.pathname;
+  if (page.includes("antalya")) return antalya_hotels;
+  if (page.includes("bodrum")) return bodrum_hotels;
+  if (page.includes("bursa")) return bursa_hotels;
+  if (page.includes("diyarbakir")) return diyarbakir_hotels;
+  if (page.includes("izmir")) return izmir_hotels;
+  if (page.includes("mardin")) return mardin_hotels;
+  if (page.includes("mugla")) return mugla_hotels;
+  if (page.includes("trabzon")) return trabzon_hotels;
+  if (page.includes("van")) return van_hotels;
+  return [];
+}
+
+function renderHotels(list) {
+  const grid = document.getElementById("hotelsGrid");
+  const listEl = document.getElementById("hotelsList");
+  const target = grid || listEl;
+  if (!target) return;
+
+  target.innerHTML = list.map(hotel => {
+    const meta = hotel.meta || {};
+    const badge = [
+      meta.concept ? "<span>" + meta.concept + "</span>" : "",
+      meta.theme ? "<span>" + meta.theme + "</span>" : "",
+      typeof meta.distanceKm === "number" ? "<span>" + meta.distanceKm + " km</span>" : ""
+    ].join(" ");
+
+    return ""
+      + "<div class='hotel-card'>"
+      + "  <img src='" + hotel.image + "' alt='" + hotel.name + "' onerror=\"this.src='img/logo.png'\">"
+      + "  <div class='hotel-info'>"
+      + "    <h3 class='hotel-name'>" + hotel.name + "</h3>"
+      + "    <div class='hotel-rating'>" + "⭐".repeat(Math.floor(hotel.rating)) + " " + hotel.rating + "</div>"
+      + "    <div class='hotel-price'>₺" + hotel.price + "/gece</div>"
+      + "    <div style='display:flex; gap:6px; flex-wrap:wrap; margin:6px 0; font-size:12px; color:#555;'>" + badge + "</div>"
+      + "    <ul class='hotel-features'>" + (hotel.features || []).map(f => "<li>" + f + "</li>").join("") + "</ul>"
+      + "    <button class='btn-book' onclick=\"openBooking('" + hotel.name.replace(/'/g, "\\'") + "', " + hotel.price + ")\">Rezervasyon Yap</button>"
+      + "  </div>"
+      + "</div>";
+  }).join("");
+}
+
+function applyFiltersAndSort() {
+  let data = [...currentHotels];
+
+  data = data.filter(h => h.price >= FILTER_STATE.minPrice && h.price <= FILTER_STATE.maxPrice);
+  data = data.filter(h => h.rating >= FILTER_STATE.minRating);
+
+  if (FILTER_STATE.concept) data = data.filter(h => h.meta.concept === FILTER_STATE.concept);
+  if (FILTER_STATE.theme) data = data.filter(h => h.meta.theme === FILTER_STATE.theme);
+
+  if (FILTER_STATE.amenities.length > 0) {
+    data = data.filter(h => FILTER_STATE.amenities.every(a => h.meta.amenities.includes(a)));
+  }
+
+  if (FILTER_STATE.sortBy === "priceAsc") data.sort((a, b) => a.price - b.price);
+  if (FILTER_STATE.sortBy === "priceDesc") data.sort((a, b) => b.price - a.price);
+  if (FILTER_STATE.sortBy === "ratingDesc") data.sort((a, b) => b.rating - a.rating);
+  if (FILTER_STATE.sortBy === "distanceAsc") data.sort((a, b) => a.meta.distanceKm - b.meta.distanceKm);
+
+  if (FILTER_STATE.sortBy === "recommended") {
+    data.sort((a, b) => {
+      const scoreA = (a.rating * 2) - (a.price / 1000);
+      const scoreB = (b.rating * 2) - (b.price / 1000);
+      return scoreB - scoreA;
     });
-    
-    loadReservations();
-    const clearBtn = document.getElementById('clearBtn');
-    if (clearBtn) {
-        clearBtn.addEventListener('click', () => reservationManager.clearAll());
+  }
+
+  renderHotels(data);
+}
+
+function loadHotels() {
+  const raw = getHotelsByPage();
+  currentHotels = raw.map((hotel, idx) => {
+    const meta = inferMeta(hotel, idx);
+    return { ...hotel, meta };
+  });
+  applyFiltersAndSort();
+}
+function initAdvancedFilters() {
+  const minEl = document.getElementById("minPriceInput") || document.getElementById("minPriceRange");
+  const maxEl = document.getElementById("maxPriceInput") || document.getElementById("maxPriceRange");
+  const minText = document.getElementById("minPriceText");
+  const maxText = document.getElementById("maxPriceText");
+  const ratingEl = document.getElementById("ratingFilter");
+  const conceptEl = document.getElementById("conceptFilter");
+  const themeEl = document.getElementById("themeFilter");
+  const sortEl = document.getElementById("sortBy");
+  const clearBtn = document.getElementById("clearFiltersBtn");
+
+  if (!minEl || !maxEl) return;
+
+  const parsePrice = (value, fallback) => {
+    const parsed = Number(value);
+    return Number.isFinite(parsed) ? parsed : fallback;
+  };
+
+  const syncPriceText = () => {
+    FILTER_STATE.minPrice = parsePrice(minEl.value, 0);
+    FILTER_STATE.maxPrice = parsePrice(maxEl.value, 3000);
+
+    if (FILTER_STATE.minPrice < 0) FILTER_STATE.minPrice = 0;
+    if (FILTER_STATE.maxPrice < 0) FILTER_STATE.maxPrice = 0;
+
+    if (FILTER_STATE.minPrice > FILTER_STATE.maxPrice) {
+      const temp = FILTER_STATE.minPrice;
+      FILTER_STATE.minPrice = FILTER_STATE.maxPrice;
+      FILTER_STATE.maxPrice = temp;
+      minEl.value = String(FILTER_STATE.minPrice);
+      maxEl.value = String(FILTER_STATE.maxPrice);
     }
-    
-    initAboutMePage();
+    if (minText) minText.textContent = "₺" + FILTER_STATE.minPrice;
+    if (maxText) maxText.textContent = "₺" + FILTER_STATE.maxPrice;
+  };
+
+  minEl.addEventListener("input", () => {
+    syncPriceText();
+    applyFiltersAndSort();
+  });
+
+  maxEl.addEventListener("input", () => {
+    syncPriceText();
+    applyFiltersAndSort();
+  });
+
+  if (ratingEl) ratingEl.addEventListener("change", () => {
+    FILTER_STATE.minRating = Number(ratingEl.value || 0);
+    applyFiltersAndSort();
+  });
+
+  if (conceptEl) conceptEl.addEventListener("change", () => {
+    FILTER_STATE.concept = conceptEl.value || "";
+    applyFiltersAndSort();
+  });
+
+  if (themeEl) themeEl.addEventListener("change", () => {
+    FILTER_STATE.theme = themeEl.value || "";
+    applyFiltersAndSort();
+  });
+
+  const amenityChecks = document.querySelectorAll(".amenityCheck");
+  amenityChecks.forEach(ch => {
+    ch.addEventListener("change", () => {
+      FILTER_STATE.amenities = Array.from(document.querySelectorAll(".amenityCheck:checked")).map(x => x.value);
+      applyFiltersAndSort();
+    });
+  });
+
+  if (sortEl) sortEl.addEventListener("change", () => {
+    FILTER_STATE.sortBy = sortEl.value || "recommended";
+    applyFiltersAndSort();
+  });
+
+  if (clearBtn) clearBtn.addEventListener("click", () => {
+    minEl.value = "0";
+    maxEl.value = "3000";
+    if (ratingEl) ratingEl.value = "0";
+    if (conceptEl) conceptEl.value = "";
+    if (themeEl) themeEl.value = "";
+    if (sortEl) sortEl.value = "recommended";
+    document.querySelectorAll(".amenityCheck").forEach(x => x.checked = false);
+
+    FILTER_STATE.minPrice = 0;
+    FILTER_STATE.maxPrice = 3000;
+    FILTER_STATE.minRating = 0;
+    FILTER_STATE.concept = "";
+    FILTER_STATE.theme = "";
+    FILTER_STATE.amenities = [];
+    FILTER_STATE.sortBy = "recommended";
+
+    syncPriceText();
+    applyFiltersAndSort();
+  });
+
+  syncPriceText();
+}
+const POPULAR_SEARCHES = [
+  "Antalya",
+  "Bodrum",
+  "Muğla",
+  "İzmir",
+  "Mardin"
+];
+
+function getRecentSearches() {
+  try {
+    return JSON.parse(localStorage.getItem("recentSearches") || "[]");
+  } catch {
+    return [];
+  }
+}
+
+function saveRecentSearch(value) {
+  const v = (value || "").trim();
+  if (!v) return;
+  const old = getRecentSearches().filter(x => normalizeText(x) !== normalizeText(v));
+  const next = [v, ...old].slice(0, 6);
+  localStorage.setItem("recentSearches", JSON.stringify(next));
+}
+
+function getSuggestionPool() {
+  const regions = ["Antalya", "Bodrum", "Bursa", "Diyarbakır", "İzmir", "Mardin", "Muğla", "Trabzon", "Van"];
+  const hotels = [
+    ...antalya_hotels, ...bodrum_hotels, ...bursa_hotels, ...diyarbakir_hotels,
+    ...izmir_hotels, ...mardin_hotels, ...mugla_hotels, ...trabzon_hotels, ...van_hotels
+  ].map(h => h.name);
+
+  return Array.from(new Set([...regions, ...hotels]));
+}
+
+function renderChipList(containerId, items) {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+
+  el.innerHTML = items.map(item => {
+    return "<button type='button' class='chip-btn' data-chip='" + item.replace(/"/g, "&quot;") + "'>" + item + "</button>";
+  }).join("");
+
+  el.querySelectorAll(".chip-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const destinationEl = document.getElementById("destination");
+      if (!destinationEl) return;
+      destinationEl.value = btn.getAttribute("data-chip") || "";
+      hideSuggestions();
+    });
+  });
+}
+
+function hideSuggestions() {
+  const dd = document.getElementById("suggestionsDropdown");
+  if (!dd) return;
+  dd.classList.remove("show");
+  dd.innerHTML = "";
+}
+
+function showSuggestions(query) {
+  const dd = document.getElementById("suggestionsDropdown");
+  if (!dd) return;
+
+  const q = normalizeText(query);
+  if (!q || q.length < 2) {
+    hideSuggestions();
+    return;
+  }
+
+  const pool = getSuggestionPool();
+  const starts = pool.filter(x => normalizeText(x).startsWith(q));
+  const contains = pool.filter(x => !normalizeText(x).startsWith(q) && normalizeText(x).includes(q));
+  const results = [...starts, ...contains].slice(0, 8);
+
+  if (results.length === 0) {
+    hideSuggestions();
+    return;
+  }
+
+  dd.innerHTML = results.map(item => "<div class='suggestion-item' data-s='" + item.replace(/"/g, "&quot;") + "'>" + item + "</div>").join("");
+  dd.classList.add("show");
+
+  dd.querySelectorAll(".suggestion-item").forEach(row => {
+    row.addEventListener("click", () => {
+      const val = row.getAttribute("data-s") || "";
+      const destinationEl = document.getElementById("destination");
+      if (destinationEl) destinationEl.value = val;
+      hideSuggestions();
+    });
+  });
+}
+
+function initSmartSearch() {
+  const destinationEl = document.getElementById("destination");
+  if (!destinationEl) return;
+
+  renderChipList("popularSearches", POPULAR_SEARCHES);
+  renderChipList("recentSearches", getRecentSearches());
+
+  destinationEl.addEventListener("input", () => {
+    showSuggestions(destinationEl.value);
+  });
+
+  destinationEl.addEventListener("focus", () => {
+    if (destinationEl.value.trim().length >= 2) showSuggestions(destinationEl.value);
+  });
+
+  document.addEventListener("click", (e) => {
+    const box = document.getElementById("suggestionsDropdown");
+    if (!box || !destinationEl) return;
+    if (!box.contains(e.target) && e.target !== destinationEl) hideSuggestions();
+  });
+}
+const CITY_PAGES = {
+  "antalya": "antalya.html",
+  "bodrum": "bodrum.html",
+  "mardin": "mardin.html",
+  "diyarbakir": "diyarbakir.html",
+  "diyarbakır": "diyarbakir.html",
+  "bursa": "bursa.html",
+  "trabzon": "trabzon.html",
+  "van": "van.html",
+  "izmir": "izmir.html",
+  "muğla": "mugla.html",
+  "mugla": "mugla.html"
+};
+
+const CITY_KEYS = Object.keys(CITY_PAGES);
+
+function searchResorts() {
+  const destination = (document.getElementById("destination")?.value || "").trim();
+  const checkIn = document.getElementById("checkIn")?.value || "";
+  const checkOut = document.getElementById("checkOut")?.value || "";
+  const guests = document.getElementById("guests")?.value || "1";
+
+  if (!destination) {
+    alert("Lütfen bir destinasyon seçin.");
+    return;
+  }
+
+  saveRecentSearch(destination);
+  renderChipList("recentSearches", getRecentSearches());
+
+  const normalized = normalizeText(destination);
+  const matchedCity = CITY_KEYS.find(k => normalized.includes(normalizeText(k)));
+
+  if (!matchedCity) {
+    alert("\"" + destination + "\" için sayfa bulunamadı.");
+    return;
+  }
+
+  const page = CITY_PAGES[matchedCity];
+  const params = new URLSearchParams({
+    q: destination,
+    checkIn,
+    checkOut,
+    guests
+  });
+
+  window.location.href = page + "?" + params.toString();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initThemeToggle();
+
+  loadTestimonials();
+  loadRegions();
+  setInterval(() => slideHero(1), 5000);
+
+  initSmartSearch();
+  loadHotels();
+  initAdvancedFilters();
+
+  const inputs = ["bookingCheckIn", "bookingCheckOut", "roomType"];
+  inputs.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener("change", updateTotalPrice);
+  });
+
+  loadReservations();
+  const clearBtn = document.getElementById("clearBtn");
+  if (clearBtn) {
+    clearBtn.addEventListener("click", () => reservationManager.clearAll());
+  }
+
+  initAboutMePage();
 });
