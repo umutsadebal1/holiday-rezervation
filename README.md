@@ -48,6 +48,9 @@ holiday-rezervation/
 - **Koyu/Aydınlık Mod** - CSS değişkenleriyle tema geçişi
 - **Responsive Tasarım** - Mobil, tablet ve masaüstünde mükemmel görünüş
 - **Şehir Bölümleri** - Her şehrin kendi sayfası ve otel listesi
+- **Gelişmiş ve akıllı arama** - Searchbox yazılan veya aranan yerleri otomatik tamamlar
+- **Filtreleme özellikleri** - Filtrelemeler ile istenilen oteller ve tatillerin filtrelenmesi
+
 
 ## 🚀 Kurulum ve Çalıştırma
 
