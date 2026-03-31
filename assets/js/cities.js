@@ -88,5 +88,35 @@ window.CITIES = {
     regionClass: "bottom-right",
     hotels: 267,
     aliases: ["izmir"]
+  },
+  istanbul: {
+    slug: "istanbul",
+    name: "İstanbul",
+    description: "Boğaz manzarası, tarih ve modern yaşam bir arada",
+    image: "img/logo.png",
+    heroBackground: "linear-gradient(135deg, rgba(32, 48, 96, 0.86), rgba(18, 82, 123, 0.82))",
+    regionClass: "bottom-right",
+    hotels: 314,
+    aliases: ["istanbul"]
+  },
+  ankara: {
+    slug: "ankara",
+    name: "Ankara",
+    description: "Başkentte şehir otelleri, iş seyahati ve hafta sonu konaklama",
+    image: "img/logo.png",
+    heroBackground: "linear-gradient(135deg, rgba(84, 50, 130, 0.86), rgba(148, 61, 110, 0.8))",
+    regionClass: "bottom-right",
+    hotels: 173,
+    aliases: ["ankara"]
+  },
+  gaziantep: {
+    slug: "gaziantep",
+    name: "Gaziantep",
+    description: "Lezzet rotaları, kültür turları ve butik şehir otelleri",
+    image: "img/logo.png",
+    heroBackground: "linear-gradient(135deg, rgba(170, 76, 31, 0.88), rgba(130, 42, 18, 0.84))",
+    regionClass: "bottom-right",
+    hotels: 129,
+    aliases: ["gaziantep", "antep"]
   }
 };

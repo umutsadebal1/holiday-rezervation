@@ -1,106 +1,76 @@
-# 🌍 HolidayRez - Tatil Rezervasyon Sitesi
+# HolidayRez
 
-HolidayRez, kullanıcıların Türkiye'deki popüler turistik şehirler hakkında bilgi alabileceği ve rezervasyon yapabileceği bir web projesidir. s
+HolidayRez, Türkiye'deki şehir otellerini keşfetmek ve rezervasyon yönetmek için hazırlanmış bir HTML, CSS ve JavaScript projesidir.
 
-## ✨ Özellikler
+## Özellikler
 
-- 🏝️ Turistik şehir tanıtımları
-- 📝 Rezervasyon formu
-- 🎨 Modern ve responsive tasarım
-- ⚡ HTML, CSS ve JavaScript kullanılarak geliştirildi
+- Şehir bazlı otel listeleme ve filtreleme
+- Rezervasyon oluşturma ve rezervasyon yönetimi
+- Favori ve karşılaştırma akışları
+- Açık/koyu tema desteği
+- Responsive arayüz
 
-## 🗂️ Proje Yapısı
+## Proje Yapısı
 
-```
+```text
 holiday-rezervation/
+├── assets/
+│   ├── css/
+│   │   ├── aboutme.css
+│   │   ├── experience.css
+│   │   └── styles.css
+│   └── js/
+│       ├── app.js
+│       ├── cities.js
+│       ├── experience.js
+│       ├── hotels.js
+│       ├── login.js
+│       ├── signpage.js
+│       └── title.js
 ├── img/
-├── index.html
-├── city.html
-├── cities.js
-├── hotels.js
-├── title.js
-├── app.js
 ├── aboutme.html
-├── aboutme.css
+├── city.html
+├── index.html
+├── login.html
 ├── reservations.html
-├── styles.css
+├── signpage.html
 └── README.md
 ```
 
-## 🛠️ Kullanılan Teknolojiler
+## Kullanılan Teknolojiler
 
-- **HTML5** - Sayfa yapısı
-- **CSS3** - Responsive tasarım ve tema desteği (açık/koyu mod)
-- **JavaScript** - Dinamik içerik yükleme, rezervasyon sistemi
-- **LocalStorage** - Rezervasyon verileri (tarayıcıda saklanır)
+- HTML5
+- CSS3
+- JavaScript (Vanilla)
+- LocalStorage
+- IndexedDB (rezervasyon senkronu için)
 
-## 🌟 Öne Çıkan Özellikler
+## Kurulum ve Çalıştırma
 
-- **9 Şehir Rehberi** - Antalya, Bodrum, Bursa, Diyarbakır, İzmir, Mardin, Muğla, Trabzon, Van
-- **Otel Filtreleme** - Fiyat, rating ve özelliklere göre arama
-- **Dinamik Rezervasyon** - Modal arayüz ile kolay rezervasyon yapma
-- **Koyu/Aydınlık Mod** - CSS değişkenleriyle tema geçişi
-- **Responsive Tasarım** - Mobil, tablet ve masaüstünde mükemmel görünüş
-- **Şehir Bölümleri** - Her şehrin kendi sayfası ve otel listesi
-- **Gelişmiş ve akıllı arama** - Searchbox yazılan veya aranan yerleri otomatik tamamlar
-- **Filtreleme özellikleri** - Filtrelemeler ile istenilen oteller ve tatillerin şehir
-
-
-## 🚀 Kurulum ve Çalıştırma
-
-### Klonlama
 ```bash
 git clone https://github.com/umutsadebal1/holiday-rezervation.git
 cd holiday-rezervation
 ```
 
-### Çalıştırma
-Projeyi basit bir HTTP server ile çalıştır:
+Projeyi bir statik sunucuyla çalıştır:
+
 ```bash
 # Python 3
 python -m http.server 8000
-
-# Python 2
-python -m SimpleHTTPServer 8000
 
 # Node.js
 npx http-server
 ```
 
-Sonra tarayıcıda `http://localhost:8000` adresine git veya `index.html` dosyasını doğrudan aç.
+Ardından tarayıcıda <http://localhost:8000> adresini aç.
 
-## 📖 Kullanım
+## Kullanım Akışı
 
-1. **Ana Sayfa** - `index.html` dosyasında şehirler arasında kaydırma yapabilirsin
-2. **Şehir Sayfaları** - Ayrıntılı otel bilgilerini görmek için şehre tıkla
-3. **Otel Arama** - Fiyat aralığı seçerek otelleri filtrele
-4. **Rezervasyon** - "Rezervasyon Yap" butonuyla karşılık gelen formu doldur
-5. **Rezervasyonlarım** - Yaptığın rezervasyonları görmek için sağ üstteki butona tıkla
+1. Ana sayfadan şehir veya ürün seçimi yap.
+2. Şehir sayfasında filtreleri kullanarak otelleri daralt.
+3. Otel detayından veya karttan rezervasyon oluştur.
+4. Rezervasyonlarını reservations.html sayfasında yönet.
 
-## 📊 Proje İçeriği
+## Lisans
 
-- **9 Şehir** - Detaylı otel katalogları
-- **72+ Otel** - Her şehirde 8 otel ile zengin seçeneği
-- **İmaj Sistemi** - Hero görselleri, otel kartları ve bölge görselleri
-- **LocalStorage Entegrasyonu** - Tarayıcıda otomatik veri saklama
-
-## 📷 Proje Görüntüsü
-<a href="https://hizliresim.com/4og8pw7"><img src="https://i.hizliresim.com/4og8pw7.png" alt="ff"></a>
-
-## 👨‍💻 Geliştirici
-
-**Umut Sadebal** - Proje yöneticisi ve web developer
-
----
-
-## 📝 Lisans
-
-Bu proje kendi kullanımı için hazırlanmıştır. Kod paylaşımı için izin almaya lütfen başvur.
-
-## 🤝 Katkıda Bulun
-
-Projede iyileştirme görmek istediğin noktaları issue olarak açabilir ya da pull request gönderebilirsin!
-
----
-
-**⭐ Eğer bu proje sana yardımcı olduysa, lütfen bir yıldız bırak!**
+Bu proje kişisel kullanım amacıyla hazırlanmıştır.

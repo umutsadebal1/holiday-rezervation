@@ -7,9 +7,18 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self';">
     <title>TatilRezerve - Türkiye'nin En İyi Tatil Yerleri</title>
     <link rel="icon" type="image/png" href="img/logo.png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/experience.css">
 </head>
-<body>
+<body class="page-home">
+    <div id="helloCountdownBar" class="hello-bar">
+        <div class="hello-bar-content">
+            <strong>Erken Rezervasyon Fırsatı</strong>
+            <span>Seçili otellerde ekstra %20 indirim için kalan süre: <b id="campaignCountdown">--:--:--</b></span>
+            <button type="button" id="openCampaignCenterBtn" class="hello-bar-btn">Kampanyaları İncele</button>
+        </div>
+    </div>
+
     <header class="header">
         <div class="navbar">
             <div class="logo">
@@ -17,13 +26,18 @@
             </div>
             <nav class="nav-links">
                 <a href="#home">Anasayfa</a>
-                <a href="#locations">Bölgeler</a>
-                <a href="#testimonials">Yorumlar</a>
+                <a href="#campaignCenter">Kampanyalar</a>
+                <a href="#specials">Şehirler</a>
                 <a href="#contact">İletişim</a>
             </nav>
             <div class="header-actions">
                 <button id="themeToggle" class="theme-toggle" title="Karanlık modu aç/kapat">🌙</button>
-                <a href="reservations.html" class="btn-reservations">Rezervasyonlarım</a>
+                <div id="authButtons" class="auth-buttons-container">
+                    <div class="auth-links">
+                        <button id="openLoginModalBtn" class="btn-login" type="button">Giriş Yap</button>
+                        <button id="openSignupModalBtn" class="btn-signup" type="button">Üye Ol</button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -33,281 +47,671 @@
                     <div class="slider-item" style="background: rgba(0, 0, 0, 0.6) url('img/bodsid.jpg') center/cover no-repeat;">
                         <div class="slider-content">
                             <h2>Bodrum</h2>
-                            <p>Türkiye'nin En Güzel Plaj Noktası</p>
+                            <p>Türkiye'nin en canlı sahil rotalarından biri</p>
                         </div>
                     </div>
                     <div class="slider-item" style="background: rgba(0, 0, 0, 0.6) url('img/mugsid.jpg') center/cover no-repeat;">
                         <div class="slider-content">
                             <h2>Muğla</h2>
-                            <p>Türkiye'nin sevilen tatil bölgelerinden biri</p>
+                            <p>Ege ve Akdeniz'in buluştuğu nokta</p>
                         </div>
                     </div>
                     <div class="slider-item" style="background: rgba(0, 0, 0, 0.6) url('img/marsid.jpg') center/cover no-repeat;">
                         <div class="slider-content">
                             <h2>Mardin</h2>
-                            <p>Tarihin taşlara yazıldığı şehir</p>
-                        </div>
-                    </div>
-                    <div class="slider-item" style="background: rgba(0, 0, 0, 0.6) url('img/diysid.jpg') center/cover no-repeat;">
-                        <div class="slider-content">
-                            <h2>Diyarbakır</h2>
-                            <p>Tarihin kalesi</p>
+                            <p>Tarihi sokaklar, butik oteller, eşsiz mutfak</p>
                         </div>
                     </div>
                     <div class="slider-item" style="background: rgba(0, 0, 0, 0.6) url('img/ansid.jpeg') center/cover no-repeat;">
                         <div class="slider-content">
                             <h2>Antalya</h2>
-                            <p>Akdeniz'in İncisi - Her Şeyin Olduğu Yer</p>
+                            <p>Akdeniz'de premium aile ve çift konseptleri</p>
                         </div>
                     </div>
                 </div>
-                <button class="slider-nav slider-prev" onclick="slideHero(-1)">❮</button>
-                <button class="slider-nav slider-next" onclick="slideHero(1)">❯</button>
+                <button id="heroPrevBtn" class="slider-nav slider-prev" type="button">❮</button>
+                <button id="heroNextBtn" class="slider-nav slider-next" type="button">❯</button>
             </div>
-            <div class="search-container">
-                <div class="search-box">
-                    <div class="search-field">
-                        <label>📍 Destinasyon & Otel</label>
-                        <input type="text" id="destination" placeholder="Bodrum, Fethiye, Kappadokya..." list="destinations-list">
-                        <datalist id="destinations-list">
-                            <option value="Antalya">
-                            <option value="Bodrum">
-                            <option value="Mardin">
-                            <option value="Diyarbakır">
-                            <option value="Muğla">
-                            <option value="Van">
-                            <option value="Trabzon">
-                            <option value="Bursa">
-                            <option value="İzmir">
-                        </datalist>
+
+            <div class="search-container product-search-shell">
+                <div class="search-box ets-like-search-box">
+                    <div class="search-tabs" id="searchTabs" role="tablist" aria-label="Urun secimi">
+                        <button type="button" class="search-tab active" data-product="hotel">Otel</button>
+                        <button type="button" class="search-tab" data-product="tour">Tur</button>
+                        <button type="button" class="search-tab" data-product="flight">Uçak</button>
+                        <button type="button" class="search-tab" data-product="villa">Villa</button>
+                        <button type="button" class="search-tab" data-product="bus">Otobüs</button>
                     </div>
-                    <div class="search-field">
-                        <label>📅 Giriş Tarihi</label>
-                        <input type="date" id="checkIn">
+
+                    <input type="hidden" id="selectedProduct" value="hotel">
+
+                    <div class="search-panels">
+                        <div class="search-panel active" data-panel="hotel">
+                            <div class="search-field wide">
+                                <label>Destinasyon / Otel</label>
+                                <input type="text" id="destination" placeholder="Antalya, Bodrum, İzmir..." list="destinations-list" autocomplete="off">
+                                <datalist id="destinations-list">
+                                    <option value="Antalya"></option>
+                                    <option value="Bodrum"></option>
+                                    <option value="Bursa"></option>
+                                    <option value="Diyarbakir"></option>
+                                    <option value="Izmir"></option>
+                                    <option value="Mardin"></option>
+                                    <option value="Mugla"></option>
+                                    <option value="Trabzon"></option>
+                                    <option value="Van"></option>
+                                </datalist>
+                            </div>
+                            <div class="search-field">
+                                <label>Giriş</label>
+                                <input type="date" id="checkIn">
+                            </div>
+                            <div class="search-field">
+                                <label>Çıkış</label>
+                                <input type="date" id="checkOut">
+                            </div>
+                            <div class="search-field">
+                                <label>Misafir</label>
+                                <select id="guests">
+                                    <option value="1">1 Misafir</option>
+                                    <option value="2" selected>2 Misafir</option>
+                                    <option value="3">3 Misafir</option>
+                                    <option value="4">4 Misafir</option>
+                                    <option value="5">5+ Misafir</option>
+                                </select>
+                            </div>
+                            <div class="search-field">
+                                <label>Oda</label>
+                                <select id="rooms">
+                                    <option value="1" selected>1 Oda</option>
+                                    <option value="2">2 Oda</option>
+                                    <option value="3">3 Oda</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="search-panel" data-panel="tour">
+                            <div class="search-field wide">
+                                <label>Tur Rotaları</label>
+                                <input type="text" id="tourDestination" placeholder="Karadeniz, Güneydoğu, Kapadokya...">
+                            </div>
+                            <div class="search-field">
+                                <label>Tarih</label>
+                                <input type="date" id="tourDate">
+                            </div>
+                            <div class="search-field">
+                                <label>Kişi</label>
+                                <select id="tourGuests">
+                                    <option value="1">1 Kisi</option>
+                                    <option value="2" selected>2 Kisi</option>
+                                    <option value="3">3 Kisi</option>
+                                    <option value="4">4+ Kisi</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="search-panel" data-panel="flight">
+                            <div class="search-field wide">
+                                <label>Nereden / Nereye</label>
+                                <input type="text" id="flightRoute" placeholder="Istanbul - Antalya">
+                            </div>
+                            <div class="search-field">
+                                <label>Gidiş</label>
+                                <input type="date" id="flightDate">
+                            </div>
+                            <div class="search-field">
+                                <label>Yolcu</label>
+                                <select id="flightGuests">
+                                    <option value="1" selected>1 Yetiskin</option>
+                                    <option value="2">2 Yetiskin</option>
+                                    <option value="3">3 Yetiskin</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="search-panel" data-panel="villa">
+                            <div class="search-field wide">
+                                <label>Bölge</label>
+                                <input type="text" id="villaDestination" placeholder="Kaş, Fethiye, Çeşme...">
+                            </div>
+                            <div class="search-field">
+                                <label>Giriş</label>
+                                <input type="date" id="villaCheckIn">
+                            </div>
+                            <div class="search-field">
+                                <label>Çıkış</label>
+                                <input type="date" id="villaCheckOut">
+                            </div>
+                            <div class="search-field">
+                                <label>Kişi</label>
+                                <select id="villaGuests">
+                                    <option value="2">2 Kisi</option>
+                                    <option value="4" selected>4 Kisi</option>
+                                    <option value="6">6 Kisi</option>
+                                    <option value="8">8+ Kisi</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="search-panel" data-panel="bus">
+                            <div class="search-field wide">
+                                <label>Nereden / Nereye</label>
+                                <input type="text" id="busRoute" placeholder="Ankara - Bursa">
+                            </div>
+                            <div class="search-field">
+                                <label>Tarih</label>
+                                <input type="date" id="busDate">
+                            </div>
+                            <div class="search-field">
+                                <label>Yolcu</label>
+                                <select id="busGuests">
+                                    <option value="1" selected>1 Yolcu</option>
+                                    <option value="2">2 Yolcu</option>
+                                    <option value="3">3 Yolcu</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                    <div class="search-field">
-                        <label>📅 Çıkış Tarihi</label>
-                        <input type="date" id="checkOut">
-                    </div>
-                    <div class="search-field">
-                        <label>👥 Konuk Sayısı</label>
-                        <select id="guests">
-                            <option value="1">1 Konuk</option>
-                            <option value="2">2 Konuk</option>
-                            <option value="3">3 Konuk</option>
-                            <option value="4">4 Konuk</option>
-                            <option value="5">5+ Konuk</option>
-                        </select>
-                    </div>
-                    <button class="btn-search" onclick="searchResorts()">Ara</button>
+
                     <div class="smart-search-wrap">
                         <div class="quick-searches">
                             <strong>Popüler:</strong>
                             <div id="popularSearches" class="chip-list"></div>
                         </div>
-
                         <div class="quick-searches">
                             <strong>Son Aramalar:</strong>
                             <div id="recentSearches" class="chip-list"></div>
                         </div>
-
                         <div id="suggestionsDropdown" class="suggestions-dropdown"></div>
                     </div>
+
+                    <button id="searchSubmitBtn" class="btn-search" type="button">Ara</button>
                 </div>
-            </div>
-
-            <div class="index-left-filters-wrap">
-                <section class="advanced-filters index-mini-filters" id="advancedFilters">
-                    <h3>Filtrele ve Sırala</h3>
-
-                    <div class="filter-row">
-                        <label>Fiyat Aralığı (₺)</label>
-                        <div class="price-inputs">
-                            <div class="price-input-group">
-                                <label for="minPriceInput">Min</label>
-                                <input type="number" id="minPriceInput" min="0" step="50" value="0" placeholder="0">
-                            </div>
-                            <div class="price-input-group">
-                                <label for="maxPriceInput">Max</label>
-                                <input type="number" id="maxPriceInput" min="0" step="50" value="3000" placeholder="3000">
-                            </div>
-                        </div>
-                        <div class="range-values">
-                            <span id="minPriceText">₺0</span>
-                            <span id="maxPriceText">₺3000</span>
-                        </div>
-                    </div>
-
-                    <div class="filter-row">
-                        <label>Puan / Yıldız</label>
-                        <select id="ratingFilter">
-                            <option value="0">Tümü</option>
-                            <option value="4">4.0 ve üzeri</option>
-                            <option value="4.5">4.5 ve üzeri</option>
-                            <option value="4.8">4.8 ve üzeri</option>
-                        </select>
-                    </div>
-
-                    <div class="filter-row">
-                        <label>Oda-Konsept</label>
-                        <select id="conceptFilter">
-                            <option value="">Tümü</option>
-                            <option value="Her Sey Dahil">Her Şey Dahil</option>
-                            <option value="Yarim Pansiyon">Yarım Pansiyon</option>
-                            <option value="Oda Kahvalti">Oda Kahvaltı</option>
-                        </select>
-                    </div>
-
-                    <div class="filter-row">
-                        <label>Tema</label>
-                        <select id="themeFilter">
-                            <option value="">Tümü</option>
-                            <option value="Balayi">Balayı</option>
-                            <option value="Cocuk Dostu">Çocuk Dostu</option>
-                            <option value="Aquapark">Aquapark</option>
-                            <option value="Yetiskin">Yetişkin</option>
-                        </select>
-                    </div>
-
-                    <div class="filter-row">
-                        <label>Olanaklar</label>
-                        <div class="amenities-wrap">
-                            <label><input type="checkbox" class="amenityCheck" value="Spa"> Spa</label>
-                            <label><input type="checkbox" class="amenityCheck" value="Havuz"> Havuz</label>
-                            <label><input type="checkbox" class="amenityCheck" value="Denize Sifir"> Denize Sıfır</label>
-                            <label><input type="checkbox" class="amenityCheck" value="Otopark"> Otopark</label>
-                            <label><input type="checkbox" class="amenityCheck" value="Evcil Hayvan"> Evcil Hayvan</label>
-                        </div>
-                    </div>
-
-                    <div class="filter-row">
-                        <label>Sıralama</label>
-                        <select id="sortBy">
-                            <option value="recommended">Önerilen</option>
-                            <option value="priceAsc">En Düşük Fiyat</option>
-                            <option value="priceDesc">En Yüksek Fiyat</option>
-                            <option value="ratingDesc">En Yüksek Puan</option>
-                            <option value="distanceAsc">Mesafeye Göre</option>
-                        </select>
-                    </div>
-
-                    <div class="filter-actions">
-                        <button type="button" id="clearFiltersBtn">Filtreleri Temizle</button>
-                    </div>
-                </section>
             </div>
         </section>
     </header>
+
+    <section class="promo-showcase section-block" id="promoShowcase">
+        <div class="section-heading-row">
+            <h2>Fırsat Vitrini</h2>
+            <a href="#campaignCenter" class="section-link">Tüm Kampanyalar</a>
+        </div>
+        <div class="promo-rail" id="promoRail">
+            <article class="promo-card">
+                <span class="promo-badge">Yeni</span>
+                <h3>Üyelere Özel Fiyatlar</h3>
+                <p>Giriş yapan üyeler seçili otellerde ekstra indirim görür.</p>
+                <button class="promo-action" type="button" data-open="login">Hemen Giriş Yap</button>
+            </article>
+            <article class="promo-card">
+                <span class="promo-badge">Kupon</span>
+                <h3>TRAVEL500</h3>
+                <p>20.000 TL ve üzeri sepetlerde 500 TL anında indirim.</p>
+                <button class="promo-action" type="button" data-copy-coupon="TRAVEL500">Kodu Kopyala</button>
+            </article>
+            <article class="promo-card">
+                <span class="promo-badge">Ödeme</span>
+                <h3>Şimdi %50, Kalanı Sonra</h3>
+                <p>Esnek ödeme seçenekleri ile tatil planını erteleme.</p>
+                <button class="promo-action" type="button" data-scroll-to="campaignCenter">Detaya Git</button>
+            </article>
+        </div>
+    </section>
+
+    <section class="explore-depth section-block" id="deepExplore">
+        <div class="section-heading-row">
+            <h2>Popüler Rotalarda Derin Keşif</h2>
+        </div>
+        <div class="deep-explore-grid" id="deepExploreGrid"></div>
+    </section>
+
     <section class="popular-regions" id="specials">
-        <h2>Popüler Bölgeler</h2>
-        <div class="regions-filter">
-            <button class="filter-tag active" onclick="window.location.href='city.html?city=antalya'">Antalya</button>
-            <button class="filter-tag" onclick="window.location.href='city.html?city=mardin'">Mardin</button>
-            <button class="filter-tag" onclick="window.location.href='city.html?city=diyarbakir'">Diyarbakır</button>
-            <button class="filter-tag" onclick="window.location.href='city.html?city=trabzon'">Trabzon</button>
-            <button class="filter-tag" onclick="window.location.href='city.html?city=mugla'">Muğla</button>
+        <h2>Popüler Şehirler</h2>
+        <div class="regions-filter" id="regionsFilterButtons">
+            <button class="filter-tag active" type="button" data-city="antalya">Antalya</button>
+            <button class="filter-tag" type="button" data-city="mardin">Mardin</button>
+            <button class="filter-tag" type="button" data-city="diyarbakir">Diyarbakir</button>
+            <button class="filter-tag" type="button" data-city="trabzon">Trabzon</button>
+            <button class="filter-tag" type="button" data-city="mugla">Mugla</button>
+            <button class="filter-tag" type="button" data-city="izmir">Izmir</button>
         </div>
-        <div class="regions-cascade-grid" id="regionsCascade">
-        </div>
+        <div class="regions-cascade-grid" id="regionsCascade"></div>
     </section>
-    <section class="testimonials" id="testimonials">
-        <h2>Konuk Yorumları</h2>
-        <div class="testimonials-carousel">
-            <div class="testimonials-track" id="testimonialsTrack">
+
+    <section class="personalized-block section-block" id="personalizedBlock">
+        <div class="section-heading-row">
+            <h2>Kararsız mısın? Sana Özel Öneriler</h2>
+        </div>
+        <div class="personalized-grid" id="personalizedCollections"></div>
+    </section>
+
+    <section class="recent-viewed section-block" id="recentViewedSection">
+        <div class="section-heading-row">
+            <h2>Son Görüntülenenler</h2>
+            <button id="clearRecentViewedBtn" class="section-link-button" type="button">Temizle</button>
+        </div>
+        <div id="recentViewedList" class="recent-viewed-list"></div>
+    </section>
+
+    <section class="campaign-center section-block" id="campaignCenter">
+        <div class="section-heading-row">
+            <h2>Kampanya Merkezi</h2>
+            <button id="openNotificationPrefsBtn" class="section-link-button" type="button">Bildirim Tercihleri</button>
+        </div>
+        <div class="campaign-slider" id="campaignSlider">
+            <button id="campaignPrevBtn" class="carousel-nav carousel-prev campaign-nav" type="button" aria-label="Onceki kampanya">❮</button>
+            <div class="campaign-track-wrap">
+                <div class="campaign-grid campaign-track" id="campaignGrid"></div>
             </div>
-            <button class="carousel-nav carousel-prev" onclick="slideTestimonial(-1)">❮</button>
-            <button class="carousel-nav carousel-next" onclick="slideTestimonial(1)">❯</button>
+            <button id="campaignNextBtn" class="carousel-nav carousel-next campaign-nav" type="button" aria-label="Sonraki kampanya">❯</button>
         </div>
     </section>
+
+    <section class="trust-legal section-block" id="trustLegal">
+        <div class="section-heading-row">
+            <h2>Güven ve Yasal Bilgilendirme</h2>
+        </div>
+        <div class="trust-grid">
+            <article class="trust-card">
+                <h3>Güven Rozetleri</h3>
+                <div class="badge-row">
+                    <span class="legal-badge">ETBIS</span>
+                    <span class="legal-badge">TURSAB</span>
+                    <span class="legal-badge">SSL 256 Bit</span>
+                </div>
+            </article>
+            <article class="trust-card">
+                <h3>Sözleşmeler</h3>
+                <ul class="trust-links">
+                    <li><a href="#">Mesafeli Satış Sözleşmesi</a></li>
+                    <li><a href="#">Ön Bilgilendirme Formu</a></li>
+                    <li><a href="#">İptal ve İade Koşulları</a></li>
+                </ul>
+            </article>
+            <article class="trust-card">
+                <h3>KVKK</h3>
+                <ul class="trust-links">
+                    <li><a href="#">Aydınlatma Metni</a></li>
+                    <li><a href="#">Çerez Politikası</a></li>
+                    <li><button type="button" id="openCookiePrefsBtn" class="inline-link-btn">Çerez Tercihlerini Yönet</button></li>
+                </ul>
+            </article>
+        </div>
+    </section>
+
     <section class="contact" id="contact">
         <h2>Bize Ulaşın</h2>
         <div class="contact-content">
             <div class="contact-info">
                 <div class="info-card">
-                    <h3>📞 Telefon</h3>
-                    <p>+90 (538) 467-4010</p>
+                    <h3>Telefon</h3>
+                    <p>+90 (850) 000 00 00</p>
                 </div>
                 <div class="info-card">
-                    <h3>✉️ E-posta</h3>
-                    <p>info@dauerhaft14.com</p>
+                    <h3>E-posta</h3>
+                    <p>destek@tatilrez.com</p>
                 </div>
                 <div class="info-card">
-                    <h3>📍 Adres</h3>
-                    <p>Antalya Belek Üniversitesi</p>
+                    <h3>Adres</h3>
+                    <p>Muratpasa / Antalya</p>
                 </div>
             </div>
             <form class="contact-form" id="contactForm">
                 <input type="text" placeholder="Adınız" required>
-                <input type="email" placeholder="E-posta Adresiniz" required>
+                <input type="email" placeholder="E-posta" required>
                 <textarea placeholder="Mesajınız" rows="5" required></textarea>
                 <button type="submit" class="btn-submit">Mesaj Gönder</button>
             </form>
         </div>
     </section>
-          <footer class="site-footer">
-            <div class="footer-content">
-                <span class="texts4">© 2026 TatilRez. Tüm hakları saklıdır.</span>
-                <a href="aboutme.html" class="my-name">Umut Sadebal</a>
+
+    <footer class="site-footer mega-footer">
+        <div class="footer-columns">
+            <div class="footer-col">
+                <h4>Ürünler</h4>
+                <a href="#">Otel</a>
+                <a href="#">Tur</a>
+                <a href="#">Uçak</a>
+                <a href="#">Villa</a>
+                <a href="#">Otobüs</a>
             </div>
-        </footer>
+            <div class="footer-col">
+                <h4>Kurumsal</h4>
+                <a href="#">Hakkımızda</a>
+                <a href="#">Kariyer</a>
+                <a href="#">Basında Biz</a>
+                <a href="#">Yatırımcı İlişkileri</a>
+            </div>
+            <div class="footer-col">
+                <h4>Destek</h4>
+                <a href="#">Yardım Merkezi</a>
+                <a href="#">Sıkça Sorulan Sorular</a>
+                <a href="#">Sizi Arayalım</a>
+                <a href="#">Canlı Destek</a>
+            </div>
+            <div class="footer-col">
+                <h4>Sözleşmeler</h4>
+                <a href="#">KVKK</a>
+                <a href="#">Çerez Politikası</a>
+                <a href="#">Kullanıcı Sözleşmesi</a>
+                <a href="#">Aydınlatma Metni</a>
+            </div>
+            <div class="footer-col">
+                <h4>Sosyal</h4>
+                <a href="#">Instagram</a>
+                <a href="#">YouTube</a>
+            </div>
+        </div>
+        <div class="footer-bottom-row">
+            <span>© 2026 TatilRez. Tüm hakları saklıdır.</span>
+            <a href="aboutme.html" class="my-name">Umut Sadebal</a>
+        </div>
+    </footer>
+
+    <button id="openCallMeBtn" class="floating-help-btn" type="button">Sizi Arayalım</button>
+
     <div id="bookingModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Rezervasyonunuzu Tamamlayın</h2>
-            <form id="bookingForm" onsubmit="submitReservation(event)">
-                <div class="form-group">
-                    <label>Tatil Yeri / Otel Adı</label>
-                    <input type="text" id="resortName" readonly>
+        <div class="modal-content booking-wizard-modal">
+            <span class="close" id="closeBookingModal">&times;</span>
+            <h2>Rezervasyonunuzu Tamamlayin</h2>
+
+            <ol class="booking-stepper" id="bookingStepper">
+                <li class="active">Bilgiler</li>
+                <li>Misafir</li>
+                <li>Ödeme</li>
+                <li>Onay</li>
+            </ol>
+
+            <form id="bookingForm">
+                <div class="booking-step-panel active" data-step-panel="0">
+                    <div class="form-group">
+                        <label>Tatil Yeri / Otel Adi</label>
+                        <input type="text" id="resortName" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Giriş Tarihi</label>
+                        <input type="date" id="bookingCheckIn" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Cikis Tarihi</label>
+                        <input type="date" id="bookingCheckOut" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Konuk Sayisi</label>
+                        <input type="number" id="bookingGuests" min="1" required>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Tam Adınız</label>
-                    <input type="text" id="guestName" required>
+
+                <div class="booking-step-panel" data-step-panel="1">
+                    <div class="form-group">
+                        <label>Tam Adiniz</label>
+                        <input type="text" id="guestName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>E-posta</label>
+                        <input type="email" id="guestEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Telefon</label>
+                        <input type="tel" id="guestPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Özel İstekler</label>
+                        <textarea id="specialRequests" rows="3" placeholder="Herhangi bir özel istek..."></textarea>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>E-posta</label>
-                    <input type="email" id="guestEmail" required>
+
+                <div class="booking-step-panel" data-step-panel="2">
+                    <div class="form-group">
+                        <label>Oda Tipi</label>
+                        <select id="roomType" required>
+                            <option value="">Oda Tipi Secin</option>
+                            <option value="Standard">Standart Oda</option>
+                            <option value="Deluxe">Deluxe Oda</option>
+                            <option value="Suite">Suite</option>
+                            <option value="Villa">Özel Villa</option>
+                        </select>
+                    </div>
+
+                    <div class="payment-flex-cards">
+                        <label class="payment-option-card">
+                            <input type="radio" name="paymentPlan" value="full" checked>
+                            <div>
+                                <strong>Peşin Ödeme</strong>
+                                <p>Tek çekim ödemede ekstra %5 indirim</p>
+                            </div>
+                        </label>
+                        <label class="payment-option-card">
+                            <input type="radio" name="paymentPlan" value="half">
+                            <div>
+                                <strong>Simdi %50, Kalani Sonra</strong>
+                                <p>Check-in öncesi kalan ödeme tamamlama</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="installment-table-wrap">
+                        <h4>Taksit Avantajlari</h4>
+                        <table class="installment-table">
+                            <thead>
+                                <tr>
+                                    <th>Kart</th>
+                                    <th>Taksit</th>
+                                    <th>Avantaj</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>World</td>
+                                    <td>3</td>
+                                    <td>+150 Worldpuan</td>
+                                </tr>
+                                <tr>
+                                    <td>Maximum</td>
+                                    <td>6</td>
+                                    <td>%3 indirim</td>
+                                </tr>
+                                <tr>
+                                    <td>Bonus</td>
+                                    <td>4</td>
+                                    <td>Ekstra mil puan</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Telefon</label>
-                    <input type="tel" id="guestPhone" required>
+
+                <div class="booking-step-panel" data-step-panel="3">
+                    <div class="price-summary">
+                        <p>Toplam Fiyat: <strong id="totalPrice">₺0</strong></p>
+                    </div>
+                    <p class="final-confirm-copy">Rezervasyon bilgileriniz dogrulandiktan sonra onay e-postasi gonderilecektir.</p>
                 </div>
-                <div class="form-group">
-                    <label>Giriş Tarihi</label>
-                    <input type="date" id="bookingCheckIn" required>
+
+                <div class="booking-step-actions">
+                    <button id="bookingPrevStepBtn" type="button" class="btn-secondary" disabled>Geri</button>
+                    <button id="bookingNextStepBtn" type="button" class="btn-secondary">Ileri</button>
+                    <button id="bookingSubmitBtn" type="submit" class="btn-book hidden">Rezervasyonu Onayla</button>
                 </div>
-                <div class="form-group">
-                    <label>Çıkış Tarihi</label>
-                    <input type="date" id="bookingCheckOut" required>
-                </div>
-                <div class="form-group">
-                    <label>Konuk Sayısı</label>
-                    <input type="number" id="bookingGuests" min="1" required>
-                </div>
-                <div class="form-group">
-                    <label>Oda Tipi</label>
-                    <select id="roomType" required>
-                        <option value="">Oda Tipi Seçin</option>
-                        <option value="Standard">Standart Oda</option>
-                        <option value="Deluxe">Deluxe Oda</option>
-                        <option value="Suite">Suite</option>
-                        <option value="Villa">Özel Villa</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Özel İstekler</label>
-                    <textarea id="specialRequests" rows="4" placeholder="Herhangi bir özel istek veya diyetsel gereksiniminiz..."></textarea>
-                </div>
-                <div class="price-summary">
-                    <p>Toplam Fiyat: <strong id="totalPrice">₺0</strong></p>
-                </div>
-                <button type="submit" class="btn-book">Rezervasyonu Onayla</button>
             </form>
         </div>
     </div>
 
-    <script src="cities.js"></script>
-    <script src="title.js"></script>
-    <script src="hotels.js"></script>
-    <script src="app.js"></script>
+    <div id="hotelDetailModal" class="modal">
+        <div class="modal-content hotel-detail-modal-content">
+            <span class="close" id="closeHotelDetailModal">&times;</span>
+            <h2 id="hotelDetailTitle">Otel Detayi</h2>
+            <div class="hotel-detail-gallery">
+                <img id="hotelDetailMainImage" src="img/logo.png" alt="Otel gorseli">
+                <div id="hotelDetailThumbs" class="hotel-detail-thumbs"></div>
+            </div>
+            <div class="hotel-detail-grid">
+                <section>
+                    <h3>Oda Tipleri ve Konsept</h3>
+                    <div id="hotelRoomConcepts" class="detail-chip-wrap"></div>
+                </section>
+                <section>
+                    <h3>Olanaklar</h3>
+                    <div id="hotelAmenitiesByCategory" class="detail-amenity-cols"></div>
+                </section>
+            </div>
+            <section class="price-calendar-block">
+                <h3>Fiyat Takvimi</h3>
+                <div id="hotelPriceCalendar" class="price-calendar-grid"></div>
+            </section>
+        </div>
+    </div>
+
+    <div id="campaignDetailModal" class="modal">
+        <div class="modal-content campaign-detail-modal-content">
+            <span class="close" id="closeCampaignDetailModal">&times;</span>
+            <h2 id="campaignDetailTitle">Kampanya Detayi</h2>
+            <p id="campaignDetailDescription"></p>
+            <div class="campaign-coupon-box">
+                <span>Kod:</span>
+                <strong id="campaignDetailCode">-</strong>
+                <button type="button" id="copyCampaignCodeBtn" class="btn-secondary">Kopyala</button>
+            </div>
+            <a id="campaignDetailLink" href="#" class="btn-book">Kampanyaya Git</a>
+        </div>
+    </div>
+
+    <div id="compareModal" class="modal">
+        <div class="modal-content compare-modal-content">
+            <span class="close" id="closeCompareModal">&times;</span>
+            <h2>Otel Karşılaştırma</h2>
+            <div id="compareTableWrap" class="compare-table-wrap"></div>
+        </div>
+    </div>
+
+    <div id="wishlistModal" class="modal">
+        <div class="modal-content wishlist-modal-content">
+            <span class="close" id="closeWishlistModal">&times;</span>
+            <h2>Favorilerim</h2>
+            <div id="wishlistContent" class="wishlist-content"></div>
+        </div>
+    </div>
+
+    <div id="notificationsModal" class="modal">
+        <div class="modal-content notification-modal-content">
+            <span class="close" id="closeNotificationsModal">&times;</span>
+            <h2>Promosyon Bildirim Tercihleri</h2>
+            <form id="notificationPrefsForm" class="notification-prefs-form">
+                <label><input type="checkbox" name="email" checked> E-posta kampanya bildirimleri</label>
+                <label><input type="checkbox" name="sms"> SMS bildirimleri</label>
+                <label><input type="checkbox" name="push" checked> Push bildirimleri</label>
+                <button type="submit" class="btn-book">Kaydet</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="cookiePreferenceModal" class="modal">
+        <div class="modal-content cookie-modal-content">
+            <span class="close" id="closeCookieModal">&times;</span>
+            <h2>Çerez Tercih Merkezi</h2>
+            <form id="cookiePrefsForm" class="cookie-prefs-form">
+                <label><input type="checkbox" checked disabled> Zorunlu Çerezler (her zaman açık)</label>
+                <label><input type="checkbox" name="analytics" checked> Analitik Çerezler</label>
+                <label><input type="checkbox" name="marketing"> Pazarlama Çerezleri</label>
+                <label><input type="checkbox" name="personalization" checked> Kişiselleştirme Çerezleri</label>
+                <div class="cookie-action-row">
+                    <button type="button" id="rejectCookiesBtn" class="btn-secondary">Reddet</button>
+                    <button type="button" id="acceptAllCookiesBtn" class="btn-secondary">Tümünü Kabul Et</button>
+                    <button type="submit" class="btn-book">Ayarlarla Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="callMeModal" class="modal">
+        <div class="modal-content call-me-modal-content">
+            <span class="close" id="closeCallMeModal">&times;</span>
+            <h2>Sizi Arayalim</h2>
+            <form id="callMeForm" class="call-me-form">
+                <div class="form-group">
+                    <label>Ad Soyad</label>
+                    <input type="text" id="callMeName" required>
+                </div>
+                <div class="form-group">
+                    <label>Telefon</label>
+                    <input type="tel" id="callMePhone" required>
+                </div>
+                <div class="form-group">
+                    <label>Tercih Edilen Saat</label>
+                    <select id="callMeHour" required>
+                        <option value="09:00-12:00">09:00 - 12:00</option>
+                        <option value="12:00-15:00">12:00 - 15:00</option>
+                        <option value="15:00-18:00">15:00 - 18:00</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-book">Geri Arama Talebi Olustur</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content login-modal-content">
+            <span class="close" id="closeLoginModal">&times;</span>
+            <h2>Giriş Yap</h2>
+            <p class="login-modal-subtitle">Hesabınıza erişmek için giriş yapın.</p>
+
+            <form id="loginForm" class="login-modal-form">
+                <div class="form-group">
+                    <label for="loginEmail">E-posta</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword">Şifre</label>
+                    <div class="login-password-wrap">
+                        <input type="password" id="loginPassword" required>
+                        <button type="button" id="toggleLoginPassword" class="login-toggle-btn">Göster</button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-book">Giriş Yap</button>
+            </form>
+
+            <p class="login-modal-footer">Hesabın yok mu? <a href="#" id="switchToSignupModal">Üye Ol</a></p>
+        </div>
+    </div>
+
+    <div id="signupModal" class="modal">
+        <div class="modal-content signup-modal-content">
+            <span class="close" id="closeSignupModal">&times;</span>
+            <h2>Üye Ol</h2>
+            <p class="signup-modal-subtitle">Hesap oluştur ve hemen rezervasyona başla.</p>
+
+            <form id="signupModalForm" class="signup-modal-form">
+                <div class="form-group">
+                    <label for="signupName">Ad Soyad</label>
+                    <input type="text" id="signupName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="signupEmail">E-posta</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="signupPassword">Şifre</label>
+                    <div class="signup-password-wrap">
+                        <input type="password" id="signupPassword" required>
+                        <button type="button" id="toggleSignupPassword" class="signup-toggle-btn">Göster</button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-book">Üye Ol</button>
+            </form>
+
+            <p class="signup-modal-footer">Zaten hesabın var mı? <a href="#" id="switchToLoginModal">Giriş Yap</a></p>
+        </div>
+    </div>
+
+    <script src="assets/js/cities.js"></script>
+    <script src="assets/js/title.js"></script>
+    <script src="assets/js/hotels.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/experience.js"></script>
 </body>
 </html>

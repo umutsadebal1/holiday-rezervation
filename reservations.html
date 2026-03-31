@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self';">
     <title>Rezervasyonlarım</title>
     <link rel="icon" type="image/png" href="img/logo.png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
     <header class="header">
@@ -17,8 +17,8 @@
             </div>
             <nav class="nav-links">
                 <a href="index.html#home">Anasayfa</a>
-                <a href="index.html#locations">Bölgeler</a>
-                <a href="index.html#testimonials">Yorumlar</a>
+                <a href="index.html#specials">Bölgeler</a>
+                <a href="index.html#campaignCenter">Kampanyalar</a>
                 <a href="index.html#contact">İletişim</a>
             </nav>
             <div class="header-actions">
@@ -27,20 +27,100 @@
         </div>
     </header>
 
-    <main>
-        <div class="reservations-container">
-            <h1 style="margin-bottom: 2rem; color: var(--light-text);">Rezervasyonlarım</h1>
-            
-            <div id="reservationsContent">
-                </div>
-        </div>
+    <main class="reservations-main">
+        <section class="reservation-hero">
+            <div>
+                <h1>Rezervasyonlarım</h1>
+                <p>Yaklaşan tatillerini takip et, geçmiş rezervasyonlarına tek ekrandan ulaş.</p>
+            </div>
+            <button id="clearBtn" class="delbtn" type="button">Tüm Rezervasyonları Temizle</button>
+        </section>
 
-        <div class="clear-btn-container" style="text-align: center; margin-top: 2rem;">
-            <button id="clearBtn" class="delbtn">
-                Tüm Rezervasyonları Temizle
-            </button>
+        <section class="reservation-filters" id="reservationFilters">
+            <button class="reservation-tab active" data-res-filter="approved" type="button">Onay</button>
+            <button class="reservation-tab" data-res-filter="upcoming" type="button">Yaklaşanlar</button>
+            <button class="reservation-tab" data-res-filter="past" type="button">Geçmiş</button>
+            <button class="reservation-tab" data-res-filter="cancelled" type="button">İptaller</button>
+            <button class="reservation-tab" data-res-filter="all" type="button">Tümü</button>
+        </section>
+
+        <section id="reservationsSummary" class="reservation-summary-cards"></section>
+
+        <div class="reservations-container">
+            <div id="reservationsContent"></div>
         </div>
     </main>
+
+    <div id="editReservationModal" class="modal">
+        <div class="modal-content reservation-edit-modal">
+            <span class="close" id="closeEditReservationModal">&times;</span>
+            <h2>Rezervasyonu Düzenle</h2>
+            <form id="editReservationForm">
+                <input type="hidden" id="editBaseNightlyPrice" value="0">
+
+                <div class="reservation-edit-grid">
+                    <div class="form-group">
+                        <label for="editResortName">Otel</label>
+                        <input type="text" id="editResortName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editStatus">Durum</label>
+                        <select id="editStatus" required>
+                            <option value="Onaylandı">Onaylandı</option>
+                            <option value="Beklemede">Beklemede</option>
+                            <option value="İptal Edildi">İptal Edildi</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="editCheckIn">Giriş Tarihi</label>
+                        <input type="date" id="editCheckIn" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editCheckOut">Çıkış Tarihi</label>
+                        <input type="date" id="editCheckOut" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editGuests">Konuk Sayısı</label>
+                        <input type="number" id="editGuests" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editRoomType">Oda Tipi</label>
+                        <select id="editRoomType" required>
+                            <option value="Standard">Standart</option>
+                            <option value="Deluxe">Deluxe</option>
+                            <option value="Suite">Suite</option>
+                            <option value="Villa">Villa</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="editGuestName">Konuk Adı</label>
+                        <input type="text" id="editGuestName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editGuestEmail">E-posta</label>
+                        <input type="email" id="editGuestEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editGuestPhone">Telefon</label>
+                        <input type="tel" id="editGuestPhone">
+                    </div>
+                    <div class="form-group form-group-full">
+                        <label for="editSpecialRequests">Özel İstekler</label>
+                        <textarea id="editSpecialRequests" rows="3" placeholder="Özel isteklerinizi yazabilirsiniz."></textarea>
+                    </div>
+                </div>
+
+                <div class="edit-price-preview">
+                    Yeni Toplam Tutar: <strong id="editTotalPrice">-</strong>
+                </div>
+
+                <div class="booking-actions">
+                    <button type="button" id="cancelEditReservationBtn" class="btn-cancel">Vazgeç</button>
+                    <button type="submit" class="btn-edit">Güncellemeleri Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <footer class="site-footer">
         <div class="footer-content">
@@ -49,6 +129,6 @@
         </div>
     </footer>
 
-    <script src="app.js"></script>
+    <script src="assets/js/app.js"></script>
 </body>
 </html>

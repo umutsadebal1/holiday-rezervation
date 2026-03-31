@@ -88,5 +88,23 @@ window.HOTELS_BY_CITY = {
     { name: 'Historical Caravanserai Hotel', image: 'img/vanot6.jpg', rating: 4.3, price: 580, features: ['Tarihi Bina', 'Muze Yakini', 'Cay Evi', 'Antika'] },
     { name: 'Hotel Dosco', image: 'img/vanot7.jpg', rating: 4.5, price: 750, features: ['Urartu Kalintilari', 'Arkeoloji Turu', 'Rehber', 'Kultur'] },
     { name: 'Royale Palace Resort', image: 'img/vanot8.webp', rating: 4.9, price: 1200, features: ['5 Yildiz', 'Gourmet', 'Konferans', 'Business'] }
+  ],
+  istanbul: [
+    { name: 'Bosphorus Grand Hotel', image: 'img/logo.png', rating: 4.8, price: 2350, features: ['Bogaz Manzarasi', 'Spa', 'Concierge', 'Business'] },
+    { name: 'Galata Heritage Suites', image: 'img/logo.png', rating: 4.7, price: 1880, features: ['Tarihi Doku', 'Butik', 'Kahvalti', 'Merkezi Konum'] },
+    { name: 'Kadikoy City Comfort', image: 'img/logo.png', rating: 4.5, price: 1420, features: ['Ulasim Kolayligi', 'WiFi', 'Restoran', 'Aile Dostu'] },
+    { name: 'Sultanahmet Palace View', image: 'img/logo.png', rating: 4.6, price: 1650, features: ['Tarihi Yarımada', 'Cati Terasi', 'Tur Danisma', 'Kultur'] }
+  ],
+  ankara: [
+    { name: 'Cankaya Elite Hotel', image: 'img/logo.png', rating: 4.6, price: 1320, features: ['Sehir Merkezi', 'Business Lounge', 'Fitness', 'Otopark'] },
+    { name: 'Kizilay Panorama Suites', image: 'img/logo.png', rating: 4.5, price: 1180, features: ['Merkezi Lokasyon', 'Kahvalti', 'Toplanti Salonu', 'WiFi'] },
+    { name: 'Atakule Crown Residence', image: 'img/logo.png', rating: 4.7, price: 1490, features: ['Manzara', 'Deluxe Oda', 'Spa', 'Restoran'] },
+    { name: 'Ankara Parkline Otel', image: 'img/logo.png', rating: 4.4, price: 990, features: ['Ekonomik', 'Temiz Oda', 'Ulasim', 'Aile Dostu'] }
+  ],
+  gaziantep: [
+    { name: 'Bakircilar Han Boutique', image: 'img/logo.png', rating: 4.6, price: 1280, features: ['Butik', 'Lezzet Rotasi', 'Tarihi Carsi', 'Kultur'] },
+    { name: 'Zeugma Comfort Hotel', image: 'img/logo.png', rating: 4.7, price: 1460, features: ['Muze Yakini', 'Spa', 'Business', 'Toplanti Salonu'] },
+    { name: 'Antep Flavor Suites', image: 'img/logo.png', rating: 4.5, price: 1090, features: ['Gastronomi', 'Aile Dostu', 'Merkezi Konum', 'WiFi'] },
+    { name: 'Yesilvadi City Resort', image: 'img/logo.png', rating: 4.4, price: 930, features: ['Sakin Konum', 'Bahce', 'Otopark', 'Kahvalti'] }
   ]
 };

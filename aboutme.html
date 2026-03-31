@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://unpkg.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self';">
   <title>Umut Sadebal!!!</title>
     <link rel="icon" type="image/png" href="img/logo.png">
 
-  <link rel="stylesheet" href="aboutme.css">
+  <link rel="stylesheet" href="assets/css/aboutme.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -143,13 +143,13 @@
      <nav class="navbar">
   <ul class="navbar-list">
     <li class="navbar-item">
-      <button class="navbar-link active" data-nav-link="about" onclick="sayfaDegistir('about', this)">Hakkımda</button>
+        <button type="button" class="navbar-link active" data-nav-link="about">Hakkımda</button>
     </li>
     <li class="navbar-item">
-      <button class="navbar-link" data-nav-link="resume" onclick="sayfaDegistir('resume', this)">Eğitim ve Yetenek</button>
+        <button type="button" class="navbar-link" data-nav-link="resume">Eğitim ve Yetenek</button>
     </li>
     <li class="navbar-item">
-      <button class="navbar-link" data-nav-link="portfolio" onclick="sayfaDegistir('portfolio', this)">Portföyüm</button>
+        <button type="button" class="navbar-link" data-nav-link="portfolio">Portföyüm</button>
     </li>
   </ul>
 </nav>
@@ -242,7 +242,7 @@
         - #RESUME
       -->
 
-      <article class="resume active" data-page="resume">
+      <article class="resume" data-page="resume">
 
         <header>
           <h2 class="h2 article-title">Eğitim ve Yetenek</h2>
@@ -369,7 +369,7 @@
   </main>
 
 
-  <script src="app.js"></script>
+  <script src="assets/js/app.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
