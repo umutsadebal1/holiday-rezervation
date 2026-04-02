@@ -65,19 +65,19 @@ Sonrasinda tarayicida su adresi ac:
 
 <http://localhost:8000>
 
-##Gorseller
+## Gorseller
 
 ### 1) Ana Sayfa
 
-![Ana Sayfa Tanitim Gorseli](img/showcase/main.png)
+![Ana Sayfa Tanitim Gorseli](https://hizliresim.com/huaezo2)
 
 ### 2) Sehir Sonuclari ve Filtreleme
 
-![Sehir Sonuclari Tanitim Gorseli](img/showcase/hotelpage.png)
+![Sehir Sonuclari Tanitim Gorseli](https://hizliresim.com/9ua5i1t)
 
 ### 3) Rezervasyon Akisi
 
-![Rezervasyon Akisi Tanitim Gorseli](img/showcase/rezervationpage.png)
+![Rezervasyon Akisi Tanitim Gorseli](https://hizliresim.com/qwbq0sc)
 
 
 ## Sayfa Haritasi
