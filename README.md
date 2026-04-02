@@ -69,15 +69,15 @@ Sonrasinda tarayicida su adresi ac:
 
 ### 1) Ana Sayfa
 
-![Ana Sayfa Tanitim Gorseli](https://hizliresim.com/huaezo2)
+![Ana Sayfa Tanitim Gorseli](https://i.hizliresim.com/huaezo2.png)
 
 ### 2) Sehir Sonuclari ve Filtreleme
 
-![Sehir Sonuclari Tanitim Gorseli](https://hizliresim.com/9ua5i1t)
+![Sehir Sonuclari Tanitim Gorseli](https://i.hizliresim.com/9ua5i1t.png)
 
 ### 3) Rezervasyon Akisi
 
-![Rezervasyon Akisi Tanitim Gorseli](https://hizliresim.com/qwbq0sc)
+![Rezervasyon Akisi Tanitim Gorseli](https://i.hizliresim.com/qwbq0sc.png)
 
 
 ## Sayfa Haritasi
