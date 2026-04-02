@@ -13,6 +13,7 @@ HolidayRez, Turkiye odakli sehir otellerini kesfetme, karsilastirma, favorileme 
 - [Neler Sunuyor?](#neler-sunuyor)
 - [2 Dakikada Demo Akisi](#2-dakikada-demo-akisi)
 - [Kurulum ve Calistirma](#kurulum-ve-calistirma)
+- [Website Tanitim Gorselleri](#website-tanitim-gorselleri)
 - [Sayfa Haritasi](#sayfa-haritasi)
 - [Veri Saklama Mimarisi](#veri-saklama-mimarisi)
 - [Proje Yapisi](#proje-yapisi)
@@ -63,6 +64,21 @@ npx http-server
 Sonrasinda tarayicida su adresi ac:
 
 <http://localhost:8000>
+
+##Gorseller
+
+### 1) Ana Sayfa
+
+![Ana Sayfa Tanitim Gorseli](img/showcase/main.png)
+
+### 2) Sehir Sonuclari ve Filtreleme
+
+![Sehir Sonuclari Tanitim Gorseli](img/showcase/hotelpage.png)
+
+### 3) Rezervasyon Akisi
+
+![Rezervasyon Akisi Tanitim Gorseli](img/showcase/rezervationpage.png)
+
 
 ## Sayfa Haritasi
 
