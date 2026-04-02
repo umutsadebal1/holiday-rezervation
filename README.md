@@ -13,7 +13,7 @@ HolidayRez, Turkiye odakli sehir otellerini kesfetme, karsilastirma, favorileme 
 - [Neler Sunuyor?](#neler-sunuyor)
 - [2 Dakikada Demo Akisi](#2-dakikada-demo-akisi)
 - [Kurulum ve Calistirma](#kurulum-ve-calistirma)
-- [Website Tanitim Gorselleri](#website-tanitim-gorselleri)
+- [Gorseller](#gorseller)
 - [Sayfa Haritasi](#sayfa-haritasi)
 - [Veri Saklama Mimarisi](#veri-saklama-mimarisi)
 - [Proje Yapisi](#proje-yapisi)
@@ -78,7 +78,6 @@ Sonrasinda tarayicida su adresi ac:
 ### 3) Rezervasyon Akisi
 
 ![Rezervasyon Akisi Tanitim Gorseli](https://i.hizliresim.com/qwbq0sc.png)
-
 
 ## Sayfa Haritasi
 
